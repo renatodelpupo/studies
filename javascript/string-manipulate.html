@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style media="screen">
+    body {
+      background-color: #1c1d21;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <p>Static value: US$ <span class="static-value">23,50</span></p>
+  <p>Dynamic value: US$ <span class="unit">0</span>,<span class="cents">00</span></p>
+
+  <button class="executeButton">Change</button>
+
+  <!--  -->
+
+  <script>
+    // Get elements
+    const staticValue = document.querySelector('.static-value');
+    let unitArea = document.querySelector('.unit');
+    let centsArea = document.querySelector('.cents');
+    let executeButton = document.querySelector('.executeButton');
+
+    // Button click
+    executeButton.addEventListener('click', function() {
+
+      staticValueUnit = staticValue.textContent.split(',')[0];
+      staticValueCents = staticValue.textContent.split(',')[1];
+
+      unitArea.textContent = staticValueUnit;
+      centsArea.textContent = staticValueCents;
+
+    });
+  </script>
+</body>
+
+</html>

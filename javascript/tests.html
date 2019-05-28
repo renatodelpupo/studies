@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style media="screen">
+    body {
+      background-color: #1c1d21;
+      color: white;
+    }
+    .bold {
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <span class="title">Numbers:</span>
+  <ul>
+    <li></li>
+  </ul>
+
+  <button class="add-number-item">Add number item</button>
+
+  <button class="console-hello">Console hello</button>
+
+  <button class="console-title">Console trick</button>
+
+  <!--  -->
+
+  <script>
+    // Select an element and add class
+    document.querySelector('.title').classList.add('bold');
+
+    /* */
+
+    // Add number to the list
+    function addNumbersToList() {
+
+      var listItem = document.querySelectorAll('li');
+
+      for (i = 0; i < listItem.length; i++) {
+        listItem[i].textContent = i + 1;
+      }
+    }
+
+    // Execute the function
+    addNumbersToList();
+
+    /* */
+
+    var buttonAddNumberItem = document.querySelector('.add-number-item');
+
+    buttonAddNumberItem.addEventListener('click', function() {
+
+      var newItem = document.createElement('li');
+      var itensList = document.querySelector('ul');
+
+      // Add a new item to the list
+      itensList.appendChild(newItem);
+
+      // Execute the numbering action
+      addNumbersToList();
+
+    });
+
+    /* */
+
+    function consoleHello() {
+      console.log('Hello');
+    }
+
+    // Event listener of click
+    var buttonConsoleHello = document.querySelector('.console-hello');
+    buttonConsoleHello.addEventListener('click', consoleHello);
+
+    /* */
+
+    // Creating a function to tiny document.querySelector
+    function getElement(selector) {
+      return document.querySelector(selector);
+    }
+
+    var buttonTitle = getElement('.console-title');
+    buttonTitle.addEventListener('click', function() {
+      console.log(getElement('.title').textContent);
+    })
+
+    /* */
+
+    // Remove a list element by double click
+
+    let listItems = document.querySelectorAll('li');
+
+    listItems.forEach(function(listIte) {
+
+      listIte.addEventListener('dblclick', function() {
+        //console.log('double clicked')
+        this.remove();
+      })
+
+    })
+  </script>
+</body>
+
+</html>

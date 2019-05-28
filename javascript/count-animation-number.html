@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <p>Balance: US$ <span class="balanceNum">0,00</span></p>
+
+  <form>
+    <label for="operation">Operation:</label>
+    <input id="operation" type="number" name="operation" value="" placeholder="Money change">
+    <input class="submit" type="submit" value="Submit">
+  </form>
+
+  <!--  -->
+
+  <script>
+    // Initial money
+    let balance = 23.50;
+
+    // Get elements
+    const balanceArea = document.querySelector('.balanceNum');
+    const executeButton = document.querySelector('.submit');
+
+    // Set initial balance (with two decimals and comma instead of dot)
+    balanceArea.textContent = balance.toFixed(2).split('.').join(',');
+
+    // Event listener of click
+    executeButton.addEventListener('click', function(e) {
+
+      // Prevent button 'send'
+      e.preventDefault();
+
+      // Clear the console
+      console.clear();
+
+      // Get user response
+      let inputValue = document.querySelector('#operation').value;
+      let inputValueNumber = parseFloat(inputValue);
+
+      // If input is a valid number
+      if (!isNaN(inputValueNumber)) {
+
+        // Get current balance
+        let currentBalance = balance;
+        console.log('Balance before calc: ' + balance)
+
+        // Calc new balance
+        balance += inputValueNumber;
+        let newBalance = balance;
+        console.log('Balance after calc: ' + balance)
+
+        // Animate result
+        animateValue(balanceArea, currentBalance, newBalance, 1000);
+
+      } else {
+        console.log('Invalid number')
+      }
+    })
+
+
+    // Animate value function
+    function animateValue(obj, start, end, duration) {
+      var range = end - start;
+      var current = start;
+      var increment = end > start ? 1 : -1;
+      var stepTime = Math.abs(Math.floor(duration / range));
+      var timer = setInterval(function() {
+        current += increment;
+        // obj.innerHTML = current is the natural
+        // but I want to replace dot with comma
+        obj.innerHTML = current.toFixed(2).toString().split('.').join(',');
+        if (current == end) {
+          clearInterval(timer);
+        }
+      }, stepTime);
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <p>Balance: US$ <span class="unit">0</span>,<span class="cents">00</span></p>
+
+  <form>
+    Operation: <input class="input" type="number" name="operation" value="" placeholder="Money change">
+    <input class="submit" type="submit" value="Submit">
+  </form>
+
+  <script>
+    /* Guide
+    // parseInt transform a string to integer number
+    // parseFloat transform a string to a decimal number
+    // toString transform a number to string
+    // split and join works with string
+    // toFixed(2) transform 2.2 into 2.20 string
+    */
+
+    // Initial money
+    let balance = 23.50;
+
+    // Get elements
+    let unitArea = document.querySelector('.unit');
+    let centsArea = document.querySelector('.cents');
+
+    // Set initial balance
+    unitArea.textContent = balance.toFixed(2).split('.')[0];
+    centsArea.textContent = balance.toFixed(2).split('.')[1];
+
+    // Event listener of click
+    let executeButton = document.querySelector('.submit');
+    executeButton.addEventListener('click', function(e) {
+      e.preventDefault();
+
+      // Get user response
+      let inputValue = parseFloat(document.querySelector('.input').value);
+      let inputValueValid = parseFloat(inputValue.toString().split(',').join('.')); // If user use comma instead of dot
+
+      console.clear()
+
+      // Get current balance
+      console.log('Balance before calc:' + balance)
+      let currentBalanceUnit = parseInt(balance.toString().split('.')[0]);
+      let currentBalanceCents = parseInt(balance.toString().split('.')[1]);
+
+      // Calc new balance
+      balance += inputValueValid;
+      console.log('Balance after calc:' + balance)
+      let newBalanceUnit = balance.toFixed(2).split('.')[0];
+      let newBalanceCents = balance.toFixed(2).split('.')[1];
+
+      // Set balance with new value (animated)
+      animateValue(unitArea, currentBalanceUnit, newBalanceUnit, 10000);
+      animateValue(centsArea, currentBalanceCents, newBalanceCents, 10000);
+    })
+
+
+    // Animate value function
+    function animateValue(obj, start, end, duration) {
+      var range = end - start;
+      var current = start;
+      var increment = end > start ? 1 : -1;
+      var stepTime = Math.abs(Math.floor(duration / range));
+      var timer = setInterval(function() {
+        current += increment;
+        obj.innerHTML = current;
+        if (current == end) {
+          clearInterval(timer);
+        }
+      }, stepTime);
+    }
+  </script>
+</body>
+
+</html>
