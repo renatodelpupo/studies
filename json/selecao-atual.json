@@ -1,0 +1,55 @@
+{
+  "revista": {
+    "skuRevista": "22766"
+  },
+  "experiencias": {
+    "essenciais": {
+      "nome": "Essenciais",
+      "sku1": "22061",
+      "sku2": "22060",
+      "precoMensal": "79",
+      "precoAnual": "74",
+      "descricao": "Experiência que traz vinhos descomplicados, indispensáveis para os seus momentos de felicidade."
+    },
+    "surpreendentes": {
+      "nome": "Surpreendentes",
+      "sku1": "22045",
+      "sku2": "22044",
+      "precoMensal": "142",
+      "precoAnual": "131",
+      "descricao": "Rótulos do mundo inteiro, com sabores mais complexos para serem explorados."
+    },
+    "notaveis": {
+      "nome": "Notáveis",
+      "sku1": "22046",
+      "sku2": "22047",
+      "precoMensal": "205",
+      "precoAnual": "189",
+      "descricao": "Experiência com exemplares prestigiados, ideal para paladares mais aguçados."
+    },
+    "singulares": {
+      "nome": "Singulares",
+      "sku1": "22101",
+      "sku2": "22102",
+      "precoMensal": "295",
+      "precoAnual": "274",
+      "descricao": "Vinhos de vinícolas exclusivas e safras de produção limitada, para quem tem o paladar experiente."
+    },
+    "refrescantes": {
+      "nome": "Refrescantes",
+      "sku1": "22057",
+      "sku2": "22058",
+      "precoMensal": "114",
+      "precoAnual": "106",
+      "descricao": "Experiência com vinhos cheios de frescor e leveza, para você aproveitar no dia a dia."
+    },
+    "espumantes": {
+      "nome": "Espumantes",
+      "sku1": "22441",
+      "sku2": "22441",
+      "precoMensal": "142",
+      "precoAnual": "131",
+      "descricao": "Exemplares feitos para você celebrar a vida e brindar todos os seus momentos."
+    }
+  }
+}
