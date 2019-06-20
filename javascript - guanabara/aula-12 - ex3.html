@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style media="screen">
+    input {
+      margin-top: 1em;
+    }
+    .confirmar {
+      display: block;
+      margin-top: 1em;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Olá mundo</h1>
+  <p>Beleza?</p>
+
+  Quer aprender JavaScript ou não?
+
+  <div>
+    Sim:
+    <input type="radio" name="resposta" value="sim">
+    <br>
+    Não:
+    <input type="radio" name="resposta" value="nao">
+
+    <button class="confirmar">Confirmar</button>
+  </div>
+
+  <script>
+
+  // Botão para iniciar função
+  var btoVerificar = document.querySelector('.confirmar')
+
+  // Todas as alternativas possíveis
+  var resposta = document.querySelectorAll('input[name="resposta"]')
+
+  // Descobrir alternativa selecionada
+  for (i = 0; i < resposta.length; i++) {
+
+    if (resposta[i].checked) {
+      respostaSelecionada = resposta[i].value()
+    }
+
+  }
+
+  btoVerificar.addEventListener('click', function() {
+    console.clear()
+
+    if (resposta[0].checked) {
+      console.log('Beleza, vamos lá!')
+    } else {
+      console.log('Então vai tomar no !')
+    }
+
+  })
+
+  </script>
+</body>
+
+</html>

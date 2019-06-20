@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+
+<body>
+  <h1>Olá mundo</h1>
+  <p>Beleza?</p>
+  <script>
+    
+    // Declara um número inteiro e um real
+    var n1 = 3
+    var n2 = 2.75
+    
+    // Soma os dois (números) e converte para string
+    var numeroString = (n1 + n2).toString();
+    
+    // Inverte a string para número inteiro e real, respectivamente    
+    var numeroInteiro = Number.parseInt(numeroString)
+    var numeroReal = Number.parseFloat(numeroString)
+    
+    // Exibe no console os resultados    
+    console.log('Número inteiro: ' + numeroInteiro)
+    console.log('Número real: ' + numeroReal)
+    
+    // Transforma o numero real numérico em string novamente
+    var numeroRealString = String(numeroReal)
+    console.log('Tipo de numeroRealString: ' + typeof numeroRealString)
+    
+    //
+    //
+    //
+    
+    var nome = "Pupo"
+    var idade = 25
+    var conhecimento = "JavaScript"
+    
+    // Usando JavaScript template strings (ou placeholders) versus concatenação
+    console.log(`O aluno ${nome}, ${idade} anos, está aprendendo ${conhecimento}`)
+    
+    //
+    //
+    //
+    
+    var dinheiro = 1545.5
+    var dinheiroDoisDecimais = dinheiro.toFixed(2) // = 1545.50
+    var dinheiroVirgula = dinheiroDoisDecimais.replace('.',',') // = 1545,60
+    var dinheiroLocal = dinheiro.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
+    
+    console.log('Meu salário é ' + dinheiroLocal)
+  </script>
+</body>
+</html>
