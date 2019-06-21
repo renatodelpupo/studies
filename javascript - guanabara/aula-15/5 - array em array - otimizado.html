@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>array em array - otimizado</title>
+  </head>
+  <body>
+    <h2>array em array - otimizado</h2>
+    <p>Descobri o nutrição[0], não precisando criar um novo array de índices</p>
+
+    <script>
+      // Declarando um JSON-array (JSON com colchetes)
+      let nutrição = [{
+        'macarrão': {
+          'peso': '500g',
+          'saudavel': 'não'
+        },
+        'banana': {
+          'peso': '100g',
+          'saudavel': 'sim'
+        },
+        'leite': {
+          'peso': '500ml',
+          'saudavel': 'moderação'
+        },
+        'maçã': {
+          'peso': '90g',
+          'saudavel': 'sim'
+        }
+      }]
+
+      // Declarando um array para comparação
+      let frutas = ['maçã', 'morango', 'banana']
+
+      // nutrição[0] vai me retornar o primeiro parâmetro, como:
+      // macarrão, banana, leite, maça
+
+      // Para cada fruta
+      for (let i in frutas) {
+
+        // Fruta percorrida no for
+        let frutaLaçada = frutas[i]
+
+        // Se a fruta percorrida existir em nutrição[0]
+        if (nutrição[0][frutaLaçada]) {
+
+          //console.log('verdadeiro')
+          let pesoFrutaEncontrada = nutrição[0][frutas[i]].peso
+          console.log(`Há ${frutas[i]} em Nutrição e seu peso é: ${pesoFrutaEncontrada}`)
+
+        } else {
+          console.log(`Não há ${frutas[i]} em Nutrição`)
+        }
+      }
+    </script>
+  </body>
+</html>

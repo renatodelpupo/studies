@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>for in & indexOf</title>
+  </head>
+  <body>
+    <h2>for in & indexOf</h2>
+    <p><b style="font-size:1.2em">indexOf</b> serve para procurar algo dentro de outro.</p>
+    <p>Procura <b>a</b> dentro de <b>banana</b>: <br> 'banana'.indexOf('a') = 1 (sua posição)</p>
+    <p>Procura <b>n</b> dentro de <b>banana</b>: <br> 'banana'.indexOf('n') = 2 (sua posição)</p>
+    <p>Procura <b>c</b> dentro de <b>banana</b>: <br> 'banana'.indexOf('c') = -1 (sempre que não existe)</p>
+    <h3>mais complexo</h3>
+    <p>let números = [5, 6, 2]</p>
+    <p>Procura <i>6</i> dentro de <i>números</i>: <b><u>números</u></b>.indexOf(<b><u>6</u></b>) = 1 (sua chave)</p>
+    <p>Procura <i>11</i> dentro de <i>números</i>: <b><u>números</u></b>.indexOf(<b><u>11</u></b>) = -1 (não existe)</p>
+
+
+    <script>
+
+      let numeros = [5, 6, 2]
+
+      // Estrutura normal
+      for (let i = 0; i < numeros.length; i++) {
+        console.log(`A posição ${i} é ${numeros[i]}`)
+      }
+
+      console.log('---')
+
+      for (let i in numeros) {
+        console.log(`A posição ${i} é ${numeros[i]}`)
+      }
+
+      console.log('---')
+
+      let buscape = 6
+      console.log(`O valor ${buscape} está na chave ${numeros.indexOf(buscape)}`)
+      console.log(`O valor 10 (não existe) está na chave ${numeros.indexOf(10)}`)
+
+      console.log('---')
+
+      let buscaInvalido = 11
+      console.log(`Let numeros é ${numeros}`)
+      console.log(`Let buscaInvalido é ${buscaInvalido}`)
+
+      if (numeros.indexOf(buscaInvalido) != -1) {
+        console.log('buscaInvalido existe em let numeros')
+      } else {
+        console.log('buscaInvalido NÃO existe em let numeros')
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>array em array</title>
+  </head>
+  <body>
+    <h2>array em array</h2>
+
+    <script>
+
+      // Declarando as comidas (array maior)
+      let comidas = ['macarrão', 'maçã', 'leite', 'banana']
+
+      // Declarando as frutas (array menor, para comparar se está no maior)
+      let frutas = ['maçã', 'banana', 'morango']
+
+      // Testes
+      /*
+      console.log(`Comidas: ${comidas}`)
+      console.log(`Frutas: ${frutas}`)
+
+      for (let i = 0; i <= frutas.length; i++) {
+
+        if (comidas.indexOf(frutas[i]) != -1) {
+          console.log(`Há a fruta ${frutas[i]} em comidas`)
+        }
+      }
+      */
+
+      // Declarando um JSON nutrição, onde os elementos carregam informações
+      let nutrição = {
+        'macarrão': {
+          'peso': '500g',
+          'saudavel': 'não'
+        },
+        'banana': {
+          'peso': '100g',
+          'saudavel': 'sim'
+        },
+        'leite': {
+          'peso': '500ml',
+          'saudavel': 'moderação'
+        },
+        'maçã': {
+          'peso': '90g',
+          'saudavel': 'sim'
+        }
+      }
+
+      // Declarando uma variável para armazenar os índices de nutrição
+      // para posteriormente comparar se as ${frutas} estão no JSON
+      let índicesNutrição = []
+
+      // Testes
+      /*for (let i in nutrição) {
+        console.log(`O conteúdo de ${i} é`)
+        console.log(nutrição[i])
+      }*/
+
+      // Adicionado cada índice do JSON ${nutrição} no array ${índicesNutrição}
+      for (let i in nutrição) {
+        índicesNutrição.push(i)
+      }
+
+      // Teste
+      console.log(`Nutrição (Índices): ${índicesNutrição}`)
+      console.log(`Frutas: ${frutas}`)
+
+      // Para cada fruta
+      for (let i in frutas) {
+
+        // Ver se o conteúdo do array ${frutas} está dentro do array ${índicesNutrição}
+        // Ex.: frutas[i], que é maçã
+        // Se não houver, retorna-se -1, nosso false
+        // Se tiver, vai retornar um número maior ou igual a zero (índicesNutrição.indexOf(frutas[i]) >= 0)
+        if (índicesNutrição.indexOf(frutas[i]) != -1) {
+          console.log(`Há a fruta ${frutas[i]} em Índices Nutrição`)
+        }
+      }
+
+      console.log('...')
+
+      console.log('Tudo que estiver em Índices Nutrição, por tabela, está em Nutrição:')
+      console.log(nutrição)
+
+    </script>
+  </body>
+</html>

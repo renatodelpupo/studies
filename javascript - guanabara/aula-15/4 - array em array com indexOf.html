@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>array em array com indexOf</title>
+  </head>
+  <body>
+    <h2>array em array com indexOf</h2>
+    <p>Não sabia do nutrição[0] (descobri na metade, só pro #aqui) e fiz outro array só pros índices</p>
+
+    <script>
+
+      // Declarando um JSON
+      let nutrição = [{
+        'macarrão': {
+          'peso': '500g',
+          'saudavel': 'não'
+        },
+        'banana': {
+          'peso': '100g',
+          'saudavel': 'sim'
+        },
+        'leite': {
+          'peso': '500ml',
+          'saudavel': 'moderação'
+        },
+        'maçã': {
+          'peso': '90g',
+          'saudavel': 'sim'
+        }
+      }]
+
+      // Declarando um array para comparação
+      let frutas = ['maçã', 'morango', 'banana']
+
+      // Declarando uma variável para armazenar os índices de nutrição
+      // para posteriormente comparar se as ${frutas} estão no JSON
+      let índicesNutrição = []
+
+      // Adicionado cada índice do JSON ${nutrição} no array ${índicesNutrição}
+      for (let i in nutrição[0]) {
+        índicesNutrição.push(i)
+      }
+
+      // Para cada fruta
+      for (let i in frutas) {
+
+        // Vejo se está fruta existe em índicesNutrição
+        // Obs.: índicesNutrição é um array simples de ${nutrição}
+        // que acho que foi uma gambiarra fazê-lo
+        if (índicesNutrição.indexOf(frutas[i]) != -1) {
+
+          // Se existir (retornar algo diferente de -1)
+
+          // Vejo qual é a fruta descoberta nesse laço
+          let frutaDaVez = frutas[i]
+
+          // Passo ela como parâmetro lá do ${nutrição} e vejo seu peso // #aqui
+          let frutaEncontrada = nutrição[0][frutaDaVez].peso
+
+          // Imprimo
+          console.log(`Há ${frutas[i]} em Nutrição e seu peso é: ${frutaEncontrada}`)
+
+        } else {
+
+          // Se não existir (retornar -1)
+          console.log(`Não há ${frutas[i]} em Nutrição`)
+        }
+      }
+    </script>
+  </body>
+</html>
