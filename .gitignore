@@ -1,3 +1,7 @@
-/nbproject/
-/node_modules/
+.apm
+.node-gyp
+.npm
+.atom-socket-secret-*
 .DS_Store
+nbproject
+node_modules
