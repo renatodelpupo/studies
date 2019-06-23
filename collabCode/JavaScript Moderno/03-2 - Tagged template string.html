@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+
+  <script>
+    // Pegando o body do HTML
+    const $body = document.querySelector('body')
+
+    // Função que irá construir meu template
+    function construcao(estilo, ...conteudos) {
+      // Criar h1
+      const $h1 = document.createElement('h1')
+
+      // Sou um array
+      console.log(conteudos)
+
+      // Aplicar estilo para o h1
+      $h1.style = estilo
+
+      //
+      // Aplicar conteúdo para o h1
+      //
+
+      // Não iria funcionar o replace em um array
+      // $h1.innerHTML = conteudos.replace(',' , '<br>')
+
+      // Somente transformando em string, o replace só faria o primeiro caso
+      // $h1.innerHTML = conteudos.toString().replace(',' , '<br>')
+      /* Retorna:
+      Conteúdo 1
+      Conteúdo 2,Conteúdo 3
+      */
+
+      // Então usa-se RegEx / com /g (para selecionar todas as instâncias)
+      // $h1.innerHTML = conteudos.toString().replace(/,/g, '<br>')
+
+      // Com join é ainda mais fácil
+      $h1.innerHTML = conteudos.join('<br>')
+
+      // Retornar
+      return $h1
+    }
+
+    // Executando a função construção com dados de conteúdos e estilo
+    // Guardando em const destaque
+    const destaque = construcao `
+        ${'Conteúdo 1'};
+        ${'Conteúdo 2'};
+        ${'Conteúdo 3'};
+        ${'Conteúdo 4'};
+        text-align: center;
+        line-height: 1.5;
+        font-size: 16px;
+        color: #2c343c;
+      `
+    // O ponto e vírgula faz diferença pois conflita com o CSS
+
+    // Colocando o resultado (const destaque) no body
+    $body.appendChild(destaque)
+  </script>
+
+</body>
+
+</html>

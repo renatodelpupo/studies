@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Map</title>
+</head>
+
+<body>
+
+  <ul>
+
+  </ul>
+
+  <script>
+
+    const animais = [
+      {
+        nome: 'Cachorro',
+        som: 'auau'
+      },
+      {
+        nome: 'Gato',
+        som: 'miau'
+      },
+      {
+        nome: 'Cabra',
+        som: 'bér'
+      },
+      {
+        nome: 'Porco',
+        som: 'oinq'
+      }
+    ]
+
+    // console.log(animais)
+
+    // O map tem dois parâmetros, sendo o primeiro (uma função), obrigatório
+    // animais.map()
+    // animais.map(function () { })  ou  animais.map(() => {})
+
+    // O 'oi' é impresso quatro vezes, pq o array tem quatro itens
+    animais.map(() => console.log('oi'))
+
+    //
+    console.log('----')
+    //
+
+    // Imprime cada animal (em seu JSON com nome e som)
+    // Como a função só tem um parâmetro, tirei os parênteses de (item)
+    animais.map(item => console.log(item))
+
+    //
+    console.log('----')
+    //
+
+    // Const declara uma nova variável
+    // Map vai percorrer todo o array ${animais}, chamando cada item de ${item}
+    // Usei arrow function onde retorno em template string
+    const animaisSom = animais.map(item => `${item.nome} faz ${item.som}`)
+    console.log(animaisSom)
+    // Retorna um novo array com a frase completa
+
+    //
+    console.log('----')
+    //
+
+    // Se a função quebrar linha {}, preciso explicitar o retorno
+    const animaisSom2 = animais.map((item) => {
+      return `${item.nome} faz ${item.som}`
+    })
+    console.log(animaisSom2)
+    // Retorna igualmente um novo array com a frase completa
+
+    //
+    console.log('----')
+    //
+
+    // Imprime cada item do novo array em uma linha (anonimamente)
+    // O primeiro parâmetro da função é o índice do item
+    animais.map((item) => {
+      return console.log(`${item.nome} faz ${item.som}`)
+    })
+
+    //
+    console.log('----')
+    //
+
+    // O segundo parâmetro da função é a chave (posição)
+    animais.map((item, chave) => {
+      return console.log(`[${chave}] ${item.nome} faz ${item.som}`)
+    })
+
+    //
+    console.log('----')
+    //
+
+    // O terceiro parâmetro da função é o valor "original" (antigo)
+    animais.map((item, chave, original) => {
+      console.log(`${item.nome} faz ${item.som}.`)
+      console.log('Original:', original[chave])
+    })
+
+    //
+    console.log('----')
+    //
+
+    // O segundo parâmetro DO MAP (depois da função) é uma espécie de (this)
+    // Mas não pode usar arrow function
+    animais.map(function(item, chave, original) {
+      console.log(`${item.nome} faz ${item.som}, ${this}`)
+    }, "brother");
+
+    //
+    console.log('----')
+    //
+
+    // Misturando com Object Destructuring
+    // Para não usar mais item.nome e item.som
+    animais.map((item, chave, original) => {
+
+      // Já funciona
+      // const base = ({nome, som}) => console.log(`${nome} faz ${som}.`)
+      // const montagem = base(item)
+
+      // Aqui fica ainda menor
+      // const resultado = (({nome, som}) => console.log(`${nome} faz ${som}.`))(item)
+
+      // Aqui formatei como IIFE
+      // const resultado = (function ({nome, som}) {
+      //   console.log(`${nome} faz ${som}.`)
+      // }(item))
+
+      // Aqui formatei como IIFE (anônimo)
+      (function ({nome, som}) {
+        console.log(`${nome} faz ${som}.`)
+      }(item))
+
+      // Escrevendo o HTML (não funcionou com IIFE)
+      document.querySelector('ul').innerHTML += `<li>${item.nome} faz ${item.som}.</li>`
+
+    })
+
+  </script>
+
+</body>
+
+</html>

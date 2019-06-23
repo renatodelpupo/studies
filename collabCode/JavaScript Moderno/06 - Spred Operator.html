@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Spread Operator</title>
+</head>
+
+<body>
+
+  <script>
+    const frutas = ['banana', 'uva', 'morango', 'maçã'];
+
+    //console.log(...frutas) = banana morango maçã
+    //console.log(frutas) = (3) ['banana', 'morango', 'maçã']
+
+    // Combinando com IIFE
+    (function (...valor) {
+
+      // forEach em arrow function
+      valor.forEach(item => console.log(item))
+
+    }(...frutas))
+
+
+    //
+    // Construindo no HTML
+    //
+
+    // Pega body
+    const $body = document.querySelector('body')
+
+    // Cria UL
+    const $lista1 = document.createElement('ul')
+
+    // Adiciona estilo a UL
+    $lista1.style.textTransform = 'capitalize'
+
+    // Adiciona lista ao body
+    $body.append($lista1);
+
+    // Construindo itens de lista
+    (function (...valor) {
+
+      // forEach em arrow function
+      valor.forEach(item => {
+
+        // Cria LI
+        const $itemLista = document.createElement('li')
+
+        // Adiciona texto a LI
+        $itemLista.innerText = item
+
+        // Pendura LI na UL
+        $lista1.append($itemLista)
+
+      })
+
+    }(...frutas.sort()))
+    // Imediatamente invoca a função passando ${frutas} (ordenada/sort()) como parâmetro
+
+
+    // Segunda maneira (segunda lista)
+
+    const $lista2 = document.createElement('ul')
+    $lista2.style.textTransform = 'capitalize'
+    $body.append($lista2);
+
+    (function (...valor) {
+
+      // Cria uma nova lista (map) a partir da anterior
+      const novaLista = valor.map(item => `<li>${item}</li>`)
+
+      console.log(novaLista)
+
+      $lista2.innerHTML = novaLista.join('')
+      // O join pega todos os itens do array e monta novamente separando por 'nada'
+
+    }(...frutas.sort()))
+
+  </script>
+
+</body>
+
+</html>

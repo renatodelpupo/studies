@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h4>Open console</h4>
+    <button class="botao" type="button" name="button">Botão</button>
+    <button class="botaoClassico" type="button" name="button">Botão clássico</button>
+
+    <script>
+
+      // Normal (1)
+      function printName1(name) {
+        return console.log(name)
+      }
+      printName1('Marina 1')
+
+      // Normal em variável (2)
+      const printName2 = function(name) {
+        return console.log(name)
+      }
+      printName2('Marina 2');
+      // Esse ; faz falta
+
+      // IIFE (Anônimo) (3)
+      (function(name){
+        return console.log(name)
+      }('Marina 3'))
+
+      // Arrow em variável (4)
+      const printName4 = (name) => {
+        return console.log(name)
+      }
+      printName4('Marina 4')
+
+      // Arrow em variável - uma linha (5)
+      const printName5 = (name) => console.log(name)
+      printName5('Marina 5')
+
+      // Arrow + IIFE #fail
+      // ((name) => { console.log(name) }('Marina 6'))
+
+      // Arrow em variável - uma linha sem parênteses (7)
+      const printName7 = name => console.log(name)
+      printName7('Marina 7')
+
+      // Múltiplos parâmetros
+      const printUser8 = (name, email) => {
+        console.log(name)
+        console.log(email)
+      }
+      printUser8('Marina 8', 'marina@gmail.com 8')
+
+      //
+      const printUser9 = (name, email) => 'Marina 9, marina@gmail.com 9'
+      console.log(printUser9())
+
+      //
+      const printUser10 = (name, email) => `
+      Marina 10
+      marina@gmail.com 10
+      `
+      console.log(printUser10())
+
+      //
+      // Limpando
+      console.clear()
+      //
+      // Usando arrays
+
+      // Usando um JSON-array
+      const printUser11 = () => [{name: 'Marina 11', email: 'marina@gmail.com 11'}]
+      console.log(printUser11()[0].name)
+
+      // Usando JSON com return
+      const printUser12 = () => {
+        return {name: 'Marina 12', email: 'marina@gmail.com 12'}
+      }
+      console.log(printUser12().name)
+
+      // Usando JSON com parênteses
+      const printUser13 = () => ({name: 'Marina 13', email: 'marina@gmail.com 13'})
+      console.log(printUser13().name)
+
+      // Evento de click
+      const $botao = document.querySelector('.botao')
+      $botao.addEventListener('click', () => console.log('Botão clicado'))
+
+      // Evento de click sem return
+      const $botaoClassico = document.querySelector('.botaoClassico')
+      $botaoClassico.addEventListener('click', () => {
+        $botaoClassico.style.background = 'orange'
+        console.log('Botão clicado')
+      })
+
+    </script>
+  </body>
+</html>

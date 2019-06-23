@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+
+  <script>
+    // Pegando o body do HTML
+    const $body = document.querySelector('body')
+
+    // Função que irá construir meu template
+    function construcao(estilo, conteudo1, conteudo2) {
+      // Criar h1
+      const $h1 = document.createElement('h1')
+
+      // Aplicar estilo e conteúdo para o h1
+      $h1.style = estilo
+      $h1.innerHTML = `Primeiro: ${conteudo1} <br> Segundo: ${conteudo2}`
+
+      // Retornar
+      return $h1
+    }
+
+    // Executando a função construção com dados de conteúdos e estilo
+    // Guardando em const destaque
+    const destaque = construcao `
+        ${'Conteúdo 1'};
+        ${'Conteúdo 2'};
+        text-align: center;
+        line-height: 1.5;
+        font-size: 16px;
+        color: #2c343c;
+      `
+    // O ponto e vírgula faz diferença pois conflita com o CSS
+
+    // Colocando o resultado (const destaque) no body
+    $body.appendChild(destaque)
+  </script>
+
+</body>
+
+</html>

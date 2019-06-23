@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+
+  <script>
+
+    const evento = {
+      id: 1,
+      nome: 'Nome do evento',
+      local: 'Centro de Convenções'
+    }
+
+    // Normal
+    // const id = evento.id
+    // const nome = evento.nome
+    // const local = evento.local
+
+    // Uma linha
+    //const id = evento.id, nome = evento.nome, local = evento.local
+
+    // Com object destructuing
+    const {id, nome, local} = evento
+
+    console.log(id)
+    console.log(nome)
+    console.log(local)
+
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Object Destructuring</title>
+</head>
+
+<body>
+
+  <script>
+
+    const evento = {
+      id: 1,
+      nome: 'Nome do evento',
+      local: 'Centro de Convenções'
+    }
+
+    // Object destructuing + arrow function
+    const cartao = ({nome, local}) => `
+      <ul>
+        <li>${nome}</li>
+        <li>${local}</li>
+      </ul>
+    `
+
+    // Construindo o ${cartão} com os dados de ${evento}
+    const cartaoEvento = cartao(evento);
+
+    // Adicionar ao $body
+    document.querySelector('body').innerHTML = cartaoEvento
+
+  </script>
+
+</body>
+
+</html>
