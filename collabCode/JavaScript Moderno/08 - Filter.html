@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Filter</title>
+  </head>
+  <body>
+
+    <h2>Filter</h2>
+
+    <ul></ul>
+
+    <script>
+
+      const frameworks = [
+        {nome: 'Rails', linguagem: 'Ruby'},
+        {nome: 'Vue', linguagem: 'JavaScript'},
+        {nome: 'Laravel', linguagem: 'PHP'},
+        {nome: 'React', linguagem: 'JavaScript'},
+        {nome: 'Bootstrap', linguagem: 'HTML/CSS/JS'},
+        {nome: 'Angular', linguagem: 'JavaScript'},
+      ]
+
+      // O filter tem dois parâmetros, sendo o primeiro (uma função), obrigatório
+      // frameworks.filter()
+      // frameworks.filter(function () { })  ou  frameworks.filter(() => {})
+
+      // O 'oi' é impresso seis vezes, pq o array tem seis itens
+      frameworks.filter(() => console.log('oi'))
+
+      //
+      console.log('----')
+      //
+
+      // Imprime cada framework (em seu JSON com nome e linguagem)
+      // Como a função só tem um parâmetro, tirei os parênteses de (item) => frameworks.filter((item) => console.log(item))
+      frameworks.filter(item => console.log(item))
+
+      //
+      console.log('----')
+      //
+
+      //
+      // A PARTIR DAQUI SE DIFERE DO MAP
+      //
+
+      //
+      console.log('----')
+      //
+
+      // O filter deve validar se algo é verdadeiro ou falso
+      // Se for verdadeiro, ele retorna o ${item} para um novo array
+      // Para salvar esse retorno, vamos usar uma variável
+
+      /*const frameworksJS = frameworks.filter(function(item) {
+        return true
+      })
+
+      console.log(frameworksJS)*/
+
+      // Nesse exemplo acima o novo array recebe tudo
+
+      //
+
+      // Vamos começar a validar de fato
+      const frameworksJS = frameworks.filter(function(item) {
+        return item.linguagem === 'JavaScript'
+      })
+
+      console.log(frameworksJS)
+
+      //
+      console.log('----')
+      //
+
+      // Minificando
+      const frameworksJS2 = frameworks.filter((item) => item.linguagem === 'JavaScript')
+      console.log(frameworksJS2)
+
+      //
+      console.log('----')
+      //
+
+      //
+      // A PARTIR DAQUI VOLTA A SER COMO MAP
+      //
+
+      // O segundo parâmetro da função é a chave (posição)
+      frameworks.filter((item, chave) => {
+        return console.log(`[${chave}] ${item.nome} é em ${item.linguagem}`)
+      })
+
+      //
+      console.log('----')
+      //
+
+      // O terceiro parâmetro da função é o valor "original" (antigo)
+      /*frameworks.filter((item, chave, original) => {
+        console.log(`${item.nome} é em ${item.linguagem}.`)
+        console.log('Original:', original[chave])
+      })*/
+      // Comentei pois ficou muito grande no console
+
+      //
+      //console.log('----')
+      //
+
+      // O segundo parâmetro DO FILTER (depois da função) é uma espécie de (this)
+      // Mas não pode usar arrow function
+      frameworks.filter(function(item, chave, original) {
+        console.log(`${item.nome} ${this} ${item.linguagem}`)
+      }, "é em");
+
+      //
+      console.log('----')
+      //
+
+      // Exemplo do Marco com Object Destructuring
+      frameworks.filter(({nome, linguagem}) => {
+        console.log(`${nome} é em ${linguagem}`);
+
+        // Adicionado a UL
+        document.querySelector('ul').innerHTML += `<li>${nome} é em ${linguagem}</li>`;
+      })
+
+    </script>
+
+  </body>
+</html>

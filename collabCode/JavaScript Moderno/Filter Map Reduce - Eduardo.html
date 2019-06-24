@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+
+  <h4>Soma de todos os saldos negativos</h4>
+
+  <script>
+    console.clear()
+
+    const conta = [
+      {saldo: 10}, {saldo: -10},{saldo: -210},
+      {saldo: -110},{saldo: 110},{saldo: 10},
+      {saldo: 0},{saldo: 55},{saldo: -1010},
+      {saldo: 510},{saldo: 10},{saldo: 10},
+      {saldo: -10},{saldo: -10},{saldo: -10},{saldo: -10},
+    ]
+
+    // Filtrando os negativos: Forma longa
+    /*const negativos = conta.filter((numero) => {
+      if (numero.saldo < 0) {
+        return numero
+      }
+    })*/
+
+    // Filtrando os negativos: Forma curta
+    const negativos = conta.filter(numero => numero.saldo < 0)
+
+    // Somando todos os negativos
+    const soma = negativos.reduce((acumulador, item) => acumulador + item.saldo, 0)
+
+    // Imprimindo resultado
+    console.log(soma)
+
+    /////
+
+    // Criando um map só com os números negativos
+
+    const mapa = negativos.map((item) => item.saldo)
+    console.log('Array negativo:', mapa)
+
+    /////
+
+    // Uma linha: com map
+    console.log(conta.filter(x => x.saldo < 0).map(x => x.saldo).reduce((a,b) => a+b, 0))
+
+    // Uma linha: sem map
+    console.log(conta.filter(x => x.saldo < 0).reduce((a, b) => a + b.saldo, 0))
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Filter com Eduardo</title>
+</head>
+
+<body>
+
+  <h4>Somente nomes de frameworks JS</h4>
+
+  <script>
+    const frameworks = [
+      {nome: 'Rails', linguagem: 'Ruby'},
+      {nome: 'Vue', linguagem: 'JavaScript'},
+      {nome: 'Laravel', linguagem: 'PHP'},
+      {nome: 'React', linguagem: 'JavaScript'},
+      {nome: 'Bootstrap', linguagem: 'HTML/CSS/JS'},
+      {nome: 'Angular', linguagem: 'JavaScript'}
+    ]
+
+    // Como funciona
+    const frameworksJS = []
+
+    frameworks.filter(function(item) {
+      if (item.linguagem === 'JavaScript') {
+        frameworksJS.push(item.nome)
+      }
+    })
+    console.log('Funciona dumb:', frameworksJS)
+
+    ////
+    console.log('----')
+    ////
+
+    // Como gostaria que funcionasse
+    const filtrado = frameworks.filter((item) => {
+      if (item.linguagem === 'JavaScript') {
+        return item.nome
+      }
+    })
+    console.log('Não funciona "smart":', filtrado)
+
+    ////
+    console.log('----')
+    ////
+
+    // Testes
+    const resultado = frameworks.filter(x => x.linguagem === 'JavaScript').map(x => x.nome)
+    console.log('Funciona com filter + map:', resultado)
+
+    ////
+    console.log('----')
+    ////
+  </script>
+
+</body>
+
+</html>
