@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>forEach e Bubble</title>
+
+  <style media="screen">
+    ul {
+      border: 1px solid orange;
+    }
+
+    li {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+
+<body>
+
+  <ul>
+    <li class="itemLista">A</li>
+    <li class="itemLista">B</li>
+    <li class="itemLista">C</li>
+  </ul>
+
+  <script>
+    const $lista = document.querySelector('ul')
+    const $itemLista = document.querySelectorAll('li')
+
+    // Com loop forEach
+    $itemLista.forEach(item => item.addEventListener('click', () => console.log(`Clicado em ${item.textContent} via forEach`)))
+
+    // Consultando o event.target
+    $lista.addEventListener('click', function(e) {
+      console.log('Clicado na ul')
+
+      const $alvo = e.target
+
+      // tagName retorna em maiúsculo
+      //if ($alvo.tagName === 'LI') console.log(`Clicado no alvo ${$alvo.textContent} por nome da tag`)
+
+      if ($alvo.classList.contains('itemLista')) console.log(`Clicado no alvo ${$alvo.textContent} por classe`)
+
+    })
+  </script>
+
+</body>
+
+</html>

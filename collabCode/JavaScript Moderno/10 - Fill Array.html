@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <script>
+
+      let alimentos = ['abacate', 'banana', 'cenoura', 'danone']
+
+      alimentos.fill('xxx')
+      console.log('Todos:', alimentos)
+
+      // Reset
+      alimentos = ['abacate', 'banana', 'cenoura', 'danone']
+
+      alimentos.fill('xxx', 1, 2) // Começa no [1] e termina antes do [2]
+      console.log('Só o segundo:', alimentos)
+
+      // Reset
+      alimentos = ['abacate', 'banana', 'cenoura', 'danone']
+
+      alimentos.fill('xxx', 1, alimentos.length-1) // Começa no [1] e termina no penúltimo
+      console.log('Primeiro e último não:', alimentos)
+
+      // Reset
+      alimentos = ['abacate', 'banana', 'cenoura', 'danone']
+
+      alimentos.fill('xxx', 0, alimentos.length-1)
+      console.log('Menos o último:', alimentos)
+
+
+    </script>
+  </body>
+</html>
