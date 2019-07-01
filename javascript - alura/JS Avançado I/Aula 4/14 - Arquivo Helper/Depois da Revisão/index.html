@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Upload de Arquivo - Helper/Ajudante</title>
+  </head>
+  <body>
+
+    <h2>Upload de Arquivo - Helper/Ajudante</h2>
+
+    <label>Informações do arquivo no formato nome/tamanho/tipo:</label>
+    <input class="dados-arquivo" placeholder="nome/tamanho/tipo">
+
+    <button onclick="arquivoController.envia()">Enviar</button>
+
+    <script src="Arquivo.js"></script>
+    <script src="ArquivoController.js"></script>
+    <script src="ArquivoHelper.js"></script>
+    <script>
+        let arquivoController = new ArquivoController();
+    </script>
+
+  </body>
+</html>

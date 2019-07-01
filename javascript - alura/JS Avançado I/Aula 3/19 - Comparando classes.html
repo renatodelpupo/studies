@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Comparando classes</title>
+</head>
+
+<body>
+
+  <h2>Comparando classes</h2>
+
+  <script>
+    class Aluno {
+
+      constructor(matricula, nome) {
+        this.matricula = matricula;
+        this.nome = nome;
+      }
+    }
+
+    class Prova {
+
+      constructor(aluno, nota) {
+        this.aluno = aluno;
+        this.nota = nota;
+      }
+    }
+
+    var avaliacoes = [
+      new Prova(new Aluno(1, 'Luana'), 8),
+      new Prova(new Aluno(2, 'Cássio'), 6),
+      new Prova(new Aluno(3, 'Barney'), 9),
+      new Prova(new Aluno(4, 'Bira'), 5)
+    ];
+
+    var aprovados = avaliacoes
+      .filter(prova => prova.nota >= 7)
+      .map(prova => prova.aluno.nome);
+
+    console.log('Aprovados:', aprovados);
+
+    console.log('---')
+
+    // Só testando manipulação das classes
+    console.log(avaliacoes[0].aluno.nome)
+
+    console.log('---')
+
+    //
+    // Pegando a ficha dos alunos aprovados
+    // Chamo de ficha a combinação aluno + matrícula
+    // Pq não peguei da classe Aluno?
+    // => Pq anteriormente só foram criados alunos dentro de avaliações
+
+    // Descobrindo todas as fichas de aluno
+    const fichaTodosAlunos = avaliacoes.map(item => item.aluno);
+    //console.log(fichaTodosAlunos)
+
+    // Comparando as fichas de todos com os nomes dos aprovados
+    const fichaAlunosAprovados = fichaTodosAlunos
+      .filter(item => aprovados
+      .includes(item.nome))
+    console.log(fichaAlunosAprovados)
+
+    console.log('---')
+
+    // Apenas criando um aluno
+    const novoAluno = new Aluno(14, 'Renato')
+    console.log(`O novo aluno, matrícula número ${novoAluno.matricula}, se chama ${novoAluno.nome}`)
+
+    console.log('---')
+
+  </script>
+
+</body>
+
+</html>

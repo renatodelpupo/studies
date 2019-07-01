@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Parâmetros com Spread</title>
+</head>
+
+<body>
+
+  <h2>Parâmetros com Spread</h2>
+
+  <script>
+
+    function somaDoisNumeros(numero1, numero2) {
+      return numero1 + numero2;
+    }
+
+    let numeros = [10, 30];
+
+    // Referência
+    console.log('Referência:', somaDoisNumeros(numeros[0], numeros[1]));
+
+    // Eficiência (spread operator)
+    console.log('Eficiência:', somaDoisNumeros(...numeros));
+  </script>
+</body>
+
+</html>

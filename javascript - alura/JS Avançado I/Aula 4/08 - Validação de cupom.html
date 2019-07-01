@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Validação de cupom</title>
+</head>
+
+<body>
+
+  <h2>Validação de cupom</h2>
+  <p>Um cupom válido é composto por três letras, hífen, duas letras, hífen, dois números.</p>
+  <p>Ex.: AAA-BB-22</p>
+
+  <script>
+    //let codigo = 'GWZ-JJ-12';
+
+    // Esse é o método normal e a intenção aqui é sair do procedural
+    // e resolver com orientação a objetos
+    /*function validaCodigo(codigo) {
+
+      if (/\D{3}-\D{2}-\d{2}/.test(codigo)) {
+        console.log(`${codigo} é um código válido!`);
+      } else {
+        console.log(`${codigo} é um código inválido`);
+      }
+
+    }
+
+    validaCodigo('GWZ-JJ-12') // válido
+    validaCodigo('1X1-JJ-12') // inválido*/
+
+    class Codigo {
+
+      constructor(codigoParametro) {
+        this.codigoParaTestar = codigoParametro;
+
+        // Esse erro pára toda a execução posterior do script
+        // Ele vai na função validaCodigo(), valida o código e depois executa-se caso seja falso
+        //if (!this.validaCodigo(this.codigoParaTestar)) throw new Error(`${this.codigoParaTestar} é um código inválido`);
+        // Sequer deixa executar o else do validaCodigo()
+        // (Tem algum problema na declaração)
+      }
+
+      //[1] validaCodigo(codigoParametro) {
+      validaCodigo() {
+
+        // Expressão regular: /\D{3}-\D{2}-\d{2}/
+        // Esse RegEx vai dar certo se houver algo antes ou depois
+        // Ex.: BATH-DD-113
+        // Para evitar isso, usa-se o ^ que indica "começa com"
+        // e também o $ que significa "termina com"
+
+        if (/^\D{3}-\D{2}-\d{2}$/.test(this.codigoParaTestar)) {
+          console.log(`${this.codigoParaTestar} é um código válido!`);
+        } else {
+          console.log(`${this.codigoParaTestar} é um código inválido`);
+        }
+
+        //[1] return /\D{3}-\D{2}-\d{2}/.test(codigoParametro)
+      }
+
+      get getCodigoParametro() {
+        return this.codigoParametro
+      }
+    }
+
+    // const testeP1 = new Codigo()
+    // const testeP2 = testeP1.validaCodigo('AAA-BB-22')
+    // ou
+    // const testeP2 = new Codigo().validaCodigo('AAA-BB-22')
+
+    //console.log(testeP2)
+
+    //não funciona: const teste5 = new Codigo('ZZZ-ZZ-11').get(getCodigoParametro)
+    const teste6 = new Codigo('BATH-DD-113').validaCodigo()
+    const teste3 = new Codigo('AAA-BB-22').validaCodigo()
+    const teste4 = new Codigo('BRO-V1-76').validaCodigo()
+
+
+    console.log('----')
+  </script>
+</body>
+
+</html>

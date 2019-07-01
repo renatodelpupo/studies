@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Multiplicando Ímpares</title>
+</head>
+
+<body>
+
+  <h2>Multiplicando Ímpares</h2>
+
+  <script>
+    /*
+    Temos a seguinte sequência de números:
+      let numeros = [3, 2, 11, 20, 8, 7];
+    Sua tarefa: criar uma nova lista com a mesma quantidade de números,
+    mas cada elemento da nova lista deve ter seu valor dobrado quando for ímpar.
+
+    ATENÇÃO: a lista numeros não pode ser alterada!
+    Você pode resolver do jeito que desejar, o mais importante é o resultado.
+    */
+
+    let numeros = [3, 2, 11, 20, 8, 7];
+
+    // Mapzão maroto, testando se ele for divisível por 2, dobrar
+    let resposta1 = numeros.map(item => item % 2 != 0 ? item * 2 : item)
+
+    // Descobrindo que não preciso ver se é != 0
+    let resposta2 = numeros.map(item => item % 2 ? item * 2 : item)
+
+    // Descobrindo de maneira mais complexa:
+    // Pega o resto do item, soma um e multiplica pelo item
+    // Par    % 2 = 0   +1 = 1    1 * item = mesmo valor
+    // Ímpar  % 2 = 1   +1 = 2    2 * item = dobro do valor
+    let resposta3 = numeros.map(item => (item % 2 + 1) * item)
+
+
+    // Consolando
+    console.log('Números originais:', numeros)
+    console.log('Resposta 1:', resposta1)
+    console.log('Resposta 2:', resposta2)
+    console.log('Resposta 3:', resposta3)
+  </script>
+</body>
+
+</html>

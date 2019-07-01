@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Desafio final</title>
+  </head>
+  <body>
+
+    <h2>Desafio final</h2>
+
+    <form class="" action="index.html" method="post">
+      <input id="data" type="text" name="" value="">
+      <input id="quantidade" type="text" name="" value="">
+      <input id="valor" type="text" name="" value="">
+      <button class="submit" type="submit" name="button">Enviar</button>
+    </form>
+
+    <script src="js/app/controllers/NegociacaoController.js"></script>
+    <script src="js/app/models/Negociacao.js"></script>
+    <script>
+
+      const enviar = document.querySelector('.submit')
+      const negociacaoController = new NegociacaoController()
+
+      //enviar.addEventListener('click', negociacaoController.adiciona())
+
+      enviar.addEventListener('click', event => {
+        event.preventDefault()
+        negociacaoController.adiciona
+
+        // Limpando inputs
+        const inputs = document.querySelectorAll('form input')
+        inputs.forEach(item => item.value = '')
+
+        // Focando no primeiro
+        document.querySelectorAll('form input')[0].focus()
+      })
+
+    </script>
+
+  </body>
+</html>
