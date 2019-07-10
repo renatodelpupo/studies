@@ -1,10 +1,12 @@
 
-class bro {
+/*class bro {
 
   metodo(){
 
   }
 
-}
+}*/
 
-console.log('testando')
+import { $body } from './dom-elements.js';
+
+console.log($body)
