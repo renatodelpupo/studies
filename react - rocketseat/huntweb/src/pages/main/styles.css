@@ -1,0 +1,48 @@
+
+:root {
+  --laranja: #da552f;
+}
+
+.product-list {
+  margin: 20px auto 0;
+  padding: 0 20px;
+  max-width: 700px;
+}
+
+.product-list article {
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  background: #fff;  
+}
+
+.product-list article p {
+  margin-top: 5px;
+  line-height: 24px;
+  font-size: 16px;
+  color: #999;
+}
+
+.product-list article a {
+  display: flex;
+  flex-direction: column; /* Bug */
+  justify-content: center;
+  /* align-content: center; */ /* Bug */
+  margin-top: 10px;
+  height: 42px;
+  border-radius: 5px;
+  border: 2px solid var(--laranja);
+  background: none;
+  text-decoration: none;
+  text-align: center; /* Bug */
+  font-weight: bold;
+  font-size: 16px;
+  color: var(--laranja);
+  transition: all .2s;
+}
+
+.product-list article a:hover {
+  background: var(--laranja);
+  color: white;
+}
