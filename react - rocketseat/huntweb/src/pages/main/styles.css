@@ -46,3 +46,29 @@
   background: var(--laranja);
   color: white;
 }
+
+.product-list .actions {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.product-list .actions button {
+  padding: 10px;
+  border-radius: 5px;
+  border: 0;
+  background: var(--laranja);
+  font-weight: bold;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+}
+
+.product-list .actions button:hover {
+  opacity: .7;
+}
+
+.product-list .actions button:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
