@@ -1,0 +1,43 @@
+{
+  "revista": {
+    "skuRevista": "22907"
+  },
+  "selecoes": {
+    "essenciais": {
+      "sku1": "22123",
+      "sku2": "22122",
+      "callToActionPrice": "74",
+      "callToActionText": "Experiência que traz vinhos descomplicados, indispensáveis para os seus momentos de felicidade."
+    },
+    "surpreendentes": {
+      "sku1": "22226",
+      "sku2": "22227",
+      "callToActionPrice": "131",
+      "callToActionText": "Rótulos do mundo inteiro, com sabores mais complexos para serem explorados."
+    },
+    "notaveis": {
+      "sku1": "22365",
+      "sku2": "22366",
+      "callToActionPrice": "189",
+      "callToActionText": "Experiência com exemplares prestigiados, ideal para paladares mais aguçados."
+    },
+    "singulares": {
+      "sku1": "22107",
+      "sku2": "22106",
+      "callToActionPrice": "274",
+      "callToActionText": "Vinhos de vinícolas exclusivas e safras de produção limitada, para quem tem o paladar experiente."
+    },
+    "refrescantes": {
+      "sku1": "22368",
+      "sku2": "22367",
+      "callToActionPrice": "106",
+      "callToActionText": "Experiência com vinhos cheios de frescor e leveza, para você aproveitar no dia a dia."
+    },
+    "espumantes": {
+      "sku1": "22279",
+      "sku2": "22279",
+      "callToActionPrice": "131",
+      "callToActionText": "Exemplares feitos para você celebrar a vida e brindar todos os seus momentos."
+    }
+  }
+}
