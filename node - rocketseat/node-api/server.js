@@ -1,5 +1,6 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const requireDir = require('require-dir')
 
 // Iniciando o App
 const app = express()
@@ -7,7 +8,8 @@ const app = express()
 // Iniciando o banco de dados
 mongoose.connect('mongodb://localhost:27017/nodeapi', { useNewUrlParser: true })
 
-require('./src/models/Product')
+// Usando esse pacote, ele requere recursivamente toda a pasta
+requireDir('./src/models')
 
 // app.get = toda vez que o usuário acessar a rota
 // o parâmetro req simboliza a requisição ao servidor
