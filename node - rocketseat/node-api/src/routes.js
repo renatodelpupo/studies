@@ -7,5 +7,6 @@ const ProductController = require('./controllers/ProductController')
 // o parâmetro req simboliza a requisição ao servidor
 // o res é a resposta para a requisição
 routes.get('/products', ProductController.index)
+routes.post('/products', ProductController.store)
 
 module.exports = routes
