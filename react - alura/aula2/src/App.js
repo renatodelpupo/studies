@@ -6,21 +6,23 @@ class App extends Component {
 
   constructor() {
     super()
-    this.state = {lista: [
-      {
-        nome: 'Humberto',
-        email: 'humberto@gmail.com'
-      },
-      {
-        nome: 'Doisberto',
-        email: 'doisberto@gmail.com'
-      }
-    ]}
+    this.state = {
+      lista: [
+        {
+          nome: 'Humberto',
+          email: 'humberto@gmail.com'
+        },
+        {
+          nome: 'Doisberto',
+          email: 'doisberto@gmail.com'
+        }
+      ]
+    }
   }
 
   render() {
     return (
-      <div id="layout">    
+      <div id="layout">
         <a href="#menu" id="menuLink" className="menu-link">
           <span></span>
         </a>
@@ -43,24 +45,24 @@ class App extends Component {
             <div className="pure-form pure-form-aligned">
               <form className="pure-form pure-form-aligned">
                 <div className="pure-control-group">
-                  <label htmlFor="nome">Nome</label> 
-                  <input id="nome" type="text" name="nome" value=""  />                  
+                  <label htmlFor="nome">Nome</label>
+                  <input id="nome" type="text" name="nome" value="" />
                 </div>
                 <div className="pure-control-group">
-                  <label htmlFor="email">Email</label> 
-                  <input id="email" type="email" name="email" value=""  />                  
+                  <label htmlFor="email">Email</label>
+                  <input id="email" type="email" name="email" value="" />
                 </div>
                 <div className="pure-control-group">
-                  <label htmlFor="senha">Senha</label> 
-                  <input id="senha" type="password" name="senha"  />                                      
+                  <label htmlFor="senha">Senha</label>
+                  <input id="senha" type="password" name="senha" />
                 </div>
-                <div className="pure-control-group">                                  
-                  <label></label> 
-                  <button type="submit" className="pure-button pure-button-primary">Gravar</button>                                    
+                <div className="pure-control-group">
+                  <label></label>
+                  <button type="submit" className="pure-button pure-button-primary">Gravar</button>
                 </div>
               </form>
-            </div>  
-            <div>            
+            </div>
+            <div>
               <table className="pure-table">
                 <thead>
                   <tr>
@@ -70,7 +72,7 @@ class App extends Component {
                 </thead>
                 <tbody>
                   {
-                    this.state.lista.map(function(autor) {
+                    this.state.lista.map(function (autor) {
                       return (
                         <tr>
                           <td>{autor.nome}</td>
@@ -80,8 +82,8 @@ class App extends Component {
                     })
                   }
                 </tbody>
-              </table> 
-            </div>             
+              </table>
+            </div>
           </div>
         </div>
       </div>
