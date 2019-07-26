@@ -12,14 +12,17 @@ class App extends Component {
   }
 
   // WillMount: Função chamada antes do primeiro render()
-  componentWillMount() {
+  // DidMount: Função chamada após o primeiro render()
+  componentDidMount() {
     this.setState({ 
       lista: [
         {
+          id: '1234',
           nome: 'Humberto',
           email: 'humberto@gmail.com'
         },
         {
+          id: '03930',
           nome: 'Bro',
           email: 'bro@gmail.com'
         }
@@ -35,12 +38,12 @@ class App extends Component {
         </a>
         <div id="menu">
           <div className="pure-menu">
-            <a className="pure-menu-heading" href="#">Company</a>
+            {/* <a className="pure-menu-heading" href="#">Company</a>
             <ul className="pure-menu-list">
               <li className="pure-menu-item"><a href="#" className="pure-menu-link">Home</a></li>
               <li className="pure-menu-item"><a href="#" className="pure-menu-link">Autor</a></li>
               <li className="pure-menu-item"><a href="#" className="pure-menu-link">Livro</a></li>
-            </ul>
+            </ul> */}
           </div>
         </div>
 
@@ -81,7 +84,7 @@ class App extends Component {
                   {
                     this.state.lista.map(function (autor) {
                       return (
-                        <tr>
+                        <tr key={autor.id}>
                           <td>{autor.nome}</td>
                           <td>{autor.email}</td>
                         </tr>
