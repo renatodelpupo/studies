@@ -7,17 +7,24 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
+      lista: []
+    }
+  }
+
+  // WillMount: Função chamada antes do primeiro render()
+  componentWillMount() {
+    this.setState({ 
       lista: [
         {
           nome: 'Humberto',
           email: 'humberto@gmail.com'
         },
         {
-          nome: 'Doisberto',
-          email: 'doisberto@gmail.com'
+          nome: 'Bro',
+          email: 'bro@gmail.com'
         }
       ]
-    }
+    });
   }
 
   render() {
