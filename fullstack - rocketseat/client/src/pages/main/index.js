@@ -23,16 +23,21 @@ export default class Main extends Component {
 
     console.log('Enviando formulário')
 
+    const nome = document.querySelector('#nome').value
+    const email = document.querySelector('#email').value
+
+    console.log(nome, email)
+
     // Atualiza o banco
-    fetch('http://localhost:3001/api/products', {
+    await fetch('http://localhost:3001/api/products', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        nome: 'Testando',
-        email: 'pega banco',
+        nome: nome,
+        email: email
       })
     })
 
