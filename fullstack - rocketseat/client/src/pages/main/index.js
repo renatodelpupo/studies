@@ -23,15 +23,29 @@ export default class Main extends Component {
 
     console.log('Enviando formulário')
 
+    // Atualiza na view
     this.setState({
       products: [
         ...this.state.products,
         {
           "_id": this.state.products.length + 1,
           "nome": "Caralho",
-          "email": "mermao",
+          "email": "mermao"
         }
       ]
+    })
+
+    // Atualiza no banco
+    fetch('http://localhost:3001/api/products', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        nome: 'Caralho',
+        email: 'mermao',
+      })
     })
   }
 
