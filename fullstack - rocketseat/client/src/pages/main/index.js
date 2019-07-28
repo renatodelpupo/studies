@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import api from '../../services/api'
 
+import './style.css'
+
 export default class Main extends Component {
 
   state = {
@@ -53,13 +55,23 @@ export default class Main extends Component {
     const { products } = this.state
 
     return (
-      <div>
-        {products.map(product => (
-          <article key={product._id}>
-            <strong>{product.nome}</strong>
-            <strong>{product.email}</strong>
-          </article>
-        ))}
+      <div className="table-area">
+        <table>
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map(product => (
+              <tr key={product._id}>
+                <td><b>{product.nome}</b></td>
+                <td>{product.email}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     )
   }

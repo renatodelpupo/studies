@@ -1,0 +1,25 @@
+
+.table-area {
+  display: flex;
+  justify-content: center;
+}
+
+table th {
+  background-color: var(--roxoWine);
+  text-align: left;
+  color: white;
+}
+
+table tr {
+  border-color: var(--roxoWine);
+}
+
+table th,
+table td {
+  padding: 5px;
+  border: 1px solid var(--roxoWine);
+}
+
+table td b {
+  margin-right: 15px;
+}
