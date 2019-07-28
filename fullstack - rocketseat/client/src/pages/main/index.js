@@ -40,9 +40,13 @@ export default class Main extends Component {
         email: email
       })
     })
-
-    // Pega o banco novo
-    this.loadProducts()
+      .then(() => {
+        // Pega o banco novo
+        this.loadProducts()
+      })
+      .catch(function (err) {
+        console.log('Problema com a conexão: ', err)
+      })
   }
 
   render() {
