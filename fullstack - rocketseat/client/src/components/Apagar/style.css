@@ -1,0 +1,12 @@
+
+button.Apagar {
+  display: block;
+  display: none;
+  margin:  0 auto 15px;;
+  padding: 5px 15px;
+  background-color: var(--roxoWine);
+  border: none;
+  border-radius: 2.5px;
+  color: white;
+  cursor: pointer
+}

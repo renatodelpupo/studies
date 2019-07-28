@@ -50,26 +50,16 @@ export default class Main extends Component {
   }
 
   render() {
-
     const { products } = this.state
 
     return (
       <div>
-        <form onSubmit={this.enviarFormulario}>
-          <label>Nome</label>
-          <input id="nome" type="text" name="nome" />
-          <label>E-mail</label>
-          <input id="email" type="email" name="email" />
-          <button type="submit">Gravar</button>
-        </form>
         {products.map(product => (
           <article key={product._id}>
             <strong>{product.nome}</strong>
             <strong>{product.email}</strong>
           </article>
         ))}
-        <hr />
-        <h1>Hello Rocketseat</h1>
       </div>
     )
   }
