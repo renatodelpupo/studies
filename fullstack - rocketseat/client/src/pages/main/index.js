@@ -18,21 +18,18 @@ export default class Main extends Component {
   }
 
   // Se não usar a arrow function perde-se o escopo do this
-  enviarFormulario = evento => {
+  enviarFormulario = async (evento) => {
     evento.preventDefault()
 
     console.log('Enviando formulário')
-    console.log(this.state.products[0])
 
     this.setState({
-
       products: [
+        ...this.state.products,
         {
-          "_id": "1234",
+          "_id": this.state.products.length + 1,
           "nome": "Caralho",
           "email": "mermao",
-          "createdAt": "2019-07-28T18:30:59.556Z",
-          "__v": 0
         }
       ]
     })
