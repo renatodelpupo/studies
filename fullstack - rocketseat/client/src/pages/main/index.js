@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import api from '../../services/api'
 
+import CustomInput from '../../components/CustomInput'
+
 import './style.css'
 
 export default class Main extends Component {
@@ -55,10 +57,8 @@ export default class Main extends Component {
     return (
       <div>
         <form onSubmit={this.enviarFormulario}>
-          <label>Nome</label>
-          <input id="nome" type="text" name="nome" />
-          <label>Email</label>
-          <input id="email" type="email" name="email" />
+          <CustomInput label="Nome" id="nome" type="text" name="nome" />
+          <CustomInput label="Email" id="email" type="email" name="email" />
           <button type="submit">Gravar</button>
         </form>
         <div className="table-area">

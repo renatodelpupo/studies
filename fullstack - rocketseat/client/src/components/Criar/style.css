@@ -18,9 +18,9 @@ form label {
   color: var(--roxoWine);
 }
 
-form label:first-child {
+/* form label:first-child {
   margin-left: 0;
-}
+} */
 
 form input {
   border-radius: 2.5px;
