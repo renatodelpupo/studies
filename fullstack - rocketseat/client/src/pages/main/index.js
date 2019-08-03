@@ -4,6 +4,7 @@ import api from '../../services/api'
 import './style.css'
 
 import Criar from '../../components/Criar'
+import Apagar from '../../components/Apagar'
 import Tabela from '../../components/Tabela'
 
 export default class Main extends Component {
@@ -32,6 +33,7 @@ export default class Main extends Component {
       <div>
         <Criar classeMain={this} />
         <Tabela classeMain={this} />
+        <Apagar classeMain={this} />
       </div>
     )
   }
