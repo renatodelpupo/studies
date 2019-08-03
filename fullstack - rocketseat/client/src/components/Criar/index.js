@@ -10,6 +10,7 @@ export default class Criar extends Component {
   enviarFormulario = async (evento) => {
     evento.preventDefault()
 
+    const objetoClicado = evento.target
     const nome = document.querySelector('#nome').value
     const email = document.querySelector('#email').value
 
@@ -30,6 +31,7 @@ export default class Criar extends Component {
       .then(() => {
         // Atualiza tabela com o banco
         this.props.classeMain.loadProducts()
+        objetoClicado.reset()
       })
       .catch(function (err) {
         console.log('Problema com a conexão: ', err)
