@@ -9,7 +9,8 @@ import Tabela from '../../components/Tabela'
 export default class Main extends Component {
 
   state = {
-    products: []
+    products: [],
+    ultimoLista: undefined
   }
 
   componentDidMount() {
@@ -19,7 +20,10 @@ export default class Main extends Component {
   loadProducts = async () => {
     const response = await api.get(`/products`)
     const { docs } = response.data
-    this.setState({ products: docs })
+    this.setState({
+      products: docs,
+      ultimoLista: response.data.docs[response.data.docs.length - 1]._id
+    })
   }
 
   render() {
