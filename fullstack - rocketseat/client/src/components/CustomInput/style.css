@@ -1,0 +1,11 @@
+form label {
+  margin-right: 10px;
+  margin-left: 15px;
+  color: var(--roxoWine);
+}
+
+form input {
+  border-radius: 2.5px;
+  border: 1px solid var(--roxoWine);
+  padding: 5px 10px;
+}

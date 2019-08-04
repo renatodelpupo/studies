@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import api from '../../services/api'
 
-import './style.css'
-
 import Criar from '../../components/Criar'
 import Apagar from '../../components/Apagar'
 import Tabela from '../../components/Tabela'

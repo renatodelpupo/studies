@@ -30,6 +30,7 @@ export default class Criar extends Component {
     })
       .then(() => {
         // Atualiza tabela com o banco
+        console.log('Tabela atualizada')
         this.props.classeMain.loadProducts()
         objetoClicado.reset()
       })
