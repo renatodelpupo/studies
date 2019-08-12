@@ -1,4 +1,5 @@
 body {
+  padding: 0 30px;
   font-family: tahoma;
   color: #282828;
   margin: 0px;
@@ -30,6 +31,15 @@ img {
   flex-basis: 500px;
 }
 
+.color-box-area {
+  display: flex;
+  margin: 25px -5px 0;
+}
+
+.color-box-area .color-box {
+  margin: 0 5px;
+}
+
 .color-box {
   width: 40px;
   height: 40px;
@@ -38,14 +48,23 @@ img {
 }
 
 .cart {
-  margin-right: 25px;
-  float: right;
+  display: flex;
+  justify-content: center;
+  padding: 5px 10px;
   border: 1px solid #d8d8d8;
-  padding: 5px 20px;
+}
+
+.button-area {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 0 10px;
+}
+
+.button-area button{
+  width: calc(50% - 5px);
 }
 
 button {
-  margin-top: 30px;
   border: none;
   background-color: #1e95ea;
   color: white;
@@ -58,6 +77,11 @@ button {
 .disabledButton {
   background-color: #d8d8d8;
   cursor: default;
+}
+
+/* Todos os botões removeButton, menos quando também tiver disabledButton */
+.removeButton:not(.disabledButton) {
+  background-color: lightcoral;
 }
 
 .review-form {
@@ -79,4 +103,8 @@ textarea {
 
 .outOfStock {
   text-decoration: line-through;
+}
+
+.hide {
+  display: none;
 }

@@ -8,17 +8,19 @@ var app = new Vue({
     variants: [
       {
         variantId: 2234,
-        variantColor: 'green',
+        variantColor: 'Green',
         variantImage: './assets/img/vmSocks-green.jpg',
         variantCart: 0,
-        variantInventory: 4
+        variantInventory: 4,
+        visibleOnCartDetails: false
       },
       {
         variantId: 2235,
-        variantColor: 'blue',
+        variantColor: 'Blue',
         variantImage: './assets/img/vmSocks-blue.jpg',
         variantCart: 0,
-        variantInventory: 1
+        variantInventory: 1,
+        visibleOnCartDetails: false
       }
     ]
   },
@@ -27,17 +29,26 @@ var app = new Vue({
       if (this.variants[this.selectedVariant].variantInventory >= 1) {
         this.variants[this.selectedVariant].variantCart++
         this.variants[this.selectedVariant].variantInventory--
+        this.updateCartDetails()
       }
     },
     removeFromCart() {
       if (this.variants[this.selectedVariant].variantCart >= 1) {
         this.variants[this.selectedVariant].variantCart--
         this.variants[this.selectedVariant].variantInventory++
+        this.updateCartDetails()
       }
     },
     updateProduct(index) {
       this.selectedVariant = index
     },
+    updateCartDetails() {
+      if (this.variants[this.selectedVariant].variantCart >= 1) {
+        this.variants[this.selectedVariant].visibleOnCartDetails = true
+      } else {
+        this.variants[this.selectedVariant].visibleOnCartDetails = false
+      }
+    }
   },
   computed: {
     title() {
