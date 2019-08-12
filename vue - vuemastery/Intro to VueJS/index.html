@@ -21,7 +21,7 @@
       </div>
 
       <div class="product-info">
-        <h1>{{ product }}</h1>
+        <h1>{{ title }}</h1>
         <p v-if="inventory >= 3">In Stock</p>
         <p v-else-if="inventory < 3 && inventory > 0">Almost sold out!</p>
         <p v-else class="outOfStock">Out of stock</p>
@@ -32,8 +32,11 @@
           <li v-for="detail in details">{{ detail }}</li>
         </ul>
 
-        <div class="color-box" v-for="variant in variants" :key="variant.variantId" :style="{ backgroundColor: variant.variantColor }" @mouseover="updateProduct(variant.variantImage)">
-          
+        <div class="color-box" 
+             v-for="(variant, index) in variants"
+             :key="variant.variantId"
+             :style="{ backgroundColor: variant.variantColor }"
+             @click="updateProduct(index)">
         </div>
 
         <!-- Mesma coisa, em sintaxe diferente: v-on:click ou @click -->
