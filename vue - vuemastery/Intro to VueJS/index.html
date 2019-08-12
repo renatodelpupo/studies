@@ -14,53 +14,8 @@
 
   <div id="app">
 
-    <div class="product">
-
-      <div class="product-image">
-        <img :src="image" />
-      </div>
-
-      <div class="product-info">
-        <h1>{{ title }}</h1>
-        <p v-if="inventory >= 3">In Stock</p>
-        <p v-else-if="inventory < 3 && inventory > 0">Almost sold out!</p>
-        <p v-else class="outOfStock">Out of stock</p>
-
-        <p>Available: {{ inventory }}</p>
-
-        <ul>
-          <li v-for="detail in details">{{ detail }}</li>
-        </ul>
-
-        <div class="color-box-area">
-          <div class="color-box" 
-              v-for="(variant, index) in variants"
-              :key="variant.variantId"
-              :style="{ backgroundColor: variant.variantColor }"
-              @click="updateProduct(index)">
-          </div>
-        </div>
-
-        <div class="button-area">
-          <!-- Mesma coisa, em sintaxe diferente: v-on:click ou @click -->
-          <button v-on:click="addToCart" :disabled="!inventory" :class="{ disabledButton: !inventory }">Add to cart</button>
-          <button @click="removeFromCart" :disabled="!cart" class="removeButton" :class="{ disabledButton: !cart }">Remove from cart</button>
-        </div>
-
-        <div class="cart">
-          Cart: {{ cartTotal }}
-        </div>
-
-      </div>
-
-    </div>
-
-    <div class="cartDetails" :class="{hide: !cartTotal}">
-      <h3>Your current cart:</h3>
-      <ul>
-        <li v-for="variant in variants" :class="{hide: !variant.visibleOnCartDetails}">{{ title + ' ' + variant.variantColor }}: {{ variant.variantCart }}</li>
-      </ul>
-    </div>
+    <product :premium="true"></product>
+    <product :premium="false"></product>
 
   </div>
 
