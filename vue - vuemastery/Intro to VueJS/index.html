@@ -37,7 +37,7 @@
         </div>
 
         <!-- Mesma coisa, em sintaxe diferente: v-on:click ou @click -->
-        <button v-on:click="addToCart" :disabled="!inStock" :class="{ disabledButton: !inStock }">Add to cart</button>
+        <button v-on:click="addToCart" :disabled="!inventory" :class="{ disabledButton: !inventory }">Add to cart</button>
         <button @click="removeFromCart" :disabled="!cart" :class="{ disabledButton: !cart }">Remove from cart</button>
 
         <div class="cart">
