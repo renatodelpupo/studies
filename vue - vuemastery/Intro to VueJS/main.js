@@ -3,7 +3,6 @@ var app = new Vue({
   data: {
     product: 'Socks',
     brand: 'VM',
-    cart: 0,
     details: ['80% cotton', '20% polyester', 'Gender-neutral'],
     selectedVariant: 0,
     variants: [
@@ -11,27 +10,29 @@ var app = new Vue({
         variantId: 2234,
         variantColor: 'green',
         variantImage: './assets/img/vmSocks-green.jpg',
-        variantQuantity: 4
+        variantCart: 0,
+        variantInventory: 4
       },
       {
         variantId: 2235,
         variantColor: 'blue',
         variantImage: './assets/img/vmSocks-blue.jpg',
-        variantQuantity: 0
+        variantCart: 0,
+        variantInventory: 1
       }
     ]
   },
   methods: {
     addToCart() {
-      if (this.inventory >= 1) {
-        this.cart++
-        this.inventory--
+      if (this.variants[this.selectedVariant].variantInventory >= 1) {
+        this.variants[this.selectedVariant].variantCart++
+        this.variants[this.selectedVariant].variantInventory--
       }
     },
     removeFromCart() {
-      if (this.cart >= 1) {
-        this.cart--
-        this.inventory++
+      if (this.variants[this.selectedVariant].variantCart >= 1) {
+        this.variants[this.selectedVariant].variantCart--
+        this.variants[this.selectedVariant].variantInventory++
       }
     },
     updateProduct(index) {
@@ -46,7 +47,15 @@ var app = new Vue({
       return this.variants[this.selectedVariant].variantImage
     },
     inventory() {
-      return this.variants[this.selectedVariant].variantQuantity
+      return this.variants[this.selectedVariant].variantInventory
+    },
+    cart() {
+      return this.variants[this.selectedVariant].variantCart
+    },
+    cartTotal() {
+      let allCartsMap = this.variants.map(item => item.variantCart)
+      let allCartsReduce = allCartsMap.reduce(((acc, cur) => acc + cur), 0)
+      return allCartsReduce
     }
   }
 })
