@@ -4,6 +4,7 @@ var app = new Vue({
     product: 'Socks',
     image: './assets/img/vmSocks-green.jpg',
     inStock: true,
+    inventory: 3,
     details: ['80% cotton', '20% polyester', 'Gender-neutral'],
     variants: [
       {
@@ -21,16 +22,29 @@ var app = new Vue({
   },
   methods: {
     addToCart() {
-      this.cart++
-    },
-    updateProduct(variantImage) {
-      this.image = variantImage
+      if (this.inventory >= 1) {
+        this.cart++
+        this.inventory--
+      }
+      this.updateStock()
     },
     removeFromCart() {
       if (this.cart >= 1) {
         this.cart--
+        this.inventory++
       }
-    }
+      this.updateStock()
+    },
+    updateStock() {
+      if (this.inventory >= 1) {
+        this.inStock = true
+      } else {
+        this.inStock = false
+      }
+    },
+    updateProduct(variantImage) {
+      this.image = variantImage
+    },
   }
 })
 
