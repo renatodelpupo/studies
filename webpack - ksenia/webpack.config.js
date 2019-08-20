@@ -1,26 +1,18 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const variables = require('./variables.js');
-
-const dados = [
-  {
-    nome: 'Renato',
-    cidade: 'Vitória'
-  },
-  {
-    nome: 'Marina',
-    cidade: 'Cariacica'
-  }
-]
 
 let plugins = []
 
-dados.forEach(item => {
+const data = require('./wineanos.json')
+
+data.forEach(item => {
+
   plugins.push(new HtmlWebpackPlugin({
     template: 'index.html',
-    filename: `${item.nome}.html`,
-    title: item.nome,
-    cidade: item.cidade,
+    filename: `${item.wineano}.html`,
+    wName: item.name,
+    wArea: item.area,
+    wCode: `<img class="qrcode-image" src="../qrcodes/${item.wineano}.svg" alt="">`
   }))
 })
 

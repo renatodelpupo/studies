@@ -1,0 +1,52 @@
+/* Reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+/* Style */
+
+body {
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+}
+
+.content-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 0 auto;
+  padding: 15px 15px 110px;
+  max-width: 480px;
+  min-height: 100vh;
+  background: url('../img/elementos.svg') no-repeat bottom center;
+  background-size: contain;
+}
+
+.vcard-name {
+  margin-bottom: .5em;
+  font-weight: 700;
+  font-size: 36px;
+}
+
+.vcard-area {
+  margin: 0;
+  font-weight: 300;
+  font-size: 30px;
+}
+
+.qrcode-title {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.qrcode-image {
+  width: 200px;
+}
