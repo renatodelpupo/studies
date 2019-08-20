@@ -8,7 +8,13 @@ const data = require('./wineanos.json')
 data.forEach(item => {
 
   plugins.push(new HtmlWebpackPlugin({
-    template: 'index.html',
+    hash: true,
+    minify: {
+      html5: true,
+      collapseWhitespace: true,
+      removeComments: true
+    },
+    template: './src/index.html',
     filename: `${item.wineano}.html`,
     wName: item.name,
     wArea: item.area,
