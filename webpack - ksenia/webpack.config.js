@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 let plugins = []
 
-const data = require('./wineanos.json')
+const data = require('./src/wineanos.json')
 
 data.forEach(item => {
 
@@ -15,10 +15,10 @@ data.forEach(item => {
       removeComments: true
     },
     template: './src/index.html',
-    filename: `${item.wineano}.html`,
+    filename: `./${item.wineano}/index.html`,
     wName: item.name,
     wArea: item.area,
-    wCode: `<img class="qrcode-image" src="../qrcodes/${item.wineano}.svg" alt="">`
+    wCode: `<img class="qrcode-image" src="../../qrcodes/${item.wineano}.svg" alt="">`
   }))
 })
 

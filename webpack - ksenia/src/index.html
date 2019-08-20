@@ -9,22 +9,22 @@
   <title>vCard | Wine</title>
   <meta name="description" content="Adicione aos contatos">
 
-  <link rel="manifest" href="../manifest.json">
+  <link rel="manifest" href="../../manifest.json">
   <meta name="theme-color" content="#ffffff">
 
   <!-- icon in the highest resolution we need it for -->
-  <link rel="icon" sizes="192x192" href="../img/favicon-192p.png">
+  <link rel="icon" sizes="192x192" href="../../img/favicon-192p.png">
 
   <!-- Safari -->
-  <link rel="apple-touch-icon" href="../img/favicon-192p.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="../img/favicon-76p.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="../img/favicon-120p.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="../img/favicon-152p.png">
-  <link rel="apple-touch-startup-image" href="../img/favicon-192p.png">
+  <link rel="apple-touch-icon" href="../../img/favicon-192p.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../../img/favicon-76p.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="../../img/favicon-120p.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="../../img/favicon-152p.png">
+  <link rel="apple-touch-startup-image" href="../../img/favicon-192p.png">
   <meta name="apple-mobile-web-app-status-bar-style" content="white">
 
   <link href="https://fonts.googleapis.com/css?family=Lato:300,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="../style.css">
+  <link rel="stylesheet" type="text/css" href="../../style.css">
 </head>
 
 <body>
@@ -32,7 +32,7 @@
   <div class="content-wrap">
 
     <div class="logo-area">
-      <img class="wine-logo" src="../img/wine-logo.svg" alt="">
+      <img class="wine-logo" src="../../img/wine-logo.svg" alt="">
     </div>
 
     <div class="infos-wrap">
@@ -50,7 +50,7 @@
   <script type="text/javascript">
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function () {
-        navigator.serviceWorker.register('../sw.js').then(function (registration) {
+        navigator.serviceWorker.register('../../sw.js').then(function (registration) {
           console.log('ServiceWorker registration successful with scope: ', registration.scope);
         }).catch(function (err) {
           console.log('ServiceWorker registration failed: ', err);
