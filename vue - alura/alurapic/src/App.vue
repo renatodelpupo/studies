@@ -3,7 +3,7 @@
     <h1>{{ msg }}</h1>
     <ul>
       <li v-for="foto of fotos">
-        <img :src="foto.src" :alt="foto.alt" />
+        <img :src="foto.url" :alt="foto.titulo" />
       </li>
     </ul>
   </div>
@@ -12,21 +12,15 @@
 <script>
 export default {
   name: "app",
+  created() {
+    this.$http.get('http://localhost:3000/v1/fotos')
+    .then(res => res.json())
+    .then(fotos => this.fotos = fotos, err => console.log(err))
+  },
   data() {
     return {
       msg: "Starting Alurapic",
-      fotos: [
-        {
-          src:
-            "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTwV4kVzT5McBdGSgqlVeRzubrNH_mOrrkKseDOGFURq20HmsrelEfMU7It",
-          alt: "Happy dog"
-        },
-        {
-          src:
-            "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTwV4kVzT5McBdGSgqlVeRzubrNH_mOrrkKseDOGFURq20HmsrelEfMU7It",
-          alt: "Happy dog"
-        }
-      ]
+      fotos: []
     };
   }
 };
