@@ -8,7 +8,7 @@
     {{ termoBusca }}
 
     <ul class="lista-fotos">
-      <li class="lista-fotos-item" v-for="foto of fotos" v-bind:key="foto.titulo">
+      <li class="lista-fotos-item" v-for="foto of fotosFiltradas" v-bind:key="foto.titulo">
 
         <meu-painel :titulo="foto.titulo">
             <img class="imagem-responsiva" :src="foto.url" :alt="foto.titulo">
@@ -37,6 +37,20 @@ export default {
       fotos: [],
       termoBusca: ''
     }
+  },
+
+  computed: {
+
+    fotosFiltradas() {
+      if (this.termoBusca) {
+        // trim() retira espaços em branco, 'i' deixa case insensitive
+        let expressaoRegular = new RegExp(this.termoBusca.trim(), 'i')
+        return this.fotos.filter(foto => expressaoRegular.test(foto.titulo))
+      } else {
+        return this.fotos
+      }
+    }
+
   },
 
   created() {
