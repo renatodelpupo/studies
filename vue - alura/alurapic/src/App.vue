@@ -3,8 +3,12 @@
   <div class="corpo">
     <h1 class="centralizado">{{ titulo }}</h1>
 
+    <input type="search" class="filtro" v-on:input="termoBusca = $event.target.value" placeholder="digite o título da foto">
+
+    {{ termoBusca }}
+
     <ul class="lista-fotos">
-      <li class="lista-fotos-item" v-for="foto of fotos">
+      <li class="lista-fotos-item" v-for="foto of fotos" v-bind:key="foto.titulo">
 
         <meu-painel :titulo="foto.titulo">
             <img class="imagem-responsiva" :src="foto.url" :alt="foto.titulo">
@@ -30,7 +34,8 @@ export default {
     return {
 
       titulo: 'Alurapic', 
-      fotos: []
+      fotos: [],
+      termoBusca: ''
     }
   },
 
