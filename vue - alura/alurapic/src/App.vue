@@ -1,12 +1,30 @@
 
 <template>
-  <div class="corpo">
-    <router-view></router-view>
+  <div>
+    <nav>
+      <ul>
+        <li v-for="route in routes" :key="route.path">
+          <router-link :to="route.path || '/'">{{ route.name }}</router-link>
+        </li>
+      </ul>
+    </nav>
+    <div class="corpo">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
 <script>
-export default {};
+import { routes } from './routes'
+
+export default {
+
+  data() {
+    return {
+      routes
+    }
+  }
+};
 </script>
 
 <style scoped>
