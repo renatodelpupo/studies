@@ -10,7 +10,12 @@
 
 <script>
 export default {
-  props: ['rotas'],
+  props: {
+    rotas: {
+      type: Array,
+      required: true
+    }
+  },
   data() {
     return {};
   }
