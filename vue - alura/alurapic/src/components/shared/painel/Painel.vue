@@ -48,11 +48,13 @@ export default {
   box-shadow: 5px 5px 5px;
 }
 
-.painel-efeito-enter, .painel-efeito-leave-active {
+.painel-efeito-enter,
+.painel-efeito-leave-active {
   opacity: 0;
 }
 
-.painel-efeito-enter-active, .painel-efeito-leave-active {
-  transition: opacity .5s;
+.painel-efeito-enter-active,
+.painel-efeito-leave-active {
+  transition: opacity 0.5s;
 }
 </style>

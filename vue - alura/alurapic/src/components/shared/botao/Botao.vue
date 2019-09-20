@@ -14,7 +14,7 @@ export default {
     tipo: {
       required: true,
       type: String
-    }, 
+    },
     rotulo: {
       required: true,
       type: String
@@ -26,7 +26,7 @@ export default {
     },
     estilo: {
       required: false,
-      default: 'padrao',
+      default: "padrao",
       type: String
     }
   },
@@ -34,18 +34,17 @@ export default {
   methods: {
     disparaAcao() {
       if (this.confirmacao) {
-        if (confirm('Confirma?')) this.$emit('botaoAtivado')
-        return
+        if (confirm("Confirma?")) this.$emit("botaoAtivado");
+        return;
       }
-      this.$emit('botaoAtivado')
+      this.$emit("botaoAtivado");
     }
   },
 
   computed: {
     estiloDoBotao() {
-
-      if (this.estilo == "padrao" || !this.estilo) return "botao-padrao"
-      if (this.estilo == "perigo") return "botao-perigo"
+      if (this.estilo == "padrao" || !this.estilo) return "botao-padrao";
+      if (this.estilo == "perigo") return "botao-perigo";
     }
   }
 };

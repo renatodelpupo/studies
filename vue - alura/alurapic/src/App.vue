@@ -17,12 +17,12 @@ import Menu from "./components/shared/menu/Menu.vue";
 export default {
   data() {
     return {
-      routes,
+      routes
     };
   },
 
   components: {
-    'meu-menu': Menu
+    "meu-menu": Menu
   }
 };
 </script>
