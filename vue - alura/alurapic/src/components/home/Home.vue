@@ -9,7 +9,7 @@
         <li class="lista-fotos-item" v-for="foto of fotosFiltradas" :key="foto.titulo">
           <meu-painel :titulo="foto.titulo">
             <imagem-responsiva :src="foto.url" :alt="foto.titulo" />
-            <meu-botao rotulo="remover" tipo="button" @click.native="remove(foto)" />
+            <meu-botao rotulo="remover" tipo="button" @botaoAtivado="remove(foto)"  />
           </meu-painel>
         </li>
       </ul>
@@ -49,9 +49,7 @@ export default {
 
   methods: {
     remove(foto) {
-      if (confirm('Confirma?')) {
-        alert('Remover a foto', foto.titulo)
-      }
+      alert(`Foto ${foto.titulo} removida`);
     }
   },
 
