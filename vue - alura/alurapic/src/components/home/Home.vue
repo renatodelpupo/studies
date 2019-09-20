@@ -9,7 +9,13 @@
         <li class="lista-fotos-item" v-for="foto of fotosFiltradas" :key="foto.titulo">
           <meu-painel :titulo="foto.titulo">
             <imagem-responsiva :src="foto.url" :alt="foto.titulo" />
-            <meu-botao rotulo="remover" tipo="button" @botaoAtivado="remove(foto)"  />
+            <meu-botao 
+              rotulo="remover" 
+              tipo="button" 
+              @botaoAtivado="remove(foto)" 
+              :confirmacao="true"
+              estilo="perigo"
+            />
           </meu-painel>
         </li>
       </ul>
