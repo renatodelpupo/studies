@@ -1,0 +1,574 @@
+[
+  {
+    "attributes": {
+      "CONTEUDO": "750.00",
+      "TIPO": "Tinto",
+      "ENVELHECIMENTO": "30% do vinho por 4 meses em barricas de carvalho francês e americano.\r\n",
+      "SAFRA": "2018",
+      "UVA_1_PERCENTUAL": "100.00",
+      "TEMPERATURA_SERVICO": "15",
+      "ESTIMATIVA_GUARDA": "3",
+      "UN_MEDIDA_CONTEUDO": "ml",
+      "COR": "Rubi",
+      "SABOR": "Leve, acidez agradável, taninos macios",
+      "AROMAS": "Frutas negras, especiarias",
+      "PRODUTO_EXCLUSIVO_WINE": "true",
+      "COMENTARIOS_SOMMLR": "Este é um Syrah descomplicado, que apresenta gostosa harmonia entre as características da uva que lhe deu origem e a influência do breve amadurecimento em carvalho. Para ser apreciado a qualquer momento, acompanhando uma refeição ou apenas ser degustado sem compromisso. ",
+      "SUBTIPO": "Varietal",
+      "CLASSIFICACAO": "Meio Seco/Demi-Sec",
+      "PAIS": "Chile",
+      "REGIAO": "Valle Central ",
+      "UVA_1": "Syrah",
+      "DIR_ENOGASTRONOMICAS": "Alcatra grelhada, pizza portuguesa, lasanha à bolonhesa, pimentão recheado, assado de berinjela com tomate e cebola, queijos semi-duros.",
+      "UVAS": "Syrah (100%)",
+      "GRADUACAOALCOOLICA": "12.50"
+    },
+    "catalogCodes": [
+      "CATALOG_WINE_OUTLET",
+      "Teste Virtual",
+      "CATALOG_WINE_BH_001783",
+      "CATALOG_WINE",
+      "WINE"
+    ],
+    "compravel": true,
+    "precoClubeW": 26.35,
+    "precoDe": 31,
+    "precoPor": 31,
+    "productSeoUrl": "vinhos/paine-syrah-2018/prod22126.html",
+    "productType": null,
+    "storeProduct": {
+      "available": true,
+      "brand": {
+        "code": "VyF Wine Co",
+        "displayName": "VyF Wines"
+      },
+      "categories": [
+        {
+          "code": "DESCONTOPROGRESSIVOMAIO",
+          "compoundGuid": "DESCONTOPROGRESSIVOMAIO|CATALOG_WINE",
+          "guid": "68d39c66-ea2a-495c-8ad6-e762d951bf25"
+        },
+        {
+          "code": "VINHOS",
+          "compoundGuid": "VINHOS|CATALOG_WINE",
+          "guid": "VINHOS|CATALOG_WINE"
+        },
+        {
+          "code": "VINHOS",
+          "compoundGuid": "VINHOS|WINE",
+          "guid": "VINHOS|WINE"
+        },
+        {
+          "code": "VINHOS",
+          "compoundGuid": "VINHOS|CATALOG_WINE_OUTLET",
+          "guid": "87f02e1b-1b60-4c59-b7d4-81b2e07e9e5c"
+        },
+        {
+          "code": "VINHOS",
+          "compoundGuid": "VINHOS|CATALOG_WINE_BH_001783",
+          "guid": "7676799a-b39a-45f3-9107-25cb7cad9a69"
+        },
+        {
+          "code": "VINHOS",
+          "compoundGuid": "VINHOS|Teste Virtual",
+          "guid": "76229e58-bf82-461d-a7b0-cf76d5133220"
+        }
+      ],
+      "code": "22126",
+      "displayName": "Paine Syrah 2018",
+      "displayable": true,
+      "image": "produtos/22126-01.png",
+      "productType": {
+        "name": "Vinho"
+      },
+      "quantidadeAvaliacoes": 0,
+      "ratio": 4.5,
+      "uidPk": 86227,
+      "wrappedProduct": {
+        "attributeValueMap": {
+          "CONTEUDO": {
+            "value": 750
+          },
+          "TIPO": {
+            "value": "Tinto"
+          },
+          "ENVELHECIMENTO": {
+            "value": "30% do vinho por 4 meses em barricas de carvalho francês e americano.\r\n"
+          },
+          "SAFRA": {
+            "value": "2018"
+          },
+          "UVA_1_PERCENTUAL": {
+            "value": 100
+          },
+          "TEMPERATURA_SERVICO": {
+            "value": "15"
+          },
+          "ESTIMATIVA_GUARDA": {
+            "value": 3
+          },
+          "UN_MEDIDA_CONTEUDO": {
+            "value": "ml"
+          },
+          "COR": {
+            "value": "Rubi"
+          },
+          "SABOR": {
+            "value": "Leve, acidez agradável, taninos macios"
+          },
+          "AROMAS": {
+            "value": "Frutas negras, especiarias"
+          },
+          "COMENTARIOS_SOMMLR": {
+            "value": "Este é um Syrah descomplicado, que apresenta gostosa harmonia entre as características da uva que lhe deu origem e a influência do breve amadurecimento em carvalho. Para ser apreciado a qualquer momento, acompanhando uma refeição ou apenas ser degustado sem compromisso. "
+          },
+          "PRODUTO_EXCLUSIVO_WINE": {
+            "value": true
+          },
+          "SUBTIPO": {
+            "value": "Varietal"
+          },
+          "CLASSIFICACAO": {
+            "value": "Meio Seco/Demi-Sec"
+          },
+          "PAIS": {
+            "value": "Chile"
+          },
+          "DIR_ENOGASTRONOMICAS": {
+            "value": "Alcatra grelhada, pizza portuguesa, lasanha à bolonhesa, pimentão recheado, assado de berinjela com tomate e cebola, queijos semi-duros."
+          },
+          "UVA_1": {
+            "value": "Syrah"
+          },
+          "REGIAO": {
+            "value": "Valle Central "
+          },
+          "UVAS": {
+            "value": "Syrah (100%)"
+          },
+          "GRADUACAOALCOOLICA": {
+            "value": 12.5
+          }
+        },
+        "brand": {
+          "code": "VyF Wine Co",
+          "displayName": "VyF Wines"
+        },
+        "categories": [
+          {
+            "code": "DESCONTOPROGRESSIVOMAIO",
+            "compoundGuid": "DESCONTOPROGRESSIVOMAIO|CATALOG_WINE",
+            "guid": "68d39c66-ea2a-495c-8ad6-e762d951bf25"
+          },
+          {
+            "code": "VINHOS",
+            "compoundGuid": "VINHOS|CATALOG_WINE",
+            "guid": "VINHOS|CATALOG_WINE"
+          },
+          {
+            "code": "VINHOS",
+            "compoundGuid": "VINHOS|WINE",
+            "guid": "VINHOS|WINE"
+          },
+          {
+            "code": "VINHOS",
+            "compoundGuid": "VINHOS|CATALOG_WINE_OUTLET",
+            "guid": "87f02e1b-1b60-4c59-b7d4-81b2e07e9e5c"
+          },
+          {
+            "code": "VINHOS",
+            "compoundGuid": "VINHOS|CATALOG_WINE_BH_001783",
+            "guid": "7676799a-b39a-45f3-9107-25cb7cad9a69"
+          },
+          {
+            "code": "VINHOS",
+            "compoundGuid": "VINHOS|Teste Virtual",
+            "guid": "76229e58-bf82-461d-a7b0-cf76d5133220"
+          }
+        ],
+        "code": "22126",
+        "displayName": "Paine Syrah 2018",
+        "guid": "22126",
+        "image": "produtos/22126-01.png",
+        "productType": {
+          "name": "Vinho"
+        },
+        "uidPk": 86227
+      }
+    }
+  },
+  {
+    "attributes": {
+      "CONTEUDO": "750.00",
+      "TIPO": "Tinto",
+      "ENVELHECIMENTO": "Em tanques de aço inox.",
+      "SAFRA": "2018",
+      "TEMPERATURA_SERVICO": "15",
+      "ESTIMATIVA_GUARDA": "3",
+      "UN_MEDIDA_CONTEUDO": "ml",
+      "COR": "Rubi",
+      "SABOR": "Frutado, herbáceo, leve, acidez agradável, taninos macios",
+      "AROMAS": "Frutas vermelhas frescas, vegetal",
+      "UVA_10": "Carménère",
+      "PRODUTO_EXCLUSIVO_WINE": "true",
+      "COMENTARIOS_SOMMLR": "Com um estilo versátil, este tinto pode ser degustado sozinho ou harmonizado, com pratos do dia a dia e petiscos. Elaborado com a uva emblemática do Chile, esse rótulo expressa a expertise da família francesa Rothschild, um dos maiores nomes do mundo do vinho.",
+      "SUBTIPO": "Varietal",
+      "PAIS": "Chile",
+      "REGIAO": "Valle Central ",
+      "DIR_ENOGASTRONOMICAS": "Pimentão recheado com carne, iscas de filé de frango com legumes, espaguete de abobrinha ao sugo, arroz carreteiro, pizza de calabresa com queijo, panqueca de carne.",
+      "UVAS": "Carménère"
+    },
+    "catalogCodes": [
+      "CATALOG_WINE_OUTLET",
+      "Teste Virtual",
+      "CATALOG_WINE_BH_001783",
+      "CATALOG_WINE",
+      "WINE"
+    ],
+    "compravel": false,
+    "precoClubeW": 29.67,
+    "precoDe": 34.9,
+    "precoPor": 34.9,
+    "productSeoUrl": "vinhos/baron-philippe-de-rothschild-carmenere-2018/prod22691.html",
+    "productType": null,
+    "storeProduct": {
+      "available": true,
+      "brand": {
+        "code": "BARONPHILIPPE",
+        "displayName": "Baron Philippe de Rothschild"
+      },
+      "categories": [
+        {
+          "code": "VINHOS",
+          "compoundGuid": "VINHOS|CATALOG_WINE",
+          "guid": "VINHOS|CATALOG_WINE"
+        },
+        {
+          "code": "VINHOS",
+          "compoundGuid": "VINHOS|CATALOG_WINE_BH_001783",
+          "guid": "7676799a-b39a-45f3-9107-25cb7cad9a69"
+        },
+        {
+          "code": "VINHOS",
+          "compoundGuid": "VINHOS|CATALOG_WINE_OUTLET",
+          "guid": "87f02e1b-1b60-4c59-b7d4-81b2e07e9e5c"
+        },
+        {
+          "code": "MALBECWINE",
+          "compoundGuid": "MALBECWINE|CATALOG_WINE",
+          "guid": "c294f887-8bf5-4ae1-823a-90d2bef8ece0"
+        },
+        {
+          "code": "VINHOS",
+          "compoundGuid": "VINHOS|WINE",
+          "guid": "VINHOS|WINE"
+        },
+        {
+          "code": "VINHOS",
+          "compoundGuid": "VINHOS|Teste Virtual",
+          "guid": "76229e58-bf82-461d-a7b0-cf76d5133220"
+        }
+      ],
+      "code": "22691",
+      "displayName": "Baron Philippe de Rothschild Carménère 2018",
+      "displayable": true,
+      "image": "produtos/22691-01.png",
+      "productType": {
+        "name": "Vinho"
+      },
+      "quantidadeAvaliacoes": 0,
+      "ratio": 0,
+      "uidPk": 85805,
+      "wrappedProduct": {
+        "attributeValueMap": {
+          "CONTEUDO": {
+            "value": 750
+          },
+          "TIPO": {
+            "value": "Tinto"
+          },
+          "ENVELHECIMENTO": {
+            "value": "Em tanques de aço inox."
+          },
+          "SAFRA": {
+            "value": "2018"
+          },
+          "TEMPERATURA_SERVICO": {
+            "value": "15"
+          },
+          "ESTIMATIVA_GUARDA": {
+            "value": 3
+          },
+          "UN_MEDIDA_CONTEUDO": {
+            "value": "ml"
+          },
+          "COR": {
+            "value": "Rubi"
+          },
+          "SABOR": {
+            "value": "Frutado, herbáceo, leve, acidez agradável, taninos macios"
+          },
+          "AROMAS": {
+            "value": "Frutas vermelhas frescas, vegetal"
+          },
+          "UVA_10": {
+            "value": "Carménère"
+          },
+          "COMENTARIOS_SOMMLR": {
+            "value": "Com um estilo versátil, este tinto pode ser degustado sozinho ou harmonizado, com pratos do dia a dia e petiscos. Elaborado com a uva emblemática do Chile, esse rótulo expressa a expertise da família francesa Rothschild, um dos maiores nomes do mundo do vinho."
+          },
+          "PRODUTO_EXCLUSIVO_WINE": {
+            "value": true
+          },
+          "SUBTIPO": {
+            "value": "Varietal"
+          },
+          "PAIS": {
+            "value": "Chile"
+          },
+          "DIR_ENOGASTRONOMICAS": {
+            "value": "Pimentão recheado com carne, iscas de filé de frango com legumes, espaguete de abobrinha ao sugo, arroz carreteiro, pizza de calabresa com queijo, panqueca de carne."
+          },
+          "REGIAO": {
+            "value": "Valle Central "
+          },
+          "UVAS": {
+            "value": "Carménère"
+          }
+        },
+        "brand": {
+          "code": "BARONPHILIPPE",
+          "displayName": "Baron Philippe de Rothschild"
+        },
+        "categories": [
+          {
+            "code": "VINHOS",
+            "compoundGuid": "VINHOS|CATALOG_WINE",
+            "guid": "VINHOS|CATALOG_WINE"
+          },
+          {
+            "code": "VINHOS",
+            "compoundGuid": "VINHOS|CATALOG_WINE_BH_001783",
+            "guid": "7676799a-b39a-45f3-9107-25cb7cad9a69"
+          },
+          {
+            "code": "VINHOS",
+            "compoundGuid": "VINHOS|CATALOG_WINE_OUTLET",
+            "guid": "87f02e1b-1b60-4c59-b7d4-81b2e07e9e5c"
+          },
+          {
+            "code": "MALBECWINE",
+            "compoundGuid": "MALBECWINE|CATALOG_WINE",
+            "guid": "c294f887-8bf5-4ae1-823a-90d2bef8ece0"
+          },
+          {
+            "code": "VINHOS",
+            "compoundGuid": "VINHOS|WINE",
+            "guid": "VINHOS|WINE"
+          },
+          {
+            "code": "VINHOS",
+            "compoundGuid": "VINHOS|Teste Virtual",
+            "guid": "76229e58-bf82-461d-a7b0-cf76d5133220"
+          }
+        ],
+        "code": "22691",
+        "displayName": "Baron Philippe de Rothschild Carménère 2018",
+        "guid": "22691",
+        "image": "produtos/22691-01.png",
+        "productType": {
+          "name": "Vinho"
+        },
+        "uidPk": 85805
+      }
+    }
+  },
+  {
+    "attributes": {
+      "CONTEUDO": "750.00",
+      "TIPO": "Tinto",
+      "ENVELHECIMENTO": "Passagem por barricas de carvalho.",
+      "SAFRA": "2018",
+      "UVA_1_PERCENTUAL": "100.00",
+      "TEMPERATURA_SERVICO": "15",
+      "ESTIMATIVA_GUARDA": "4",
+      "UN_MEDIDA_CONTEUDO": "ml",
+      "COR": "Rubi",
+      "SABOR": "Corpo de leve para médio, acidez agradável, taninos macios, fácil de beber",
+      "AROMAS": "Morango, framboesa, herbáceo",
+      "PRODUTO_EXCLUSIVO_WINE": "true",
+      "COMENTARIOS_SOMMLR": "Tinto elaborado pela vinícola chilena Urmeneta que foi fundada em 1860, e é uma das mais antigas do país. Vinho fácil de beber, frutado e jovem, elaborado com a uva mais difundida do mundo e tão amada pelos brasileiros, a Cabernet Sauvignon.",
+      "SUBTIPO": "Varietal",
+      "CLASSIFICACAO": "Meio Seco/Demi-Sec",
+      "PAIS": "Chile",
+      "REGIAO": "Valle Central ",
+      "UVA_1": "Cabernet Sauvignon",
+      "DIR_ENOGASTRONOMICAS": "Pernil acebolado, frango recheado, berinjela à parmegiana, panqueca à bolonhesa, sanduíche de carne e queijo, carne de panela com batatas.",
+      "UVAS": "Cabernet Sauvignon (100%)",
+      "GRADUACAOALCOOLICA": "13.00"
+    },
+    "catalogCodes": [
+      "CATALOG_WINE_OUTLET",
+      "Teste Virtual",
+      "CATALOG_WINE_BH_001783",
+      "CATALOG_WINE",
+      "WINE"
+    ],
+    "compravel": true,
+    "precoClubeW": 26.66,
+    "precoDe": 36.9,
+    "precoPor": 31.37,
+    "productSeoUrl": "vinhos/urmeneta-cabernet-sauvignon-2018/prod22201.html",
+    "productType": null,
+    "storeProduct": {
+      "available": true,
+      "brand": {
+        "code": "VIÑAURMUNETA",
+        "displayName": "Urmeneta"
+      },
+      "categories": [
+        {
+          "code": "VINHOS",
+          "compoundGuid": "VINHOS|CATALOG_WINE_BH_001783",
+          "guid": "7676799a-b39a-45f3-9107-25cb7cad9a69"
+        },
+        {
+          "code": "VINHOS",
+          "compoundGuid": "VINHOS|CATALOG_WINE_OUTLET",
+          "guid": "87f02e1b-1b60-4c59-b7d4-81b2e07e9e5c"
+        },
+        {
+          "code": "VINHOS",
+          "compoundGuid": "VINHOS|CATALOG_WINE",
+          "guid": "VINHOS|CATALOG_WINE"
+        },
+        {
+          "code": "VINHOS",
+          "compoundGuid": "VINHOS|WINE",
+          "guid": "VINHOS|WINE"
+        },
+        {
+          "code": "VINHOS",
+          "compoundGuid": "VINHOS|Teste Virtual",
+          "guid": "76229e58-bf82-461d-a7b0-cf76d5133220"
+        }
+      ],
+      "code": "22201",
+      "displayName": "Urmeneta Cabernet Sauvignon 2018",
+      "displayable": true,
+      "image": "produtos/22201-01.png",
+      "productType": {
+        "name": "Vinho"
+      },
+      "quantidadeAvaliacoes": 0,
+      "ratio": 4.333333,
+      "uidPk": 86169,
+      "wrappedProduct": {
+        "attributeValueMap": {
+          "CONTEUDO": {
+            "value": 750
+          },
+          "TIPO": {
+            "value": "Tinto"
+          },
+          "ENVELHECIMENTO": {
+            "value": "Passagem por barricas de carvalho."
+          },
+          "SAFRA": {
+            "value": "2018"
+          },
+          "UVA_1_PERCENTUAL": {
+            "value": 100
+          },
+          "TEMPERATURA_SERVICO": {
+            "value": "15"
+          },
+          "ESTIMATIVA_GUARDA": {
+            "value": 4
+          },
+          "UN_MEDIDA_CONTEUDO": {
+            "value": "ml"
+          },
+          "COR": {
+            "value": "Rubi"
+          },
+          "SABOR": {
+            "value": "Corpo de leve para médio, acidez agradável, taninos macios, fácil de beber"
+          },
+          "AROMAS": {
+            "value": "Morango, framboesa, herbáceo"
+          },
+          "COMENTARIOS_SOMMLR": {
+            "value": "Tinto elaborado pela vinícola chilena Urmeneta que foi fundada em 1860, e é uma das mais antigas do país. Vinho fácil de beber, frutado e jovem, elaborado com a uva mais difundida do mundo e tão amada pelos brasileiros, a Cabernet Sauvignon."
+          },
+          "PRODUTO_EXCLUSIVO_WINE": {
+            "value": true
+          },
+          "SUBTIPO": {
+            "value": "Varietal"
+          },
+          "CLASSIFICACAO": {
+            "value": "Meio Seco/Demi-Sec"
+          },
+          "PAIS": {
+            "value": "Chile"
+          },
+          "DIR_ENOGASTRONOMICAS": {
+            "value": "Pernil acebolado, frango recheado, berinjela à parmegiana, panqueca à bolonhesa, sanduíche de carne e queijo, carne de panela com batatas."
+          },
+          "UVA_1": {
+            "value": "Cabernet Sauvignon"
+          },
+          "REGIAO": {
+            "value": "Valle Central "
+          },
+          "UVAS": {
+            "value": "Cabernet Sauvignon (100%)"
+          },
+          "GRADUACAOALCOOLICA": {
+            "value": 13
+          }
+        },
+        "brand": {
+          "code": "VIÑAURMUNETA",
+          "displayName": "Urmeneta"
+        },
+        "categories": [
+          {
+            "code": "VINHOS",
+            "compoundGuid": "VINHOS|CATALOG_WINE_BH_001783",
+            "guid": "7676799a-b39a-45f3-9107-25cb7cad9a69"
+          },
+          {
+            "code": "VINHOS",
+            "compoundGuid": "VINHOS|CATALOG_WINE_OUTLET",
+            "guid": "87f02e1b-1b60-4c59-b7d4-81b2e07e9e5c"
+          },
+          {
+            "code": "VINHOS",
+            "compoundGuid": "VINHOS|CATALOG_WINE",
+            "guid": "VINHOS|CATALOG_WINE"
+          },
+          {
+            "code": "VINHOS",
+            "compoundGuid": "VINHOS|WINE",
+            "guid": "VINHOS|WINE"
+          },
+          {
+            "code": "VINHOS",
+            "compoundGuid": "VINHOS|Teste Virtual",
+            "guid": "76229e58-bf82-461d-a7b0-cf76d5133220"
+          }
+        ],
+        "code": "22201",
+        "displayName": "Urmeneta Cabernet Sauvignon 2018",
+        "guid": "22201",
+        "image": "produtos/22201-01.png",
+        "productType": {
+          "name": "Vinho"
+        },
+        "uidPk": 86169
+      }
+    }
+  }
+]
