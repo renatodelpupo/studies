@@ -1,5 +1,5 @@
 <template>
-  <img :src="src" :alt="alt">
+  <img :src="src" :alt="alt" v-meu-transform>
 </template>
 
 <script>
