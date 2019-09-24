@@ -43,11 +43,7 @@ export default {
 
   methods: {
     renderImage(sku) {
-      return (
-        "https://www.wine.com.br/renderImage.image?imageName=produtos/" +
-        sku +
-        "-01.png&padding=0&height=240"
-      );
+      return `https://www.wine.com.br/renderImage.image?imageName=produtos/${sku}-01.png&padding=0&height=240`
     }
   }
 };

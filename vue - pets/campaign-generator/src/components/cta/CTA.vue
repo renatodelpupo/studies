@@ -1,5 +1,5 @@
 <template>
-  <button :class="isAvailable">{{ label }}</button>
+  <button :disabled="!available">{{ label }}</button>
 </template>
 
 <script>
@@ -13,14 +13,6 @@ export default {
   },
 
   computed: {
-    isAvailable() {
-      if (this.available == true) {
-        return "available";
-      } else {
-        return "soldout";
-      }
-    },
-
     label() {
       if (this.available == true) {
         return "Add to cart";
@@ -39,14 +31,13 @@ button {
   width: 100%;
   border-radius: 4px;
   border: none;
-  color: white;
-}
-.available {
   background-color: #7fbc44;
+  color: white;
   cursor: pointer;
-}
-.soldout {
-  background-color: gray;
-  cursor: not-allowed;
+
+  &:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+  }
 }
 </style>
