@@ -1,5 +1,5 @@
 <template>
-  <img :src="src" :alt="alt" v-meu-transform="{ rotation: 30, transition: true }">
+  <img :src="src" :alt="alt" v-meu-transform.transition="30">
 </template>
 
 <script>
