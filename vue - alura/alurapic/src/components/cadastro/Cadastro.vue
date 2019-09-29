@@ -9,8 +9,7 @@
         <input 
           id="titulo" 
           autocomplete="off"
-          @input="foto.titulo = $event.target.value"
-          :value="foto.titulo"
+          v-model.lazy="foto.titulo"
         >
       </div>
 
@@ -19,10 +18,13 @@
         <input 
           id="url" 
           autocomplete="off"
-          @input="foto.url = $event.target.value"
-          :value="foto.url"
+          v-model.lazy="foto.url"
         >
-        <imagem-responsiva/>
+        <imagem-responsiva
+          v-show="foto.url"
+          :url="foto.url"
+          :alt="foto.titulo"
+        />
       </div>
 
       <div class="controle">
@@ -30,8 +32,7 @@
         <textarea 
           id="descricao"
           autocomplete="off"
-          @input="foto.descricao = $event.target.value"
-          :value="foto.descricao"
+          v-model.lazy="foto.descricao"
         >
         </textarea>
       </div>
