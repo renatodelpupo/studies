@@ -68,16 +68,16 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .centralizado {
   text-align: center;
 }
 
 .lista-fotos {
   list-style: none;
-}
 
-.lista-fotos .lista-fotos-item {
-  display: inline-block;
+  .lista-fotos-item {
+    display: inline-block;
+  }
 }
 </style>

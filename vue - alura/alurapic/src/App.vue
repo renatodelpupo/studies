@@ -27,7 +27,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .corpo {
   font-family: Helvetica, sans-serif;
   width: 96%;
