@@ -44,6 +44,10 @@ export default {
   text-transform: uppercase;
 }
 
+.painel .painel-conteudo {
+  overflow: hidden;
+}
+
 * {
   box-shadow: 5px 5px 5px;
 }

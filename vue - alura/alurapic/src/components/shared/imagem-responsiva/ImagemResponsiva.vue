@@ -1,5 +1,5 @@
 <template>
-  <img :src="src" :alt="alt" v-meu-transform.transition="30">
+  <img :src="src" :alt="alt" v-meu-transform:scale.transition="1.1">
 </template>
 
 <script>
