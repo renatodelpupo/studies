@@ -3,8 +3,14 @@
 </template>
 
 <script>
+import transform from "../../../directives/Transform"
+
 export default {
-  props: ["src", "alt"]
+  props: ["src", "alt"],
+
+  directives: {
+    "meu-transform": transform
+  },
 };
 </script>
 
