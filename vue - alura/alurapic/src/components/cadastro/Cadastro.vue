@@ -22,7 +22,7 @@
         >
         <imagem-responsiva
           v-show="foto.url"
-          :url="foto.url"
+          :src="foto.url"
           :alt="foto.titulo"
         />
       </div>
@@ -67,8 +67,9 @@ export default {
   methods: {
 
     grava() {
-      console.log(`Gravando ${this.foto.titulo}`)
-      this.foto = new Foto()
+      this.$http
+        .post('http://localhost:3000/v1/fotos', this.foto)
+        .then(() => this.foto = new Foto(), err => console.log(err))
     }
 
   }
