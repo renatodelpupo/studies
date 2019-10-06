@@ -59,7 +59,7 @@ export default {
   methods: {
     remove(foto) {
       this.$http
-        .delete(`http://localhost:3000/v1/fotos/${foto._id}`)
+        .delete(`v1/fotos/${foto._id}`)
         .then(
           () => {
             this.mensagem = `Foto ${foto.titulo} removida com sucesso`
@@ -76,7 +76,7 @@ export default {
 
   created() {
     this.$http
-      .get("http://localhost:3000/v1/fotos")
+      .get("v1/fotos")
       .then(res => res.json())
       .then(fotos => (this.fotos = fotos), err => console.log(err));
   }
