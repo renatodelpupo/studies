@@ -63,6 +63,8 @@ export default {
         .then(
           () => {
             this.mensagem = `Foto ${foto.titulo} removida com sucesso`
+            let indice = this.fotos.indexOf(foto)
+            this.fotos.splice(indice, 1)
           }, 
           err => {
             this.mensagem = 'Erro ao remover foto'
