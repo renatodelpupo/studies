@@ -2,6 +2,8 @@
   <div>
     <h1 class="centralizado">{{ titulo }}</h1>
 
+      <p class="mensagem">{{ mensagem }}</p>
+
       <input type="search" class="filtro" @input="termoBusca = $event.target.value" placeholder="digite o título da foto" />
       {{ termoBusca }}
 
@@ -36,9 +38,10 @@ export default {
 
   data() {
     return {
-      titulo: "Alurapic",
       fotos: [],
-      termoBusca: ""
+      mensagem: '',
+      termoBusca: "",
+      titulo: "Alurapic"
     };
   },
 
@@ -55,7 +58,17 @@ export default {
 
   methods: {
     remove(foto) {
-      alert(`Foto ${foto.titulo} removida`);
+      this.$http
+        .delete(`http://localhost:3000/v1/fotos/${foto._id}`)
+        .then(
+          () => {
+            this.mensagem = `Foto ${foto.titulo} removida com sucesso`
+          }, 
+          err => {
+            this.mensagem = 'Erro ao remover foto'
+            console.log(err)
+          }
+        )
     }
   },
 
@@ -78,6 +91,13 @@ export default {
 
   .lista-fotos-item {
     display: inline-block;
+  }
+}
+
+.mensagem {
+
+  &:empty {
+    display: none;
   }
 }
 </style>
