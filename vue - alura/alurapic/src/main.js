@@ -8,6 +8,8 @@ import { routes } from './routes';
 import VueRouter from 'vue-router';
 import VeeValidate from 'vee-validate';
 
+import 'bootstrap/dist/css/bootstrap.css';
+
 import './directives/Transform';
 
 Vue.use(VueRoute)
