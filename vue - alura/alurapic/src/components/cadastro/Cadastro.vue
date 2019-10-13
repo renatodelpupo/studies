@@ -12,18 +12,24 @@
         <label for="titulo">TÍTULO</label>
         <input 
           id="titulo" 
+          name="Título"
           autocomplete="off"
-          v-model.lazy="foto.titulo"
+          v-model="foto.titulo"
+          v-validate data-vv-rules="required|min:3|max:30"
         >
+        <span class="erro" v-show="errors.has('Título')">{{ errors.first('Título') }}</span>
       </div>
 
       <div class="controle">
         <label for="url">URL</label>
         <input 
           id="url" 
+          name="URL"
           autocomplete="off"
-          v-model.lazy="foto.url"
+          v-model="foto.url"
+          v-validate data-vv-rules="required"
         >
+        <span class="erro" v-show="errors.has('URL')">{{ errors.first('URL') }}</span>
         <imagem-responsiva
           v-show="foto.url"
           :src="foto.url"
@@ -82,11 +88,17 @@ export default {
   methods: {
 
     grava() {
-      this.service
-        .cadastra(this.foto)
-        .then(() => (this.id) ? this.$router.push({ name: 'inicio' }) : this.foto = new Foto(), err => console.log(err))
-    }
 
+      this.$validator
+        .validateAll()
+        .then(success => {
+          if (success) {
+            this.service
+              .cadastra(this.foto)
+              .then(() => (this.id) ? this.$router.push({ name: 'inicio' }) : this.foto = new Foto(), err => console.log(err))
+          }
+        })
+    }
   }
 };
 </script>
@@ -111,5 +123,9 @@ export default {
   width: 100%;
   font-size: inherit;
   border-radius: 5px;
+}
+
+.erro {
+  color: red;
 }
 </style>
