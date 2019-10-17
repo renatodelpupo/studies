@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import VueRoute from 'vue-router'
 import VueResource from 'vue-resource'
-import VeeValidateMessages from '../node_modules/vee-validate/dist/locale/pt_BR'
+import VeeValidateMessages from 'vee-validate/dist/locale/pt_BR'
 
 import { routes } from './routes';
 import VueRouter from 'vue-router';
