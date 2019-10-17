@@ -71,6 +71,7 @@ if (process.env.NODE_ENV === 'production') {
   module.exports.plugins = (module.exports.plugins || []).concat([
     new webpack.DefinePlugin({
       'process.env': {
+        API_URL: '"http://www.enderecodasuaapi.com"', // Teste
         NODE_ENV: '"production"'
       }
     }),
