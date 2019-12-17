@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Circle Component</title>
+
+  <style>
+
+    body {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  
+    .circle {
+      border-radius: 50%;
+      height: 200px;
+      margin: 25px;
+      width: 200px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <script>
+
+    const body = document.querySelector('body')
+
+    const Circle = color => `<div class="circle" style="background-color: ${color}"></div>`
+
+    body.innerHTML = Circle('purple') + Circle('green') + Circle('pink') + Circle('navy')
+
+  </script>
+</body>
+
+</html>
