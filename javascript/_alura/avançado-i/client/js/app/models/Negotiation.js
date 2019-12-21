@@ -6,9 +6,20 @@ class Negotiation {
     this._price = price
   }
 
-  getAmount = () => this._amount
-  getDate = () => this._date
-  getPrice = () => this._price
-  getSubtotal = () => this._amount * this._price
+  get amount() {
+    return this._amount
+  }
+
+  get date() {
+    return this._date
+  }
+
+  get price() {
+    return this._price
+  }
+
+  get subtotal() {
+    return this._amount * this._price
+  }
 
 }
