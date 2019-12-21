@@ -1,5 +1,5 @@
 
-const 
+const
   myFormInputs = [
     document.querySelector('#date'),
     document.querySelector('#amount'),
@@ -9,9 +9,9 @@ const
 
 document.querySelector('.form').addEventListener('submit', event => {
 
-  event.preventDefault()  
+  event.preventDefault()
 
-  const 
+  const
     myFormData = myFormInputs.map(item => item.value),
     myTableRow = document.createElement('tr')
 
