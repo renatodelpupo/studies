@@ -1,11 +1,14 @@
 class Negotiation {
 
   constructor(amount, price) {
-    this.date = new Date()
-    this.amount = amount
-    this.price = price
+    this._date = new Date()
+    this._amount = amount
+    this._price = price
   }
 
-  getSubtotal = () => this.amount * this.price
+  getAmount = () => this._amount
+  getDate = () => this._date
+  getPrice = () => this._price
+  getSubtotal = () => this._amount * this._price
 
 }
