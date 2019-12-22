@@ -1,10 +1,6 @@
-class NegotiationView {
+class NegotiationView extends View {
 
-  constructor(element) {
-    this._element = element
-  }
-
-  _template(negotiationList) {
+  template(model) {
     return `
       <table class="table table-hover table-bordered">
         <thead>
@@ -17,7 +13,7 @@ class NegotiationView {
         </thead>
 
         <tbody>
-          ${negotiationList.map(negotiation => `
+          ${model.map(negotiation => `
             <tr>
               <td>${DateHelper.dateToString(negotiation.date)}</td>
               <td>${negotiation.amount}</td>
@@ -30,15 +26,11 @@ class NegotiationView {
         <tfoot>
           <td colspan="3"></td>
           <td>
-            ${negotiationList.reduce((acc, cur) => acc + cur.subtotal, 0)}
+            ${model.reduce((acc, cur) => acc + cur.subtotal, 0)}
           </td>
         </tfoot>
       </table>
     `
-  }
-
-  updateNegotiationView(negotiationList) {
-    this._element.innerHTML = this._template(negotiationList)
   }
 
 }

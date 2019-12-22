@@ -21,7 +21,7 @@ class NegotiationController {
     this._cleanForm()
     this._updateNegotiationView()
 
-    this._message = 'Successfully added trading'
+    this._message = 'Trading successfully added'
     this._throwMessageView(this._message)
   }
 
@@ -41,11 +41,11 @@ class NegotiationController {
   }
 
   _throwMessageView(message) {
-    this._messageView._throw(message)
+    this._messageView.update(message)
   }
 
   _updateNegotiationView() {
-    this._negotiationView.updateNegotiationView(this._negotiationList.negotiations)
+    this._negotiationView.update(this._negotiationList.negotiations)
   }
 
 }

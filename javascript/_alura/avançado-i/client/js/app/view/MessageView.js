@@ -1,14 +1,7 @@
-class MessageView {
+class MessageView extends View {
 
-  constructor(element) {
-    this._element = element
+  template(model) {
+    return `<p class="alert alert-info">${model}</p>`
   }
 
-  _template(message) {
-    return `<p class="alert alert-info">${message}</p>`
-  }
-
-  _throw(message) {
-    this._element.innerHTML = this._template(message)
-  }
 }
