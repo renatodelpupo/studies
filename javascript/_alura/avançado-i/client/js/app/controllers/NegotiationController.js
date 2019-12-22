@@ -8,13 +8,15 @@ class NegotiationController {
     this._inputPrice = $('#price')
     this._negotiationList = new NegotiationList()
     this._negotiationView = new NegotiationView($('#negotiation-view'))
+
+    this._updateNegotiationView()
   }
 
   add(event) {
     event.preventDefault()
     this._negotiationList.add(this._createNegotiation())
     this._cleanForm()
-    this._negotiationView.updateNegotiationView()
+    this._updateNegotiationView()
   }
 
   _cleanForm() {
@@ -30,6 +32,10 @@ class NegotiationController {
       DateHelper.stringToDate(this._inputDate.value),
       this._inputPrice.value
     )
+  }
+
+  _updateNegotiationView() {
+    this._negotiationView.updateNegotiationView(this._negotiationList.negotiations)
   }
 
 }
