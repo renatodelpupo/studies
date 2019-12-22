@@ -4,6 +4,8 @@ class Negotiation {
     this._date = new Date()
     this._amount = amount
     this._price = price
+
+    Object.freeze(this)
   }
 
   get amount() {
@@ -11,7 +13,7 @@ class Negotiation {
   }
 
   get date() {
-    return this._date
+    return new Date(this._date.getTime())
   }
 
   get price() {
