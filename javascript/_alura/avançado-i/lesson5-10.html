@@ -16,9 +16,7 @@
       </tr>
     </thead>
 
-    <tbody>
-
-    </tbody>
+    <tbody id="employees"><tbody>
   </table>
 
   <script>
@@ -39,6 +37,16 @@
         "salary": "6000"
       }
     ]
+
+    document.querySelector('#employees').innerHTML = `
+      ${employees.map(employee => `
+        <tr>
+          <td>${employee.name}</td>
+          <td>${employee.address}</td>
+          <td>${employee.salary}</td>
+        </tr>
+        `).join('')
+      }`
 
   </script>
 </body>
