@@ -6,10 +6,13 @@ class NegotiationController {
     this._inputAmount = $('#amount')
     this._inputDate = $('#date')
     this._inputPrice = $('#price')
+
     this._negotiationList = new NegotiationList()
     this._negotiationView = new NegotiationView($('#negotiation-view'))
-
     this._updateNegotiationView()
+
+    this._message = new Message()
+    this._messageView = new MessageView($('#message-view'))
   }
 
   add(event) {
@@ -17,6 +20,9 @@ class NegotiationController {
     this._negotiationList.add(this._createNegotiation())
     this._cleanForm()
     this._updateNegotiationView()
+
+    this._message = 'Successfully added trading'
+    this._throwMessageView(this._message)
   }
 
   _cleanForm() {
@@ -32,6 +38,10 @@ class NegotiationController {
       DateHelper.stringToDate(this._inputDate.value),
       this._inputPrice.value
     )
+  }
+
+  _throwMessageView(message) {
+    this._messageView._throw(message)
   }
 
   _updateNegotiationView() {
