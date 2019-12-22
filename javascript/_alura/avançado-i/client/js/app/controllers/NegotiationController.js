@@ -7,12 +7,14 @@ class NegotiationController {
     this._inputDate = $('#date')
     this._inputPrice = $('#price')
     this._negotiationList = new NegotiationList()
+    this._negotiationView = new NegotiationView($('#negotiation-view'))
   }
 
   add(event) {
     event.preventDefault()
     this._negotiationList.add(this._createNegotiation())
     this._cleanForm()
+    this._negotiationView.updateNegotiationView()
   }
 
   _cleanForm() {
