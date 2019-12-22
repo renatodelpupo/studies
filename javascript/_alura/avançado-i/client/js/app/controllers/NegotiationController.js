@@ -11,11 +11,9 @@ class NegotiationController {
   add(event) {
     event.preventDefault()
 
-    const dateHelper = new DateHelper()
-
     let negotiation = new Negotiation(
         this._inputAmount.value,
-        dateHelper.stringToDate(this._inputDate.value),
+        DateHelper.stringToDate(this._inputDate.value),
         this._inputPrice.value
       )
 
