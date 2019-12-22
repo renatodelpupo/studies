@@ -1,8 +1,8 @@
 class Negotiation {
 
-  constructor(amount, price) {
-    this._date = new Date()
+  constructor(amount, date, price) {
     this._amount = amount
+    this._date = date
     this._price = price
 
     Object.freeze(this)

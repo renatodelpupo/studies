@@ -13,6 +13,7 @@ class NegotiationController {
 
     let negotiation = new Negotiation(
       this._inputAmount.value,
+      new Date(this._inputDate.value.replace(/-/g, ',')),
       this._inputPrice.value
     );
 
