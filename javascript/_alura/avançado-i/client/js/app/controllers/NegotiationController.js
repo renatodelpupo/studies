@@ -9,13 +9,15 @@ class NegotiationController {
   }
 
   add(event) {
-    event.preventDefault();
+    event.preventDefault()
+
+    const dateHelper = new DateHelper()
 
     let negotiation = new Negotiation(
-      this._inputAmount.value,
-      new Date(this._inputDate.value.replace(/-/g, ',')),
-      this._inputPrice.value
-    );
+        this._inputAmount.value,
+        dateHelper.stringToDate(this._inputDate.value),
+        this._inputPrice.value
+      )
 
   }
 
