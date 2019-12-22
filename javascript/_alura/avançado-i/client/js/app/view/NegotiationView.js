@@ -28,6 +28,10 @@ class NegotiationView {
         </tbody>
 
         <tfoot>
+          <td colspan="3"></td>
+          <td>
+            ${negotiationList.reduce((acc, cur) => acc + cur.subtotal, 0)}
+          </td>
         </tfoot>
       </table>
     `
