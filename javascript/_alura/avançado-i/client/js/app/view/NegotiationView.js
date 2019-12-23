@@ -13,7 +13,7 @@ class NegotiationView extends View {
         </thead>
 
         <tbody>
-          ${model.map(negotiation => `
+          ${model._negotiations.map(negotiation => `
             <tr>
               <td>${DateHelper.dateToString(negotiation.date)}</td>
               <td>${negotiation.amount}</td>
@@ -26,7 +26,7 @@ class NegotiationView extends View {
         <tfoot>
           <td colspan="3"></td>
           <td>
-            ${model.reduce((acc, cur) => acc + cur.subtotal, 0)}
+            ${model._negotiations.reduce((acc, cur) => acc + cur.subtotal, 0)}
           </td>
         </tfoot>
       </table>
