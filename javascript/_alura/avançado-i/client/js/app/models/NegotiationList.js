@@ -12,4 +12,8 @@ class NegotiationList {
     return [].concat(this._negotiations);
   }
 
+  _erase() {
+    this._negotiations = []
+  }
+
 }

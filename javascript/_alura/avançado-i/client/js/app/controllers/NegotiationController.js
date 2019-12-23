@@ -32,6 +32,13 @@ class NegotiationController {
     this._inputDate.focus()
   }
 
+  _cleanTable() {
+    this._negotiationList._erase()
+
+    this._message = 'Trading history cleaned'
+    this._throwMessageView(this._message)
+  }
+
   _createNegotiation() {
     return new Negotiation(
       this._inputAmount.value,
