@@ -7,10 +7,7 @@ class NegotiationController {
     this._inputDate = $('#date')
     this._inputPrice = $('#price')
 
-    this._negotiationList = new NegotiationList(
-      this,
-      model => this._negotiationView.update(model)
-    )
+    this._negotiationList = new NegotiationList(model => this._negotiationView.update(model))
 
     this._negotiationView = new NegotiationView($('#negotiation-view'))
     this._negotiationView.update(this._negotiationList)
