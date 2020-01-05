@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Lesson 2 01 09</title>
+</head>
+
+<body>
+  <script>
+    class Relogio {
+
+      constructor() {
+        this._segundos = 0
+
+        // Não funciona
+        setInterval(function() {
+          console.log(++this._segundos)
+        }, 1000)
+
+        // Pode contornar com self/that
+        const self = this
+        setInterval(function() {
+          console.log(++self._segundos)
+        }, 1000)
+
+        // Mata a pau com arrow function!
+        setInterval(() => {
+          console.log(++this._segundos)
+        }, 1000)
+      }
+    }
+
+    const relogio = new Relogio()
+  </script>
+</body>
+</html>

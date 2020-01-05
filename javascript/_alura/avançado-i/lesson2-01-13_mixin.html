@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Lesson 2 01 13</title>
+</head>
+
+<body>
+  <!-- Fase 1: Precisa importar voa de Aviao a Passarinho -->
+  <script>
+    class Aviao {
+
+      constructor(nome) {
+        this._nome = nome;
+      }
+
+      voa() {
+        alert(`${this._nome} está voando`);
+      }
+
+      ligaMotor() {
+        console.log('liga o motor');
+      }
+
+      fechaPortas() {
+        console.log('Portas sendo fechadas');
+      }
+    }
+
+    class Passarinho {
+
+      constructor(nome) {
+        this._nome = nome;
+      }
+
+      voa() {
+        // hum..precisamos implementar esse método também!
+      }
+    }
+  </script>
+
+  <!--
+    Usar herança é ruim, pois viriam lixos para Passarinho
+  -->
+
+  <!-- Fase 2: Usando composição -->
+  <script>
+    class Aviao {
+
+      constructor(nome) {
+        this._nome = nome;
+      }
+
+      voa() {
+        alert(`${this._nome} está voando`);
+      }
+
+      ligaMotor() {
+        console.log('liga o motor');
+      }
+
+      fechaPortas() {
+        console.log('Portas sendo fechadas');
+      }
+    }
+
+    class Passarinho {
+
+      constructor(nome) {
+        this._nome = nome;
+        // guarda uma instância de avião
+        this._aviao = new Aviao(nome);
+      }
+
+      voa() {
+        // usa o método voa de Aviao
+        this._aviao.voa();
+      }
+    }
+  </script>
+
+  <!--
+    Um pouco verboso...
+  -->
+
+  <!-- Fase 3: Usando mixin via Reflect -->
+  <script>
+    class Aviao {
+
+      constructor(nome) {
+        this._nome = nome;
+      }
+
+      voa() {
+        alert(`${this._nome} está voando`);
+      }
+
+      ligaMotor() {
+        console.log('liga o motor');
+      }
+
+      fechaPortas() {
+        console.log('Portas sendo fechadas');
+      }
+    }
+
+    class Passarinho {
+
+      constructor(nome) {
+        this._nome = nome;
+      }
+
+      voa() {
+        // executa o método `voa` de `Avião` usando como contexto a instância de `Passarinho`
+        Reflect.apply(Aviao.prototype.voa, this, []);
+      }
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Lesson 2 01 12</title>
+</head>
+
+<body>
+  <script>
+    const
+      object1 = {
+        name: 'John'
+      },
+      object2 = {
+        name: 'Carl'
+      }
+
+    // Funciona normal
+    function showName() {
+      console.log(this.name)
+    }
+
+    // Não funciona com arrow function
+    const showName = () => console.log(this.name)
+
+    // Reflect.apply(target, thisArgument, argumentsList)
+
+    // target
+    // Função que será chamada
+
+    // thisArgument
+    // O valor de "this" que será usado pela function do target
+
+    // argumentsList
+    // Um objeto do tipo array que especifica os argumentos com que o target deve ser chamado
+
+    // Valor de retorno
+    // O resultado da função alvo chamada com o this  e argumentos especificados
+
+    Reflect.apply(showName, object1, [])
+    Reflect.apply(showName, object2, [])
+  </script>
+</body>
+</html>

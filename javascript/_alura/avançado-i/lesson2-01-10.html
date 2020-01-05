@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Lesson 2 01 10</title>
+</head>
+
+<body>
+  <script>
+    // Não funciona com arrow
+    const carro = {
+      velocidade: 100,
+      acelera: () => {
+        console.log(this)
+        console.log(`Carro a ${this.velocidade} km por hora!`)
+      }
+    }
+
+    // Funciona sem arrow
+    const carro = {
+      velocidade: 100,
+      acelera: function() {
+        console.log(this)
+        console.log(`Carro a ${this.velocidade} km por hora!`)
+      }
+    }
+
+    carro.acelera()
+  </script>
+</body>
+</html>
