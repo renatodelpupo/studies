@@ -23,7 +23,9 @@ export default class Main extends Component {
 
     if (page === docsMeta.pages) return
 
-    this.loadProducts(page++)
+    let nextPage = page + 1
+
+    this.loadProducts(nextPage)
   }
 
   loadProducts = async (page = 1) => {
@@ -41,7 +43,9 @@ export default class Main extends Component {
     <View style={ styles.productContainer }>
       <Text style={ styles.productName }>{ item.nome }</Text>
       <Text style={ styles.productEmail }>{ item.email }</Text>
-      <TouchableOpacity onPress={ () => {} } style={ styles.productButton }>
+      <TouchableOpacity onPress={ () => {
+        this.props.navigation.navigate('Product', { product: item })
+      } } style={ styles.productButton }>
         <Text style={ styles.productButtonText }>Acessar</Text>
       </TouchableOpacity>
     </View>
