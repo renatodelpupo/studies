@@ -1,7 +1,8 @@
 import React, { Fragment } from 'react'
-import { Dimensions, FlatList, Image, ScrollView, StyleSheet, Text } from 'react-native'
+import { FlatList, ScrollView } from "react-native"
 
-const screenWidth = Dimensions.get('screen').width
+import { UserHeader } from './src/Components/UserHeader'
+import { FeedPicture } from './src/Components/FeedPicture'
 
 const feed = [
   {
@@ -23,23 +24,13 @@ const App = () => {
         renderItem={
           ({ item }) =>
           <Fragment>
-            <Text>{ item.name }</Text>
-            <Image
-              source={ require('./res/img/alura.jpg') }
-              style={ styles.image }
-            />
+            <UserHeader userName={ item.name } />
+            <FeedPicture />
           </Fragment>
         }
       />
     </ScrollView>
   )
 }
-
-const styles = StyleSheet.create({
-  image: {
-    width: screenWidth,
-    height: screenWidth
-  }
-})
 
 export default App
