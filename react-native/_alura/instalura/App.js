@@ -27,6 +27,7 @@ const App = () => {
             />
             <FeedPicture
               photoDescription = { item.description }
+              photoLikes = { item.likes }
               photoUrl = { item.url }
             />
           </Fragment>
