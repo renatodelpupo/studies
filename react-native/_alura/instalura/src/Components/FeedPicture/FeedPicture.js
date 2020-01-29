@@ -3,14 +3,14 @@ import { Image, Text } from "react-native"
 
 import styles from './styles'
 
-const FeedPicture = () => {
+const FeedPicture = ({ photoDescription, photoUrl }) => {
   return (
     <Fragment>
       <Image
-        source={ require('../../../res/img/alura.jpg') }
-        style={ styles.feedPicture }
+        source = {{ uri: photoUrl }}
+        style = { styles.feedPicture }
       />
-      <Text>Photo description</Text>
+      <Text>{ photoDescription }</Text>
     </Fragment>
   )
 }

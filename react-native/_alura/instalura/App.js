@@ -25,8 +25,14 @@ const App = () => {
         renderItem={
           ({ item }) =>
           <Fragment>
-            <UserHeader userName={ item.userName } />
-            <FeedPicture />
+            <UserHeader
+              userName = { item.userName }
+              userPhoto = { item.userURL }
+            />
+            <FeedPicture
+              photoDescription = { item.description }
+              photoUrl = { item.url }
+            />
           </Fragment>
         }
       />
