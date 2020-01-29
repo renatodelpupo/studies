@@ -1,6 +1,8 @@
 import React, { Fragment, useEffect, useState } from 'react'
 import { FlatList, ScrollView } from "react-native"
 
+import readFeed from './src/api/feed'
+
 import { UserHeader } from './src/Components/UserHeader'
 import { FeedPicture } from './src/Components/FeedPicture'
 
@@ -8,13 +10,7 @@ const App = () => {
   const [feed, setFeed] = useState([])
 
   useEffect(() => {
-    const readFeed = async() => {
-      const feedHttp = await fetch('http://localhost:3030/feed')
-      const feedJson = await feedHttp.json()
-      setFeed(feedJson)
-    }
-
-    readFeed()
+    readFeed(setFeed)
   }, [])
 
   return (
