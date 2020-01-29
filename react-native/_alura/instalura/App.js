@@ -1,21 +1,22 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import { FlatList, ScrollView } from "react-native"
 
 import { UserHeader } from './src/Components/UserHeader'
 import { FeedPicture } from './src/Components/FeedPicture'
 
-const feed = [
-  {
-    id: 1,
-    name: 'Renato'
-  },
-  {
-    id: 2,
-    name: 'Marina'
-  }
-]
-
 const App = () => {
+  const [feed, setFeed] = useState([])
+
+  useEffect(() => {
+    const readFeed = async() => {
+      const feedHttp = await fetch('http://localhost:3030/feed')
+      const feedJson = await feedHttp.json()
+      setFeed(feedJson)
+    }
+
+    readFeed()
+  }, [])
+
   return (
     <ScrollView>
       <FlatList
@@ -24,7 +25,7 @@ const App = () => {
         renderItem={
           ({ item }) =>
           <Fragment>
-            <UserHeader userName={ item.name } />
+            <UserHeader userName={ item.userName } />
             <FeedPicture />
           </Fragment>
         }
