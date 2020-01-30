@@ -17,6 +17,10 @@ const styles = StyleSheet.create({
   likeWrap: {
     alignItems: 'center',
     flexDirection: 'row'
+  },
+
+  photoDescription: {
+    padding: (0, 10)
   }
 })
 

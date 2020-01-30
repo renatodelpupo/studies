@@ -5,6 +5,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     flexDirection: "row"
   },
+
+  userName: {
+    fontWeight: '700'
+  },
+
   userPhoto: {
     borderRadius: 30,
     height: 40,

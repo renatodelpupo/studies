@@ -10,7 +10,7 @@ const UserHeader = ({ userName, userPhoto }) => {
         source = {{ uri: userPhoto }}
         style = { styles.userPhoto }
       />
-      <Text>{ userName }</Text>
+      <Text style={ styles.userName }>{ userName }</Text>
     </View>
   )
 }

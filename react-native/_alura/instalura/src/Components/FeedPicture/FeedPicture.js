@@ -2,7 +2,7 @@ import React, { Fragment, useState } from 'react'
 import { Image, Text, TouchableOpacity, View } from "react-native"
 
 import styles from './styles'
-import { likePhoto, setLikeImage } from '../../api/likes'
+import { likePhoto, likesAmountText, setLikeImage } from '../../api/likes'
 
 const FeedPicture = ({ photoDescription, photoLikes, photoUrl }) => {
 
@@ -22,7 +22,7 @@ const FeedPicture = ({ photoDescription, photoLikes, photoUrl }) => {
         source = {{ uri: photoUrl }}
         style = { styles.feedPicture }
       />
-      <Text>{ photoDescription }</Text>
+      <Text style={ styles.photoDescription }>{ photoDescription }</Text>
       <View style={ styles.likeWrap }>
         <TouchableOpacity onPress={ clickLikePhoto }>
           <Image
@@ -30,7 +30,7 @@ const FeedPicture = ({ photoDescription, photoLikes, photoUrl }) => {
             style   = { styles.likeImage }
           />
         </TouchableOpacity>
-        <Text>Likes: { likes }</Text>
+        <Text>{ likesAmountText(likes) }</Text>
       </View>
     </Fragment>
   )
