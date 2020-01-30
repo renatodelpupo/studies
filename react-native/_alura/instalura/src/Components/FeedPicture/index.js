@@ -1,0 +1,1 @@
+export { default as FeedPicture } from "./FeedPicture"
