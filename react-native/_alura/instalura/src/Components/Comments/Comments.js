@@ -1,5 +1,7 @@
 import React, { Fragment } from 'react'
-import { FlatList, ScrollView, Text } from 'react-native'
+import { FlatList, Image, ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native'
+
+import styles from './styles'
 
 const Comments = ( { photoComments }) => {
   return (
@@ -13,6 +15,18 @@ const Comments = ( { photoComments }) => {
           </Fragment>
         }
       />
+      <View style = { styles.addCommentWrap }>
+        <TextInput
+          placeholder = { "Add a comment..." }
+          style = { styles.addComment }
+        />
+        <TouchableOpacity>
+          <Image
+            source = { require('../../../res/img/send.png')}
+            style = { styles.sendImage }
+          />
+        </TouchableOpacity>
+      </View>
     </ScrollView>
   )
 }
