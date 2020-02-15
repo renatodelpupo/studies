@@ -27,14 +27,10 @@ class FormularioAutor extends Component {
         PubSub.publish('atualiza-lista-autores', novaListagem)
         this.setState({ nome: '', email: '', senha: '' })
       },
-      error: function (resposta) {
-        if (resposta.status === 400) {
-          new TratadorErros().publicaErros(resposta.responseJSON)
-        }
+      error: (resposta) => {
+        resposta.status === 400 ? new TratadorErros().publicaErros(resposta.responseJSON) : null
       },
-      beforeSend: function () {
-        PubSub.publish("limpa-erros", {})
-      }
+      beforeSend: () => PubSub.publish("limpa-erros", {})
     })
   }
 
@@ -75,19 +71,17 @@ class TabelaAutores extends Component {
         <thead>
           <tr>
             <th>Nome</th>
-            <th>email</th>
+            <th>Email</th>
           </tr>
         </thead>
         <tbody>
           {
-            this.props.lista.map(function (autor) {
-              return (
-                <tr key={autor._id}>
-                  <td>{autor.nome}</td>
-                  <td>{autor.email}</td>
-                </tr>
-              )
-            })
+            this.props.lista.map((autor) => (
+              <tr key={autor._id}>
+                <td>{autor.nome}</td>
+                <td>{autor.email}</td>
+              </tr>
+            ))
           }
         </tbody>
       </table>
@@ -102,17 +96,15 @@ export default class AutorBox extends Component {
     this.state = { lista: [] }
   }
 
-  componentDidMount() {
-    $.ajax({
-      url: "http://localhost:3001/api/products",
-      dataType: 'json',
-      success: (resposta) => this.setState({lista: resposta.docs})
-    }
-    )
+  getAuthors() {
+    fetch('http://localhost:3001/api/products')
+      .then((resp) => resp.json())
+      .then((data) => this.setState({ lista: data.docs }))
+  }
 
-    PubSub.subscribe('atualiza-lista-autores', function (topico, novaLista) {
-      this.setState({ lista: novaLista })
-    })
+  componentDidMount() {
+    this.getAuthors()
+    PubSub.subscribe('atualiza-lista-autores', (topico, novaLista) => this.setState({ lista: novaLista }))
   }
 
   render() {
