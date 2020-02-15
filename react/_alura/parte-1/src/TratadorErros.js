@@ -1,10 +1,7 @@
-import PubSub from 'pubsub-js';
+import PubSub from 'pubsub-js'
 
 export default class TratadorErros {
   publicaErros(erros) {
-    for (var i = 0; i < erros.errors.length; i++) {
-      var erro = erros.errors[i];
-      PubSub.publish("erro-validacao", erro);
-    }
+    erros.forEach((item) => PubSub.publish("erro-validacao", item.errors))
   }
 }

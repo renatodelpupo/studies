@@ -1,10 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import ReactDOM from 'react-dom'
 import { Router, Route, IndexRoute, browserHistory } from 'react-router'
-import App from './App';
-import AutorBox from './Autor';
+import App from './App'
+import AutorBox from './Autor'
 import Home from './Home'
-import './index.css';
+import './index.css'
 
 ReactDOM.render(
   <Router history={browserHistory}>
@@ -15,4 +15,4 @@ ReactDOM.render(
     </Route>
   </Router>,
   document.getElementById('root')
-);
+)
