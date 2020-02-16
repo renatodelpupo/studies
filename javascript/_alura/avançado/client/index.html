@@ -69,14 +69,14 @@
 
   <script>
     let negotiation = new Proxy(new Negotiation(1, new Date(), 100), {
-      get: function(target, prop, receiver) {
-        console.log(`Property "${prop}" intercepted`)
-        return Reflect.get(target, prop, receiver)
+      set: function(target, prop, value, receiver) {
+        console.log(`Before: ${target[prop]} | After: ${value}`)
+        return Reflect.set(target, prop, value, receiver)
       }
     })
 
-    console.log(negotiation.amount)
-    console.log(negotiation.price)
+    negotiation._amount = 10
+    negotiation._price = 200
   </script>
 
 </body>
