@@ -83,24 +83,6 @@
 
   </script>
 
-  <script>
-    let list = new Proxy(new NegotiationList(), {
-      get(target, prop, receiver) {
-        if (['add', '_erase'].includes(prop) && typeof (target[prop]) == 'function') {
-          return function () {
-            console.log(`Property "${prop}" intercepted`)
-            Reflect.apply(target[prop], target, arguments)
-          }
-        } else {
-          return Reflect.get(target, prop, receiver)
-        }
-      }
-    })
-
-    list.add(new Negotiation(new Date(), 1, 100))
-    list._erase()
-  </script>
-
 </body>
 
 </html>
