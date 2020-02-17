@@ -7,22 +7,19 @@ class NegotiationController {
     this._inputDate = $('#date')
     this._inputPrice = $('#price')
 
-    this._negotiationList = ProxyFactory.create(
+    this._negotiationView = new NegotiationView($('#negotiation-view'))
+    this._negotiationList = new Bind(
       new NegotiationList(),
       ['add', '_erase'],
-      model => this._negotiationView.update(model)
-    )
-
-    this._negotiationView = new NegotiationView($('#negotiation-view'))
-    this._negotiationView.update(this._negotiationList)
-
-    this._message = ProxyFactory.create(
-      new Message(),
-      ['text'],
-      model => this._messageView.update(model)
+      this._negotiationView
     )
 
     this._messageView = new MessageView($('#message-view'))
+    this._message = new Bind(
+      new Message(),
+      ['text'],
+      this._messageView
+    )
   }
 
   add(event) {
