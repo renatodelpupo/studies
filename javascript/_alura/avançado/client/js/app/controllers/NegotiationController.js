@@ -7,26 +7,21 @@ class NegotiationController {
     this._inputDate = $('#date')
     this._inputPrice = $('#price')
 
-    let self = this
-
-    this._negotiationList = new Proxy(new NegotiationList(), {
-      get(target, prop, receiver) {
-        if (['add', '_erase'].includes(prop) && typeof (target[prop]) == 'function') {
-          return function () {
-            console.log(`Property "${prop}" intercepted`)
-            Reflect.apply(target[prop], target, arguments)
-            self._negotiationView.update(target)
-          }
-        } else {
-          return Reflect.get(target, prop, receiver)
-        }
-      }
-    })
+    this._negotiationList = ProxyFactory.create(
+      new NegotiationList(),
+      ['add', '_erase'],
+      model => this._negotiationView.update(model)
+    )
 
     this._negotiationView = new NegotiationView($('#negotiation-view'))
     this._negotiationView.update(this._negotiationList)
 
-    this._message = new Message()
+    this._message = ProxyFactory.create(
+      new Message(),
+      ['text'],
+      model => this._messageView.update(model)
+    )
+
     this._messageView = new MessageView($('#message-view'))
   }
 
