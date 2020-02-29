@@ -48,22 +48,16 @@ class TradeController {
   }
 
   importTrades() {
-    const xhr = new XMLHttpRequest()
-    xhr.open('GET', 'trades/week')
-    xhr.onreadystatechange = () => {
-      if (xhr.readyState == 4) {
-        if (xhr.status == 200) {
-          const responseText = JSON.parse(xhr.responseText)
-          const trades = responseText.map(object => new Trade(object.amount, new Date(object.date), object.price))
-          trades.forEach(trade => this._tradeList.add(trade))
+    let service = new TradeService()
 
-          this._message.text = 'Trades imported successfully'
-        } else {
-          console.log(xhr.responseText)
-          this._message.text = 'Trades import failed'
-        }
+    service.importWeeklyTrades((err, trades) => {
+      if (err) {
+        this._message.text = err
+        return
       }
-    }
-    xhr.send()
+
+      trades.forEach(trade => this._tradeList.add(trade))
+      this._message.text = 'Trades imported successfully'
+    })
   }
 }
