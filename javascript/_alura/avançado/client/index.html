@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Negotiations</title>
+  <title>Trades</title>
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/bootstrap-theme.css">
   <style>
@@ -27,11 +27,11 @@
 
 <body class="container">
 
-  <h1 class="text-center">Negotiations</h1>
+  <h1 class="text-center">Trades</h1>
 
   <p id="message-view"></p>
 
-  <form class="form" onsubmit="negotiationController.add(event)">
+  <form class="form" onsubmit="tradeController.add(event)">
 
     <div class="form-group">
       <label for="date">Date</label>
@@ -52,10 +52,10 @@
   </form>
 
   <div class="text-center">
-    <button class="btn btn-primary text-center" type="button" onclick="negotiationController.importTrades()">
+    <button class="btn btn-primary text-center" type="button" onclick="tradeController.importTrades()">
       Import trades
     </button>
-    <button class="btn btn-primary text-center" type="button" onclick="negotiationController._cleanTable()">
+    <button class="btn btn-primary text-center" type="button" onclick="tradeController._cleanTable()">
       Erase
     </button>
   </div>
@@ -63,26 +63,26 @@
   <br>
   <br>
 
-  <div id="negotiation-view"></div>
+  <div id="trade-view"></div>
 
   <script src="./js/app/helpers/DateHelper.js"></script>
   <script src="./js/app/helpers/Bind.js"></script>
 
   <script src="./js/app/models/Message.js"></script>
-  <script src="./js/app/models/Negotiation.js"></script>
-  <script src="./js/app/models/NegotiationList.js"></script>
+  <script src="./js/app/models/Trade.js"></script>
+  <script src="./js/app/models/TradeList.js"></script>
 
   <script src="./js/app/view/View.js"></script>
   <script src="./js/app/view/MessageView.js"></script>
-  <script src="./js/app/view/NegotiationView.js"></script>
+  <script src="./js/app/view/TradeView.js"></script>
 
-  <script src="./js/app/controllers/NegotiationController.js"></script>
+  <script src="./js/app/controllers/TradeController.js"></script>
 
   <script src="js/app/services/ProxyFactory.js"></script>
 
   <script>
 
-    let negotiationController = new NegotiationController()
+    let tradeController = new TradeController()
 
   </script>
 

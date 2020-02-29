@@ -1,4 +1,4 @@
-class NegotiationController {
+class TradeController {
 
   constructor() {
     const $ = document.querySelector.bind(document)
@@ -7,9 +7,9 @@ class NegotiationController {
     this._inputDate = $('#date')
     this._inputPrice = $('#price')
 
-    this._negotiationList = new Bind(
-      new NegotiationList(),
-      new NegotiationView($('#negotiation-view')),
+    this._tradeList = new Bind(
+      new TradeList(),
+      new TradeView($('#trade-view')),
       'add', '_erase'
     )
 
@@ -22,7 +22,7 @@ class NegotiationController {
 
   add(event) {
     event.preventDefault()
-    this._negotiationList.add(this._createNegotiation())
+    this._tradeList.add(this._createTrade())
     this._cleanForm()
     this._message.text = 'Trading successfully added'
   }
@@ -35,12 +35,12 @@ class NegotiationController {
   }
 
   _cleanTable() {
-    this._negotiationList._erase()
+    this._tradeList._erase()
     this._message.text = 'Trading history cleaned'
   }
 
-  _createNegotiation() {
-    return new Negotiation(
+  _createTrade() {
+    return new Trade(
       this._inputAmount.value,
       DateHelper.stringToDate(this._inputDate.value),
       this._inputPrice.value
@@ -54,8 +54,8 @@ class NegotiationController {
       if (xhr.readyState == 4) {
         if (xhr.status == 200) {
           const responseText = JSON.parse(xhr.responseText)
-          const trades = responseText.map(object => new Negotiation(object.amount, new Date(object.date), object.price))
-          trades.forEach(negotiation => this._negotiationList.add(negotiation))
+          const trades = responseText.map(object => new Trade(object.amount, new Date(object.date), object.price))
+          trades.forEach(trade => this._tradeList.add(trade))
 
           this._message.text = 'Trades imported successfully'
         } else {

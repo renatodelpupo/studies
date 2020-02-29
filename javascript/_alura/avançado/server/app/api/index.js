@@ -7,37 +7,37 @@ previousDate.setDate(currentDate.getDate() - 7)
 const oldDate = new Date()
 oldDate.setDate(currentDate.getDate() - 14)
 
-const negotations = [
-  { data: currentDate, quantity: 1, value: 150 },
-  { data: currentDate, quantity: 2, value: 250 },
-  { data: currentDate, quantity: 3, value: 350 },
-  { data: previousDate, quantity: 1, value: 450 },
-  { data: previousDate, quantity: 2, value: 550 },
-  { data: previousDate, quantity: 3, value: 650 },
-  { data: oldDate, quantity: 1, value: 750 },
-  { data: oldDate, quantity: 2, value: 950 },
-  { data: oldDate, quantity: 3, value: 950 }
+const trades = [
+  { date: currentDate, amount: 1, price: 150 },
+  { date: currentDate, amount: 2, price: 250 },
+  { date: currentDate, amount: 3, price: 350 },
+  { date: previousDate, amount: 1, price: 450 },
+  { date: previousDate, amount: 2, price: 550 },
+  { date: previousDate, amount: 3, price: 650 },
+  { date: oldDate, amount: 1, price: 750 },
+  { date: oldDate, amount: 2, price: 950 },
+  { date: oldDate, amount: 3, price: 950 }
 ]
 
 api.weekList = (req, res) => {
-  const currentNegotiations = negotations.filter(negotiation => negotiation.data > previousDate)
-  res.json(currentNegotiations)
+  const currentTrades = trades.filter(trade => trade.date > previousDate)
+  res.json(currentTrades)
 }
 
 api.previousList = (req, res) => {
-  const previousNegotiations = negotations.filter(negotiation => negotiation.data < currentDate && negotiation.data > oldDate)
-  setTimeout(() => res.json(previousNegotiations), 500)
+  const previousTrades = trades.filter(trade => trade.date < currentDate && trade.date > oldDate)
+  setTimeout(() => res.json(previousTrades), 500)
 }
 
 api.oldList = (req, res) => {
-  const oldNegotiations = negotations.filter(negotiation => negotiation.data < previousDate)
-  res.json(oldNegotiations)
+  const oldTrades = trades.filter(trade => trade.date < previousDate)
+  res.json(oldTrades)
 }
 
-api.addNegotiation = (req, res) => {
+api.addTrade = (req, res) => {
   console.log(req.body)
-  req.body.data = new Date(req.body.data.replace(/-/g, '/'))
-  negotations.push(req.body)
+  req.body.date = new Date(req.body.date.replace(/-/g, '/'))
+  trades.push(req.body)
   res.status(200).json("Trade received")
 }
 

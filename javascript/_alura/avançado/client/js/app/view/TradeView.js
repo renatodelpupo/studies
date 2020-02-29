@@ -1,4 +1,4 @@
-class NegotiationView extends View {
+class TradeView extends View {
 
   template(model) {
     return `
@@ -13,12 +13,12 @@ class NegotiationView extends View {
         </thead>
 
         <tbody>
-          ${model._negotiations.map(negotiation => `
+          ${model._trades.map(trade => `
             <tr>
-              <td>${DateHelper.dateToString(negotiation.date)}</td>
-              <td>${negotiation.amount}</td>
-              <td>${negotiation.price}</td>
-              <td>${negotiation.subtotal}</td>
+              <td>${DateHelper.dateToString(trade.date)}</td>
+              <td>${trade.amount}</td>
+              <td>${trade.price}</td>
+              <td>${trade.subtotal}</td>
             </tr>
             `).join('')}
         </tbody>
@@ -26,7 +26,7 @@ class NegotiationView extends View {
         <tfoot>
           <td colspan="3"></td>
           <td>
-            ${model._negotiations.reduce((acc, cur) => acc + cur.subtotal, 0)}
+            ${model._trades.reduce((acc, cur) => acc + cur.subtotal, 0)}
           </td>
         </tfoot>
       </table>

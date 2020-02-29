@@ -1,8 +1,8 @@
 const api = require('../api')
 
 module.exports = (app) => {
-  app.route('/negotiations/week').get(api.weekList)
-  app.route('/negotiations/previous').get(api.previousList)
-  app.route('/negotiations/old').get(api.oldList)
-  app.route('/negotiations').post(api.addNegotiation)
+  app.route('/trades/week').get(api.weekList)
+  app.route('/trades/previous').get(api.previousList)
+  app.route('/trades/old').get(api.oldList)
+  app.route('/trades').post(api.addTrade)
 }

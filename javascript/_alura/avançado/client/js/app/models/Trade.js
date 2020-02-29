@@ -1,4 +1,4 @@
-class Negotiation {
+class Trade {
 
   constructor(amount, date, price) {
     this._amount = amount
