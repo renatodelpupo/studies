@@ -46,4 +46,24 @@ class NegotiationController {
       this._inputPrice.value
     )
   }
+
+  importTrades() {
+    const xhr = new XMLHttpRequest()
+    xhr.open('GET', 'trades/week')
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState == 4) {
+        if (xhr.status == 200) {
+          const responseText = JSON.parse(xhr.responseText)
+          const trades = responseText.map(object => new Negotiation(object.amount, new Date(object.date), object.price))
+          trades.forEach(negotiation => this._negotiationList.add(negotiation))
+
+          this._message.text = 'Trades imported successfully'
+        } else {
+          console.log(xhr.responseText)
+          this._message.text = 'Trades import failed'
+        }
+      }
+    }
+    xhr.send()
+  }
 }
