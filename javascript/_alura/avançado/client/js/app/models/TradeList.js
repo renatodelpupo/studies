@@ -9,11 +9,14 @@ class TradeList {
   }
 
   get trades() {
-    return [].concat(this._trades);
+    return [].concat(this._trades)
   }
 
   _erase() {
     this._trades = []
   }
 
+  get totalLength() {
+    return this._trades.reduce((acc, cur) => acc + cur.subtotal, 0)
+  }
 }

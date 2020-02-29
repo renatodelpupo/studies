@@ -26,7 +26,7 @@ class TradeView extends View {
         <tfoot>
           <td colspan="3"></td>
           <td>
-            ${model._trades.reduce((acc, cur) => acc + cur.subtotal, 0)}
+            ${model.totalLength}
           </td>
         </tfoot>
       </table>
