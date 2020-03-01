@@ -33,4 +33,12 @@ class TradeService {
         throw new Error('Old trades import failed')
       })
   }
+
+  importAllTrades() {
+    return Promise.all([
+      this.importWeeklyTrades(),
+      this.importPreviousTrades(),
+      this.importOldTrades()
+    ]).then(period => period.reduce((data, period) => data.concat(period), [])).catch(error => new Error(error))
+  }
 }
