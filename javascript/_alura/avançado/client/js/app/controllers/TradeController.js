@@ -50,14 +50,16 @@ class TradeController {
   importTrades() {
     let service = new TradeService()
 
-    service.importWeeklyTrades((err, trades) => {
-      if (err) {
-        this._message.text = err
-        return
-      }
+    Promise.all([
+      service.importWeeklyTrades(),
+      service.importPreviousTrades(),
+      service.importOldTrades()
+    ]).then(trades => {
+      trades
+        .reduce((flatArray, array) => flatArray.concat(array), [])
+        .forEach(trade => this._tradeList.add(trade))
 
-      trades.forEach(trade => this._tradeList.add(trade))
-      this._message.text = 'Trades imported successfully'
-    })
+        this._message.text = 'Trades imported successfully'
+    }).catch(error => this._message.text = error)
   }
 }
