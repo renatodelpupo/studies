@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>IndexedDB</title>
+  <link rel="stylesheet" href="./client/css/dark-theme.css">
+</head>
+
+<body>
+  <script src="./client/js/app/models/Trade.js"></script>
+
+  <script>
+    let connection
+
+    const openRequest = window.indexedDB.open('aluraframe', 1)
+
+    openRequest.onupgradeneeded = event => {
+      console.log('Create or update a database')
+
+      const myConnection = event.target.result
+
+      if (myConnection.objectStoreNames.contains('trades')) {
+        myConnection.deleteObjectStore('trades')
+      }
+
+      myConnection.createObjectStore('trades', { autoIncrement: true })
+    }
+
+    openRequest.onsuccess = event => {
+      console.log('Successful connection')
+      connection = event.target.result
+    }
+
+    openRequest.onerror = event => {
+      console.log(event.target.error)
+    }
+
+    function add() {
+      const transaction = connection.transaction(['trades'], 'readwrite')
+      const store = transaction.objectStore('trades')
+      const trade = new Trade(1, new Date(), 200)
+      const request = store.add(trade)
+
+      request.onsuccess = event => {
+        console.log('Trading successfully added')
+      }
+
+      request.onerror = event => {
+        console.log('Failed to add trade')
+      }
+    }
+
+    function listAll() {
+      const transaction = connection.transaction(['trades'], 'readwrite')
+      const store = transaction.objectStore('trades')
+      const cursor = store.openCursor()
+      const trades = []
+
+      cursor.onsuccess = event => {
+        const current = event.target.result
+
+        if (current) {
+          const data = current.value
+          trades.push(new Trade(data._amount, data._date, data._price))
+          current.continue()
+        } else {
+          console.log(trades)
+        }
+      }
+
+      cursor.onerror = event => console.log(event.target.error.name)
+    }
+  </script>
+
+</body>
+
+</html>
