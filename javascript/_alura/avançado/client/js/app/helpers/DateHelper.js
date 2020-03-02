@@ -10,12 +10,10 @@ class DateHelper {
 
   static stringToDate(text) {
 
-    if (/^\d{4}-\d{2}-\d{2}$/.test(text)) {
-      return new Date(...text.split('-').map((item,index) => item - index % 2))
+    if (/\d{2}\/\d{2}\/\d{4}/.test(text)) {
+      return new Date(...text.split('/').reverse().map((item, index) => item - index % 2))
     } else {
-      throw new Error('Date must be in the format YYYY-MM-DD')
+      throw new Error('Date must be in the format DD-MM-YYYY')
     }
-
   }
-
 }

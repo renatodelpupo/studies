@@ -23,9 +23,14 @@ class TradeController {
 
   add(event) {
     event.preventDefault()
-    this._tradeList.add(this._createTrade())
-    this._cleanForm()
-    this._message.text = 'Trading successfully added'
+
+    try {
+      this._tradeList.add(this._createTrade())
+      this._message.text = 'Trading successfully added'
+      this._cleanForm()
+    } catch (error) {
+      this._message.text = error
+    }
   }
 
   _cleanForm() {
