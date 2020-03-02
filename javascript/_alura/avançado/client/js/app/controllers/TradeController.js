@@ -3,6 +3,7 @@ class TradeController {
   constructor() {
     const $ = document.querySelector.bind(document)
 
+    this._currentOrder = ''
     this._inputAmount = $('#amount')
     this._inputDate = $('#date')
     this._inputPrice = $('#price')
@@ -10,7 +11,7 @@ class TradeController {
     this._tradeList = new Bind(
       new TradeList(),
       new TradeView($('#trade-view')),
-      'add', '_erase', 'order'
+      'add', '_erase', 'order', 'orderRevert'
     )
 
     this._message = new Bind(
@@ -57,6 +58,13 @@ class TradeController {
   }
 
   order(column) {
-    this._tradeList.order((a, b) => a[column] - b[column])
+
+    if (this._currentOrder == column) {
+      this._tradeList.orderRevert()
+    } else {
+      this._tradeList.order((a, b) => a[column] - b[column])
+    }
+
+    this._currentOrder = column
   }
 }

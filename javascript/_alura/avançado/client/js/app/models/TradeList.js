@@ -23,4 +23,8 @@ class TradeList {
   order(condition) {
     this._trades.sort(condition)
   }
+
+  orderRevert() {
+    this._trades.reverse()
+  }
 }
