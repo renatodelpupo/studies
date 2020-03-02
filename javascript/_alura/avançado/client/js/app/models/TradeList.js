@@ -19,4 +19,8 @@ class TradeList {
   get totalLength() {
     return this._trades.reduce((acc, cur) => acc + cur.subtotal, 0)
   }
+
+  order(condition) {
+    this._trades.sort(condition)
+  }
 }

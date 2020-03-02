@@ -10,7 +10,7 @@ class TradeController {
     this._tradeList = new Bind(
       new TradeList(),
       new TradeView($('#trade-view')),
-      'add', '_erase'
+      'add', '_erase', 'order'
     )
 
     this._message = new Bind(
@@ -54,5 +54,9 @@ class TradeController {
       trades.forEach(trade => this._tradeList.add(trade))
       this._message.text = 'Trades imported successfully'
     }).catch(error => this._message.text = error)
+  }
+
+  order(column) {
+    this._tradeList.order((a, b) => a[column] - b[column])
   }
 }
