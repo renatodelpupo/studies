@@ -1,6 +1,7 @@
 const dbName = 'aluraframe'
 const stores = ['trades']
 const version = 1
+let close = null
 let connection = null
 
 const ConnectionFactory = (function() {
@@ -19,7 +20,14 @@ const ConnectionFactory = (function() {
         }
 
         openRequest.onsuccess = event => {
-          if (!connection) connection = event.target.result
+          if (!connection) {
+            connection = event.target.result
+            close = connection.close.bind(connection)
+            connection.close = function () {
+              throw new Error('You cannot directly close the connection')
+            }
+          }
+
           resolve(connection)
         }
 
@@ -35,6 +43,13 @@ const ConnectionFactory = (function() {
         if (connection.objectStoreNames.contains(store)) connection.deleteObjectStore(store)
         connection.createObjectStore(store, { autoIncrement: true })
       })
+    }
+
+    static closeConnection() {
+      if (connection) {
+        close()
+        connection = null
+      }
     }
   }
 })()
