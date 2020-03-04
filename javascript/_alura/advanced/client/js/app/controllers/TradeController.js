@@ -24,13 +24,18 @@ class TradeController {
   add(event) {
     event.preventDefault()
 
-    try {
-      this._tradeList.add(this._createTrade())
-      this._message.text = 'Trading successfully added'
-      this._cleanForm()
-    } catch (error) {
-      this._message.text = error
-    }
+    ConnectionFactory
+      .getConnection()
+      .then(connection => {
+        const trade = this._createTrade()
+        new TradeDao(connection)
+          .add(trade)
+          .then(() => {
+            this._tradeList.add(trade)
+            this._message.text = 'Trade successfully added'
+            this._cleanForm()
+          })
+      }).catch(error => this._message.text = error)
   }
 
   _cleanForm() {
@@ -47,9 +52,9 @@ class TradeController {
 
   _createTrade() {
     return new Trade(
-      this._inputAmount.value,
+      Number(this._inputAmount.value),
       DateHelper.stringToDate(this._inputDate.value),
-      this._inputPrice.value
+      Number(this._inputPrice.value)
     )
   }
 
