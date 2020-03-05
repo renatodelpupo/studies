@@ -19,6 +19,16 @@ class TradeController {
       new MessageView($('#message-view')),
       'text'
     )
+
+    ConnectionFactory
+      .getConnection()
+      .then(connection => new TradeDao(connection))
+      .then(dao => dao.listAll())
+      .then(trades => trades.forEach(trade => this._tradeList.add(trade)))
+      .catch(error => {
+        console.log(error)
+        this._message.text = error
+      })
   }
 
   add(event) {
@@ -46,8 +56,14 @@ class TradeController {
   }
 
   _cleanTable() {
-    this._tradeList._erase()
-    this._message.text = 'Trading history cleaned'
+    ConnectionFactory
+      .getConnection()
+      .then(connection => new TradeDao(connection))
+      .then(dao => dao.eraseAll())
+      .then(message => {
+        this._message.text = message
+        this._tradeList._erase()
+      })
   }
 
   _createTrade() {
