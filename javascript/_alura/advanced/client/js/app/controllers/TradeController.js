@@ -77,10 +77,19 @@ class TradeController {
   importTrades() {
     let service = new TradeService()
 
-    service.importAllTrades().then(trades => {
-      trades.forEach(trade => this._tradeList.add(trade))
-      this._message.text = 'Trades imported successfully'
-    }).catch(error => this._message.text = error)
+    service.importAllTrades()
+      .then(trades =>
+        trades.filter(trade =>
+          !this._tradeList.trades.some(previousTrade =>
+            JSON.stringify(trade) == JSON.stringify(previousTrade)
+          )
+        )
+      )
+      .then(trades => {
+        trades.forEach(trade => this._tradeList.add(trade))
+        this._message.text = 'Trades imported successfully'
+      })
+      .catch(error => this._message.text = error)
   }
 
   order(column) {
