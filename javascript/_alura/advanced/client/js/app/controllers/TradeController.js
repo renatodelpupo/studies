@@ -29,6 +29,10 @@ class TradeController {
         console.log(error)
         this._message.text = error
       })
+
+    setInterval(() => {
+      this.importTrades()
+    }, 3000)
   }
 
   add(event) {
@@ -85,10 +89,7 @@ class TradeController {
           )
         )
       )
-      .then(trades => {
-        trades.forEach(trade => this._tradeList.add(trade))
-        this._message.text = 'Trades imported successfully'
-      })
+      .then(trades => trades.forEach(trade => this._tradeList.add(trade)))
       .catch(error => this._message.text = error)
   }
 
