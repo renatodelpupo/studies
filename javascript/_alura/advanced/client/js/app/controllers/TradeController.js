@@ -20,19 +20,7 @@ class TradeController {
       'text'
     )
 
-    ConnectionFactory
-      .getConnection()
-      .then(connection => new TradeDao(connection))
-      .then(dao => dao.listAll())
-      .then(trades => trades.forEach(trade => this._tradeList.add(trade)))
-      .catch(error => {
-        console.log(error)
-        this._message.text = error
-      })
-
-    setInterval(() => {
-      this.importTrades()
-    }, 3000)
+    this._init()
   }
 
   add(event) {
@@ -91,6 +79,22 @@ class TradeController {
       )
       .then(trades => trades.forEach(trade => this._tradeList.add(trade)))
       .catch(error => this._message.text = error)
+  }
+
+  _init() {
+    ConnectionFactory
+      .getConnection()
+      .then(connection => new TradeDao(connection))
+      .then(dao => dao.listAll())
+      .then(trades => trades.forEach(trade => this._tradeList.add(trade)))
+      .catch(error => {
+        console.log(error)
+        this._message.text = error
+      })
+
+    setInterval(() => {
+      this.importTrades()
+    }, 3000)
   }
 
   order(column) {
