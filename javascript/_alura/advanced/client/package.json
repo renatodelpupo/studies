@@ -1,0 +1,18 @@
+{
+  "name": "client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "babel-cli": "^6.10.1",
+    "babel-preset-es2015": "^6.9.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "build": "babel js/src -d js/public --source-maps",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "babel js/src -d js/public --source-maps --watch"
+  },
+  "author": "",
+  "license": "ISC"
+}
