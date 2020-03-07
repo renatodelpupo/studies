@@ -24,4 +24,14 @@ class Trade {
     return this._amount * this._price
   }
 
+  isEquals(objectToCompare) {
+    // Total criteria
+    // return JSON.stringify(this) == JSON.stringify(objectToCompare)
+
+    // Specific criteria
+    return (
+      this._date.getTime() == objectToCompare._date.getTime() &&
+      this._price == objectToCompare._price
+    )
+  }
 }

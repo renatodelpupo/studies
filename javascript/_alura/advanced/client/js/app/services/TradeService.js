@@ -4,6 +4,41 @@ class TradeService {
     this.http = new HttpService()
   }
 
+  add(trade) {
+    return ConnectionFactory
+      .getConnection()
+      .then(connection => new TradeDao(connection))
+      .then(dao => dao.add(trade))
+      .then(() => 'Trade successfully added')
+      .catch(error => {
+        throw new Error("Failed to add trades")
+      })
+  }
+
+  clean() {
+    return ConnectionFactory
+      .getConnection()
+      .then(connection => new TradeDao(connection))
+      .then(dao => dao.eraseAll())
+      .then(() => 'Trade successfully cleaned')
+      .catch(error => {
+        console.log(error)
+        throw new Error('Failed to clean trades')
+      })
+  }
+
+  import(currentList) {
+    return this.importWeeklyTrades()
+      .then(trades =>
+        trades.filter(trade =>
+          !currentList.some(previousTrade => trade.isEquals(previousTrade)))
+      )
+      .catch(error => {
+        console.log(error)
+        throw new Error("Negotiation could not be imported")
+      })
+  }
+
   importWeeklyTrades() {
     return this.http
       .get('trades/week')
@@ -40,5 +75,16 @@ class TradeService {
       this.importPreviousTrades(),
       this.importOldTrades()
     ]).then(period => period.reduce((data, period) => data.concat(period), [])).catch(error => new Error(error))
+  }
+
+  list() {
+    return ConnectionFactory
+      .getConnection()
+      .then(connection => new TradeDao(connection))
+      .then(dao => dao.listAll())
+      .catch(error => {
+        console.log(error)
+        throw new Error('Failed to get trades')
+      })
   }
 }

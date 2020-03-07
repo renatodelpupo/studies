@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Promise sync and async</title>
+</head>
+
+<body style="background-color: #1e1e1e">
+  <script>
+    function a(fail) {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          if (fail) {
+            reject('PROMISE A FAILED')
+          } else {
+            console.log('PROMISE A RESOLVED')
+            resolve('A DATA')
+          }
+        }, 2000)
+      })
+    }
+
+    function b(fail) {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          if (fail) {
+            reject('PROMISE B FAILED')
+          } else {
+            console.log('PROMISE B RESOLVED')
+            resolve('B DATA')
+          }
+        }, 1000)
+      })
+    }
+
+    function c(fail) {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          if (fail) {
+            reject('PROMISE C FAILED')
+          } else {
+            console.log('PROMISE C RESOLVED')
+            resolve('C DATA')
+          }
+        }, 500)
+      })
+    }
+
+    function testOrdered() {
+      a()
+        .then(resolve => b())
+        .then(resolve => c(true))
+        .catch(error => console.log(error))
+    }
+
+    function testUnordered() {
+      Promise
+        .all([a(), b(), c(true)])
+        .then(resultArrau => console.log(resultArrau))
+        .catch(someError => console.log(someError))
+    }
+  </script>
+</body>

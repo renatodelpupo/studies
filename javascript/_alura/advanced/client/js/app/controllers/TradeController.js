@@ -20,23 +20,21 @@ class TradeController {
       'text'
     )
 
+    this._service = new TradeService()
     this._init()
   }
 
   add(event) {
     event.preventDefault()
 
-    ConnectionFactory
-      .getConnection()
-      .then(connection => {
-        const trade = this._createTrade()
-        new TradeDao(connection)
-          .add(trade)
-          .then(() => {
-            this._tradeList.add(trade)
-            this._message.text = 'Trade successfully added'
-            this._cleanForm()
-          })
+    let trade = this._createTrade()
+
+    new TradeService()
+      .add(trade)
+      .then(message => {
+        this._tradeList.add(trade)
+        this._message.text = message
+        this._cleanForm()
       }).catch(error => this._message.text = error)
   }
 
@@ -58,6 +56,16 @@ class TradeController {
       })
   }
 
+  _cleanTable() {
+    new TradeService()
+      .clean()
+      .then(message => {
+        this._message.text = message
+        this._tradeList._erase()
+      })
+      .catch(error => this._message.text = error)
+  }
+
   _createTrade() {
     return new Trade(
       Number(this._inputAmount.value),
@@ -67,21 +75,30 @@ class TradeController {
   }
 
   importTrades() {
-    let service = new TradeService()
-
-    service.importAllTrades()
-      .then(trades =>
-        trades.filter(trade =>
-          !this._tradeList.trades.some(previousTrade =>
-            JSON.stringify(trade) == JSON.stringify(previousTrade)
-          )
-        )
-      )
-      .then(trades => trades.forEach(trade => this._tradeList.add(trade)))
+    this._service
+      .import(this._tradeList.trades)
+      .then(trades => trades.forEach(trade => {
+        this._tradeList.add(trade)
+        this._message.text = 'Trades successfully imported'
+      }))
       .catch(error => this._message.text = error)
   }
 
   _init() {
+    this._service
+      .list()
+      .then(trades =>
+        trades.forEach(trade =>
+          this._tradeList.add(trade)))
+      .catch(error => {
+        console.log(error)
+        this._message.text = error
+      })
+
+    setInterval(() => {
+      this.importTrades()
+    }, 3000)
+
     ConnectionFactory
       .getConnection()
       .then(connection => new TradeDao(connection))
