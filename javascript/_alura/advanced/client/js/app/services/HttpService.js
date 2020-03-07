@@ -1,43 +1,21 @@
 class HttpService {
 
   get(url) {
-    return new Promise((resolve, reject) => {
-      const xhr = new XMLHttpRequest()
-      xhr.open('GET', url)
+    return fetch(url)
+      .then(res => this._handleErrors(res))
+      .then(res => res.json())
+  }
 
-      xhr.onreadystatechange = () => {
-        if (xhr.readyState == 4) {
-          if (xhr.status == 200) {
-            const responseText = JSON.parse(xhr.responseText)
-            resolve(responseText)
-          } else {
-            console.log(xhr.responseText)
-            reject(xhr.responseText)
-          }
-        }
-      }
-
-      xhr.send()
-    })
+  _handleErrors(res) {
+    if (!res.ok) throw new Error(res.statusText)
+    return res
   }
 
   post(url, data) {
-    return new Promise((resolve, reject) => {
-      const xhr = new XMLHttpRequest()
-      xhr.open('POST', url, true)
-      xhr.setRequestHeader('Content-Type', 'application/json')
-
-      xhr.onreadystatechange = () => {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-          if (xhr.status === 200) {
-            resolve(JSON.parse(xhr.responseText))
-          } else {
-            reject(xhr.responseText)
-          }
-        }
-      }
-
-      xhr.send(JSON.stringify(data))
-    })
+    return fetch(url, {
+      headers: { 'Content-Type': 'application/json' },
+      method: 'POST',
+      body: JSON.stringify(data)
+    }).then(res => this._handleErrors(res))
   }
 }
