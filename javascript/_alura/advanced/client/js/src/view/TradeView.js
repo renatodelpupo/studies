@@ -1,17 +1,28 @@
+import { currentInstance } from '../controllers/TradeController'
 import { DateHelper } from '../helpers/DateHelper'
 import { View } from './View'
 
 export class TradeView extends View {
+
+  constructor(element) {
+    super(element)
+
+    element.addEventListener('click', function (event) {
+      if (event.target.nodeName == 'TH') {
+        currentInstance().order(event.target.textContent.toLowerCase())
+      }
+    })
+  }
 
   template(model) {
     return `
       <table class="table table-hover table-bordered">
         <thead>
           <tr>
-            <th onclick="tradeController.order('date')">Date</th>
-            <th onclick="tradeController.order('amount')">Amount</th>
-            <th onclick="tradeController.order('price')">Price</th>
-            <th onclick="tradeController.order('subtotal')">Subtotal</th>
+            <th>Date</th>
+            <th>Amount</th>
+            <th>Price</th>
+            <th>Subtotal</th>
           </tr>
         </thead>
 

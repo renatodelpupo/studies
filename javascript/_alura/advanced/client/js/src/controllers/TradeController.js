@@ -1,3 +1,5 @@
+import { ConnectionFactory } from '../services/ConnectionFactory'
+import { TradeDao } from '../DAO/TradeDao'
 import { TradeList } from '../models/TradeList'
 import { Message } from '../models/Message'
 import { TradeView } from '../view/TradeView'
@@ -5,9 +7,8 @@ import { MessageView } from '../view/MessageView'
 import { TradeService } from '../services/TradeService'
 import { DateHelper } from '../helpers/DateHelper'
 import { Bind } from '../helpers/Bind'
-import { Trade } from '../models/Trade'
 
-export class TradeController {
+class TradeController {
 
   constructor() {
     const $ = document.querySelector.bind(document)
@@ -133,4 +134,10 @@ export class TradeController {
 
     this._currentOrder = column
   }
+}
+
+const tradeController = new TradeController()
+
+export function currentInstance() {
+  return tradeController
 }
