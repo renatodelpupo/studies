@@ -1,4 +1,4 @@
-class Trade {
+export class Trade {
 
   constructor(amount, date, price) {
     this._amount = amount

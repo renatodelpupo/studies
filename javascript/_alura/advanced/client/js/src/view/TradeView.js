@@ -1,4 +1,7 @@
-class TradeView extends View {
+import { DateHelper } from '../helpers/DateHelper'
+import { View } from './View'
+
+export class TradeView extends View {
 
   template(model) {
     return `
@@ -32,5 +35,4 @@ class TradeView extends View {
       </table>
     `
   }
-
 }
