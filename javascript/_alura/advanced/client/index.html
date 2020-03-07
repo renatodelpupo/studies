@@ -46,30 +46,10 @@
 
   <div id="trade-view"></div>
 
-  <script src="./js/public/DAO/TradeDao.js"></script>
-
-  <script src="./js/public/helpers/DateHelper.js"></script>
-  <script src="./js/public/helpers/Bind.js"></script>
-
-  <script src="./js/public/models/Message.js"></script>
-  <script src="./js/public/models/Trade.js"></script>
-  <script src="./js/public/models/TradeList.js"></script>
-
-  <script src="./js/public/view/View.js"></script>
-  <script src="./js/public/view/MessageView.js"></script>
-  <script src="./js/public/view/TradeView.js"></script>
-
-  <script src="./js/public/controllers/TradeController.js"></script>
-
-  <script src="js/public/services/ConnectionFactory.js"></script>
-  <script src="js/public/services/HttpService.js"></script>
-  <script src="js/public/services/ProxyFactory.js"></script>
-  <script src="js/public/services/TradeService.js"></script>
-
+  <script src="node_modules/systemjs/dist/system.js"></script>
   <script>
-
-    let tradeController = new TradeController()
-
+    System.defaultJSExtensions = true
+    System.import('js/public/boot').catch(err => console.error(err))
   </script>
 
 </body>
