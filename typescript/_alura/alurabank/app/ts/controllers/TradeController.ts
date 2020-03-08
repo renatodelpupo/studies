@@ -3,11 +3,14 @@ class TradeController {
   private _inputAmount: HTMLInputElement
   private _inputDate: HTMLInputElement
   private _inputPrice: HTMLInputElement
+  private _trades: Trades = new Trades()
+  private _tradesView = new TradesView('#tradesView')
 
   constructor() {
     this._inputAmount = <HTMLInputElement>document.querySelector('#amount')
     this._inputDate = <HTMLInputElement>document.querySelector('#date')
     this._inputPrice = <HTMLInputElement>document.querySelector('#price')
+    this._tradesView.update(this._trades)
   }
 
   add(event: Event) {
@@ -19,6 +22,7 @@ class TradeController {
       Number(this._inputPrice.value)
     )
 
-    console.log(trade)
+    this._trades.add(trade)
+    this._tradesView.update(this._trades)
   }
 }
