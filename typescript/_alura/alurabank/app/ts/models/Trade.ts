@@ -1,14 +1,6 @@
 class Trade {
 
-  private _amount
-  private _date
-  private _price
-
-  constructor(amount, date, price) {
-    this._amount = amount
-    this._date = date
-    this._price = price
-  }
+  constructor(private _amount: number, private _date: Date, private _price: number) { }
 
   get amount() {
     return this._amount

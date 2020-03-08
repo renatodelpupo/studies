@@ -1,2 +1,5 @@
-const trade = new Trade(2, new Date(), 100)
-console.log(trade)
+const controller = new TradeController()
+
+document
+  .querySelector('.form')
+  .addEventListener('submit', controller.add.bind(controller))
