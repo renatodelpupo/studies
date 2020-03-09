@@ -1,28 +1,43 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1 v-text="title" />
+    <AppInput :service="promotion" @send="findPromotion()" />
+    <AppInput :service="voucher" @send="findVoucher()" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import AppInput from './components/input-code/input-code.vue'
+import ServicePromotion from './components/input-code/services/promotion'
+import ServiceVoucher from './components/input-code/services/voucher'
 
 export default {
   name: 'App',
+
   components: {
-    HelloWorld
-  }
+    AppInput
+  },
+
+  mixins: [ServicePromotion, ServiceVoucher],
+
+  data: () => ({
+    title: 'Component Communication'
+  })
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  * {
+    font-family: sans-serif;
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 18px;
+  }
+
+  h2 {
+    font-size: 16px;
+    margin: 0 0 .5em;
+  }
 </style>
