@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "module": "system",
     "noEmitOnError": true,
     "noImplicitAny": true,
     "outDir": "app/js",
