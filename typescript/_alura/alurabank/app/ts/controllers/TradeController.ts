@@ -3,6 +3,7 @@ class TradeController {
   private _inputAmount: HTMLInputElement
   private _inputDate: HTMLInputElement
   private _inputPrice: HTMLInputElement
+  private _messageView = new MessageView('#messageView')
   private _trades: Trades = new Trades()
   private _tradesView = new TradesView('#tradesView')
 
@@ -22,6 +23,7 @@ class TradeController {
       Number(this._inputPrice.value)
     )
 
+    this._messageView.update('Trade successfully added')
     this._trades.add(trade)
     this._tradesView.update(this._trades)
   }
