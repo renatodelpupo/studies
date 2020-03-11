@@ -1,7 +1,5 @@
-import { MessageView } from '../views/MessageView'
-import { Trade } from '../models/Trade'
-import { Trades } from '../models/Trades'
-import { TradesView } from '../views/TradesView'
+import { MessageView, TradesView } from '../views/index'
+import { Trade, Trades } from '../models/index'
 
 export class TradeController {
 
