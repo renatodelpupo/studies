@@ -1,4 +1,4 @@
-class View<T> {
+abstract class View<T> {
 
   private _element: Element
 
@@ -6,9 +6,7 @@ class View<T> {
     this._element = document.querySelector(selector)
   }
 
-  template(model: T): string {
-    throw new Error('You must implement the template method')
-  }
+  abstract template(model: T): string
 
   update(model: T) {
     this._element.innerHTML = this.template(model)
