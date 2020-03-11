@@ -1,10 +1,4 @@
-class MessageView {
-
-  private _element: Element
-
-  constructor(selector: string) {
-    this._element = document.querySelector(selector)
-  }
+class MessageView extends View {
 
   template(model: string): string {
     return `<p class="alert alert-info">${model}</p>`
