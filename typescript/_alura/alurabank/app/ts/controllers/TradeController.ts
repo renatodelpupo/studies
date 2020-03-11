@@ -1,16 +1,16 @@
 class TradeController {
 
-  private _inputAmount: HTMLInputElement
-  private _inputDate: HTMLInputElement
-  private _inputPrice: HTMLInputElement
+  private _inputAmount: JQuery
+  private _inputDate: JQuery
+  private _inputPrice: JQuery
   private _messageView = new MessageView('#messageView')
   private _trades: Trades = new Trades()
   private _tradesView = new TradesView('#tradesView')
 
   constructor() {
-    this._inputAmount = <HTMLInputElement>document.querySelector('#amount')
-    this._inputDate = <HTMLInputElement>document.querySelector('#date')
-    this._inputPrice = <HTMLInputElement>document.querySelector('#price')
+    this._inputAmount = $('#amount')
+    this._inputDate = $('#date')
+    this._inputPrice = $('#price')
     this._tradesView.update(this._trades)
   }
 
