@@ -1,4 +1,6 @@
-class Trades {
+import { Trade } from './Trade'
+
+export class Trades {
 
   private _trades: Trade[] = []
 

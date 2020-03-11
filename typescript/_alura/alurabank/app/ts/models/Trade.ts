@@ -1,4 +1,4 @@
-class Trade {
+export class Trade {
 
   constructor(private _amount: number, private _date: Date, private _price: number) { }
 

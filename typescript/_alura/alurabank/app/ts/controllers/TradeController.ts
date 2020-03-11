@@ -1,4 +1,9 @@
-class TradeController {
+import { MessageView } from '../views/MessageView'
+import { Trade } from '../models/Trade'
+import { Trades } from '../models/Trades'
+import { TradesView } from '../views/TradesView'
+
+export class TradeController {
 
   private _inputAmount: JQuery
   private _inputDate: JQuery
