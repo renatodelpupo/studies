@@ -1,4 +1,5 @@
 import { Trade } from './Trade'
+import { logExecutionTime } from '../helpers/decorators/index'
 
 export class Trades {
 
