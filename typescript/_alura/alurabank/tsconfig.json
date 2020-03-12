@@ -5,6 +5,7 @@
     "noImplicitAny": true,
     "outDir": "app/js",
     "removeComments": true,
+    "strictNullChecks": true,
     "target": "es6"
   },
   "include": [
