@@ -21,9 +21,9 @@ export class TradeController {
     event.preventDefault()
 
     const trade = new Trade(
-      Number(this._inputAmount.value),
-      new Date(this._inputDate.value.replace(/-/g, '/')),
-      Number(this._inputPrice.value)
+      Number(this._inputAmount.val()),
+      new Date(this._inputDate.val().replace(/-/g, '/')),
+      Number(this._inputPrice.val())
     )
 
     this._messageView.update('Trade successfully added')
