@@ -20,9 +20,16 @@ export class TradeController {
   add(event: Event) {
     event.preventDefault()
 
+    const date = new Date(this._inputDate.val().replace(/-/g, '/'))
+
+    if (!this._isWeekDay(date)) {
+      this._messageView.update('Trades available only on weekdays')
+      return
+    }
+
     const trade = new Trade(
       Number(this._inputAmount.val()),
-      new Date(this._inputDate.val().replace(/-/g, '/')),
+      date,
       Number(this._inputPrice.val())
     )
 
@@ -30,4 +37,18 @@ export class TradeController {
     this._trades.add(trade)
     this._tradesView.update(this._trades)
   }
+
+  private _isWeekDay(date: Date) {
+    return date.getDay() != week.saturday && date.getDay() != week.sunday
+  }
+}
+
+enum week {
+  sunday,
+  monday,
+  tuesday,
+  wednesday,
+  thursday,
+  friday,
+  saturday
 }
