@@ -1,19 +1,23 @@
 import { MessageView, TradesView } from '../views/index'
 import { Trade, Trades } from '../models/index'
+import { domInject } from '../helpers/decorators/index'
 
 export class TradeController {
 
+  @domInject('#amount')
   private _inputAmount: JQuery
+
+  @domInject('#date')
   private _inputDate: JQuery
+
+  @domInject('#price')
   private _inputPrice: JQuery
+
   private _messageView = new MessageView('#messageView')
   private _trades: Trades = new Trades()
   private _tradesView = new TradesView('#tradesView')
 
   constructor() {
-    this._inputAmount = $('#amount')
-    this._inputDate = $('#date')
-    this._inputPrice = $('#price')
     this._tradesView.update(this._trades)
   }
 
