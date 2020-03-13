@@ -1,11 +1,11 @@
 form label {
   margin-right: 10px;
   margin-left: 15px;
-  color: var(--roxoWine);
+  color: var(--roxo);
 }
 
 form input {
   border-radius: 2.5px;
-  border: 1px solid var(--roxoWine);
+  border: 1px solid var(--roxo);
   padding: 5px 10px;
 }

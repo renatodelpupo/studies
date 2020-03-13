@@ -5,19 +5,19 @@
 }
 
 table th {
-  background-color: var(--roxoWine);
+  background-color: var(--roxo);
   text-align: left;
   color: white;
 }
 
 table tr {
-  border-color: var(--roxoWine);
+  border-color: var(--roxo);
 }
 
 table th,
 table td {
   padding: 5px;
-  border: 1px solid var(--roxoWine);
+  border: 1px solid var(--roxo);
 }
 
 table td b {

@@ -1,6 +1,6 @@
 
 :root {
-  --roxoWine: #9f0460;
+  --roxo: #9f0460;
 }
 
 form {
@@ -9,7 +9,7 @@ form {
   align-items: center;
   margin-bottom: 15px;
   padding: 15px;
-  border-bottom: 1px solid var(--roxoWine);
+  border-bottom: 1px solid var(--roxo);
 }
 
 /* form label:first-child {
@@ -19,7 +19,7 @@ form {
 form button {
   margin-left: 15px;
   padding: 5px 10px;
-  background-color: var(--roxoWine);
+  background-color: var(--roxo);
   border-radius: 2.5px;
   border: none;
   color: white;

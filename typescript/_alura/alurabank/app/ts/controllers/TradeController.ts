@@ -42,6 +42,10 @@ export class TradeController {
     this._tradesView.update(this._trades)
   }
 
+  importData() {
+    alert('hi')
+  }
+
   private _isWeekDay(date: Date) {
     return date.getDay() != week.saturday && date.getDay() != week.sunday
   }

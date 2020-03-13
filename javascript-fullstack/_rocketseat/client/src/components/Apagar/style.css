@@ -3,7 +3,7 @@ button.Apagar {
   display: block;
   margin:  15px auto;
   padding: 5px 15px;
-  background-color: var(--roxoWine);
+  background-color: var(--roxo);
   border: none;
   border-radius: 2.5px;
   color: white;
