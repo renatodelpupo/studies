@@ -1,4 +1,34 @@
-const rules = [
+const puzzleOneRules = [
+  {
+    correctNumbers: 1,
+    correctPositions: 1,
+    numbers: [2, 8, 9]
+  },
+  {
+    correctNumbers: 1,
+    correctPositions: 0,
+    numbers: [2, 1, 5]
+  },
+  {
+    correctNumbers: 2,
+    correctPositions: 0,
+    numbers: [9, 4, 2]
+  },
+  {
+    correctNumbers: 0,
+    correctPositions: 0,
+    numbers: [7, 3, 8]
+  },
+  {
+    correctNumbers: 1,
+    correctPositions: 0,
+    numbers: [7, 8, 4]
+  }
+]
+
+const puzzleOneAttempt = [4, 5, 9]
+
+const puzzleTwoRules = [
   {
     correctNumbers: 2,
     correctPositions: 1,
@@ -36,10 +66,12 @@ const rules = [
   }
 ]
 
-const attempt = [6, 2, 3, 7]
+const puzzleTwoAttempt = [6, 2, 3, 7]
 
-const puzzleTest = (attempt, rules) => {
+const puzzleTest = (attempt, puzzleName, rules) => {
   let errors = 0
+
+  console.group(puzzleName)
 
   rules.forEach((rule, index) => {
     const numbers = rule.numbers
@@ -56,8 +88,9 @@ const puzzleTest = (attempt, rules) => {
     if (!numbersCorrect || !positionsCorrect) errors++
   })
 
-  errors > 0 ? console.log(`The puzzle has an error`) : console.log(`The puzzle has been successfully verified`)
+  errors > 0 ? console.log(`${puzzleName} has an error`) : console.log(`${puzzleName} successfully verified`)
   console.groupEnd()
 }
 
-puzzleTest(attempt, rules)
+puzzleTest(puzzleOneAttempt, 'puzzleOne', puzzleOneRules)
+puzzleTest(puzzleTwoAttempt, 'puzzleTwo', puzzleTwoRules)
