@@ -26,8 +26,6 @@ const puzzleOneRules = [
   }
 ]
 
-const puzzleOneAttempt = [4, 5, 9]
-
 const puzzleTwoRules = [
   {
     correctNumbers: 2,
@@ -66,16 +64,11 @@ const puzzleTwoRules = [
   }
 ]
 
-const puzzleTwoAttempt = [6, 2, 3, 7]
-
-const puzzleTest = (attempt, puzzleName, rules) => {
+const puzzleTest = (attempt, rules) => {
   let errors = 0
 
-  console.group(puzzleName)
-
-  rules.forEach((rule, index) => {
+  rules.forEach((rule) => {
     const numbers = rule.numbers
-    const ruleId = index + 1
 
     const verifyNumbers = attempt.filter((attemptItem) => numbers.includes(attemptItem))
     const verifyPositions = attempt.filter((attemptItem, attemptIndex) => numbers.includes(attemptItem) && numbers.indexOf(attemptItem) === attemptIndex)
@@ -83,14 +76,26 @@ const puzzleTest = (attempt, puzzleName, rules) => {
     const numbersCorrect = verifyNumbers.length === rule.correctNumbers
     const positionsCorrect = verifyPositions.length === rule.correctPositions
 
-    numbersCorrect && positionsCorrect ? console.log(`Rule ${ruleId} correct`) : console.log(`Rule ${ruleId} incorrect`)
-
     if (!numbersCorrect || !positionsCorrect) errors++
   })
 
-  errors > 0 ? console.log(`${puzzleName} has an error`) : console.log(`${puzzleName} successfully verified`)
-  console.groupEnd()
+  return errors === 0
 }
 
-puzzleTest(puzzleOneAttempt, 'puzzleOne', puzzleOneRules)
-puzzleTest(puzzleTwoAttempt, 'puzzleTwo', puzzleTwoRules)
+const puzzleVerification = puzzleRules => {
+  const _puzzleRulesLength = puzzleRules[0].numbers.length
+  const attemptMax = Math.pow(10, _puzzleRulesLength) - 1
+  const attemptMin = Math.pow(10, _puzzleRulesLength - 1)
+
+  for (puzzleAttempt = attemptMin; puzzleAttempt <= attemptMax; puzzleAttempt++) {
+    const answer = puzzleAttempt.toString().split('').map(Number)
+
+    if (puzzleTest(answer, puzzleRules)) {
+      console.log(`The answer is ${answer}`)
+      break
+    }
+  }
+}
+
+puzzleVerification(puzzleOneRules)
+puzzleVerification(puzzleTwoRules)
