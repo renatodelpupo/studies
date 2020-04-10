@@ -8,6 +8,8 @@ const rule7 = [4, 6, 7, 9]
 
 const attempt = [6, 2, 3, 7]
 
+// Testing for numbers occurrences in puzzle 2
+
 if (attempt.filter(number => rule1.includes(number)).length == 2) {
   console.log('Successful check one')
 } else {
@@ -49,3 +51,61 @@ if (attempt.filter(number => rule7.includes(number)).length == 2) {
 } else {
   console.log('Fail check seven')
 }
+
+// Testing for numbers positions in puzzle 2
+
+const checkRule1 = attempt.filter((attemptItem, attemptItemIndex) => {
+  if (rule1.includes(attemptItem)) {
+    return rule1.indexOf(attemptItem) == attemptItemIndex
+  }
+})
+
+checkRule1.length == 1 ? console.log('Successful check one') : console.log('Fail check one')
+
+const checkRule2 = attempt.filter((attemptItem, attemptItemIndex) => {
+  if (rule2.includes(attemptItem)) {
+    return rule2.indexOf(attemptItem) == attemptItemIndex
+  }
+})
+
+checkRule2.length == 0 ? console.log('Successful check two') : console.log('Fail check two')
+
+const checkRule3 = attempt.filter((attemptItem, attemptItemIndex) => {
+  if (rule3.includes(attemptItem)) {
+    return rule3.indexOf(attemptItem) == attemptItemIndex
+  }
+})
+
+checkRule3.length == 0 ? console.log('Successful check three') : console.log('Fail check three')
+
+const checkRule4 = attempt.filter((attemptItem, attemptItemIndex) => {
+  if (rule4.includes(attemptItem)) {
+    return rule4.indexOf(attemptItem) == attemptItemIndex
+  }
+})
+
+checkRule4.length == 1 ? console.log('Successful check four') : console.log('Fail check four')
+
+const checkRule5 = attempt.filter((attemptItem, attemptItemIndex) => {
+  if (rule5.includes(attemptItem)) {
+    return rule5.indexOf(attemptItem) == attemptItemIndex
+  }
+})
+
+checkRule5.length == 0 ? console.log('Successful check five') : console.log('Fail check five')
+
+const checkRule6 = attempt.filter((attemptItem, attemptItemIndex) => {
+  if (rule6.includes(attemptItem)) {
+    return rule6.indexOf(attemptItem) == attemptItemIndex
+  }
+})
+
+checkRule6.length == 1 ? console.log('Successful check six') : console.log('Fail check six')
+
+const checkRule7 = attempt.filter((attemptItem, attemptItemIndex) => {
+  if (rule7.includes(attemptItem)) {
+    return rule7.indexOf(attemptItem) == attemptItemIndex
+  }
+})
+
+checkRule7.length == 0 ? console.log('Successful check seven') : console.log('Fail check seven')
