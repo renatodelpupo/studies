@@ -1,0 +1,61 @@
+* {
+  -webkit-font-smoothing: antialiased;
+}
+
+:root {
+  --primary-color: #fd951f;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: #212121;
+  font-family: sans-serif;
+}
+
+h1 {
+  color: var(--primary-color);
+  font-size: 2.2rem;
+}
+
+.wrap {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 70vh;
+  justify-content: center;
+  width: 100%;
+}
+
+.search {
+  display: flex;
+  max-width: 300px;
+  width: 50%;
+}
+
+input {
+  border: 3px solid var(--primary-color);
+  border-radius: 5px;
+  color: #212121;
+  outline: none;
+  padding: 8px 16px;
+  width: 100%;
+}
+
+input:focus {
+  color: black;
+}
+
+button {
+  height: 36px;
+  background: var(--primary-color);
+  border-radius: 0 6px 6px 0;
+  border: 1px solid var(--primary-color);
+  color: #fff;
+  cursor: pointer;
+  font-size: 2rem;
+  text-align: center;
+  width: 40px;
+}
