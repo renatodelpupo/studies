@@ -7,7 +7,6 @@ public class PrimitiveTypes {
   public static void main(String[] args) {
     
     // Data output
-
     String name = "Renato";
     float score = 89.5f;    
     
@@ -18,7 +17,6 @@ public class PrimitiveTypes {
     System.out.format("Hi %s, your score is %.2f \n", name, score);
     
     // Data input 
-    
     Scanner keyboard = new Scanner(System.in);
 
     System.out.print("Type the surname: ");
@@ -26,8 +24,9 @@ public class PrimitiveTypes {
     
     System.out.print("Type the bonus: ");
     float bonus = keyboard.nextFloat();
+    float finalScore = score + bonus;
 
-    System.out.format("Hi %s %s, your score is %.2f + %.2f \n", name, surname, score, bonus);
+    System.out.format("Hi %s %s, your score is %.2f \n", name, surname, finalScore);
     
   }
   
