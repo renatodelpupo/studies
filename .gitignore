@@ -30,6 +30,9 @@ buck-out/
 */fastlane/Preview.html
 */fastlane/screenshots
 
+# Java
+**/.metadata
+
 # NetBeans
 **/nbproject
 
