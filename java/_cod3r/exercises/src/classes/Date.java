@@ -6,4 +6,8 @@ public class Date {
 	int month;
 	int year;
 
+	String getFormattedDate() {
+		return String.format("%d/%d/%d", day, month, year);
+	}
+
 }

@@ -14,7 +14,7 @@ public class ProductExample {
 		p2.price = 4.39;
 		p2.discount = 0.15;
 
-		System.out.println(p1.name);
+		System.out.println(p1.getSalePrice());
 
 	}
 }

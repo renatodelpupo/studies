@@ -9,7 +9,7 @@ public class DateExample {
 		d1.month = 11;
 		d1.year = 1912;
 
-		System.out.printf("%s/%s/%s", d1.day, d1.month, d1.year);
+		System.out.printf(d1.getFormattedDate());
 
 	}
 
