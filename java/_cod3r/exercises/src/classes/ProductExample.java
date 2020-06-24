@@ -4,10 +4,7 @@ public class ProductExample {
 
 	public static void main(String[] args) {
 
-		Product p1 = new Product();
-		p1.name = "Laptop";
-		p1.price = 3999.99;
-		p1.discount = 0.4;
+		Product p1 = new Product(0.4, "Laptop", 3999.99);
 
 		Product p2 = new Product();
 		p2.name = "Pencil";
@@ -15,6 +12,7 @@ public class ProductExample {
 		p2.discount = 0.15;
 
 		System.out.println(p1.getSalePrice());
+		System.out.println(p2.getSalePrice());
 
 	}
 }
