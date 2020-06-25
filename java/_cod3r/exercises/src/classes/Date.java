@@ -30,7 +30,8 @@ public class Date {
 	}
 
 	String getFormattedDate() {
-		return String.format("%d/%d/%d", day, month, year);
+		final String format = "%d/%d/%d";
+		return String.format(format, day, month, year);
 	}
 
 }
