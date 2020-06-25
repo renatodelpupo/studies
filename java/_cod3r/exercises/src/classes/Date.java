@@ -8,16 +8,21 @@ public class Date {
 
 	// Implicit and default constructor
 	Date() {
-		day = 1;
-		month = 1;
-		year = 1970;
+		// day = 1;
+		// month = 1;
+		// year = 1970;
+
+		this(1, 1, 1970);
+		// this() to call another constructor
 	}
 
 	// Explicit constructor
-	Date(int initialDay, int initialMonth, int initialYear) {
-		day = initialDay;
-		month = initialMonth;
-		year = initialYear;
+	Date(int day, int month, int year) {
+		this.day = day;
+		this.month = month;
+		this.year = year;
+
+		// this. to access instance variable
 	}
 
 	void Date() {
