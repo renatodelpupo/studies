@@ -2,7 +2,7 @@ package classes;
 
 public class Product {
 
-	double discount;
+	static double discount = 0.25;
 	String name;
 	double price;
 
@@ -10,8 +10,7 @@ public class Product {
 	Product() {}
 
 	// Explicit constructor
-	Product(double initialDiscount, String initialName, double initialPrice) {
-		discount = initialDiscount;
+	Product(String initialName, double initialPrice) {
 		name = initialName;
 		price = initialPrice;
 	}
