@@ -2,9 +2,9 @@ package classes;
 
 public class Date {
 
-	int day;
-	int month;
-	int year;
+	int day; // default 0
+	int month; // default 0
+	int year; // default 0
 
 	// Implicit and default constructor
 	Date() {
@@ -32,6 +32,11 @@ public class Date {
 	String getFormattedDate() {
 		final String format = "%d/%d/%d";
 		return String.format(format, day, month, year);
+	}
+
+	void Initialization() {
+		String notInitialized;
+		System.out.println(notInitialized); // Error: Local variable not initialized
 	}
 
 }
