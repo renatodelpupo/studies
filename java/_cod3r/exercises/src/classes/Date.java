@@ -36,7 +36,7 @@ public class Date {
 
 	void Initialization() {
 		String notInitialized;
-		System.out.println(notInitialized); // Error: Local variable not initialized
+		// System.out.println(notInitialized); // Error: Local variable not initialized
 	}
 
 }
