@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "optimist": "^0.6.1",
     "theo": "^8.1.5"
   }
 }
