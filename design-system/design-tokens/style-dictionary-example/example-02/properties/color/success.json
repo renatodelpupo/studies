@@ -1,0 +1,12 @@
+{
+  "color": {
+    "success": {
+      "tint": { "value": "#E5F2D9" },
+      "lighter": { "value": "#BFDEA1" },
+      "light": { "value": "#98C969" },
+      "default": { "value": "#7EBC43" },
+      "dark": { "value": "#58842F" },
+      "darker": { "value": "#324B1B" }
+    }
+  }
+}

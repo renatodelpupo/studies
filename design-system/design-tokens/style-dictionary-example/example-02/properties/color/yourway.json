@@ -1,0 +1,9 @@
+{
+  "color": {
+    "yourway": {
+      "tint": { "value": "#DAD4E7" },
+      "light": { "value": "#6F55A8" },
+      "default": { "value": "#573D90" }
+    }
+  }
+}

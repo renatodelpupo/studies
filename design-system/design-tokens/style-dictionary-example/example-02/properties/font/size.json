@@ -1,0 +1,15 @@
+{
+  "font": {
+    "size": {
+      "huge": { "value": "44px" },
+      "xxxl": { "value": "36px" },
+      "xxl": { "value": "28px" },
+      "xl": { "value": "20px" },
+      "lg": { "value": "18px" },
+      "md": { "value": "16px" },
+      "sm": { "value": "14px" },
+      "xs": { "value": "12px" },
+      "xxs": { "value": "10px" }
+    }
+  }
+}

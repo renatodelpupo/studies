@@ -1,0 +1,176 @@
+{
+  "border": {
+    "radius": {
+      "none": { "value": "0px" },
+      "SM": { "value": "4px" },
+      "md": { "value": "8px" },
+      "lg": { "value": "18px" },
+      "pill": { "value": "500px" },
+      "circular": { "value": "50%" }
+    },
+    "width": {
+      "none": { "value": "0px" },
+      "hairline": { "value": "1px" },
+      "thin": { "value": "2px" },
+      "thick": { "value": "4px" },
+      "heavy": { "value": "8px" }
+    }
+  },
+  "opacity": {
+    "level": {
+      "semiopaque": { "value": 0.8 },
+      "intense": { "value": 0.64 },
+      "medium": { "value": 0.32 },
+      "light": { "value": 0.16 },
+      "semitransparent": { "value": 0.08 }
+    }
+  },
+  "spacing": {
+    "inset": {
+      "quarck": { "value": "4px" },
+      "nano": { "value": "8px" },
+      "xs": { "value": "16px" },
+      "sm": { "value": "24px" },
+      "md": { "value": "32px" },
+      "lg": { "value": "40px" }
+    },
+    "offset": {
+      "quarck": { "value": "4px" },
+      "nano": { "value": "8px" },
+      "xxxs": { "value": "16px" },
+      "xxs": { "value": "24px" },
+      "xs": { "value": "32px" },
+      "sm": { "value": "40px" },
+      "md": { "value": "48px" },
+      "xl": { "value": "64px" },
+      "xxl": { "value": "80px" }
+    }
+  },
+  "font": {
+    "family": {
+      "highlight": { "value": "Neo Sans W1G" },
+      "base": { "value": "Lato" }
+    },
+    "weight": {
+      "Xbold": { "value": 900 },
+      "bold": { "value": 700 },
+      "Medium": { "value": 500 },
+      "regular": { "value": 300 },
+      "light": { "value": 100 }
+    },
+    "size": {
+      "huge": { "value": "44px" },
+      "xxxl": { "value": "36px" },
+      "xxl": { "value": "28px" },
+      "xl": { "value": "20px" },
+      "lg": { "value": "18px" },
+      "md": { "value": "16px" },
+      "sm": { "value": "14px" },
+      "xs": { "value": "12px" },
+      "xxs": { "value": "10px" }
+    }
+  },
+  "line": {
+    "height": {
+      "1": { "value": "8px" },
+      "2": { "value": "16px" },
+      "3": { "value": "24px" },
+      "4": { "value": "32px" },
+      "5": { "value": "40px" },
+      "6": { "value": "48px" },
+      "7": { "value": "56px" },
+      "8": { "value": "64px" },
+      "9": { "value": "72px" },
+      "10": { "value": "80px" }
+    }
+  },
+  "color": {
+    "tannat": {
+      "tint": { "value": "#F3CDE0" },
+      "light": { "value": "#D14B8F" },
+      "default": { "value": "#C81A78" },
+      "dark": { "value": "#A9095F" },
+      "darker": { "value": "#3C214B" },
+      "neutral": { "value": "#514F62" }
+    },
+    "sauvignon": {
+      "tint": { "value": "#F5D6DC" },
+      "light": { "value": "#F27292" },
+      "default": { "value": "#EE3E80" },
+      "dark": { "value": "#CC1A5D" },
+      "darker": { "value": "#69042C" },
+      "neutral": { "value": "#6C5153" }
+    },
+    "tavel": {
+      "tint": { "value": "#FDE8D9" },
+      "light": { "value": "#F9B950" },
+      "default": { "value": "#F79552" },
+      "dark": { "value": "#C6621E" },
+      "darker": { "value": "#7B3400" },
+      "neutral": { "value": "#6D5E4E" }
+    },
+    "chenin": {
+      "tint": { "value": "#FCDDD7" },
+      "light": { "value": "#F8971D" },
+      "default": { "value": "#F26649" },
+      "dark": { "value": "#C13B1F" },
+      "darker": { "value": "#69042C" },
+      "neutral": { "value": "#6C5153" }
+    },
+    "pinot": { "noir": { "value": "#5C594E" } },
+    "chardonnay": {
+      "tint": { "value": "#D5E9E2" },
+      "light": { "value": "#4FBFA5" },
+      "default": { "value": "#00B495" },
+      "dark": { "value": "#00826B" },
+      "darker": { "value": "#005154" },
+      "neutral": { "value": "#496161" }
+    },
+    "yourway": {
+      "tint": { "value": "#DAD4E7" },
+      "light": { "value": "#6F55A8" },
+      "default": { "value": "#573D90" }
+    },
+    "ambar": {
+      "tint": { "value": "#F7E2CE" },
+      "carignan": { "value": "#DD7D1E" }
+    },
+    "tawny": { "gold": { "value": "#FFDD7F" } },
+    "success": {
+      "tint": { "value": "#E5F2D9" },
+      "lighter": { "value": "#BFDEA1" },
+      "light": { "value": "#98C969" },
+      "default": { "value": "#7EBC43" },
+      "dark": { "value": "#58842F" },
+      "darker": { "value": "#324B1B" }
+    },
+    "warning": {
+      "tint": { "value": "#FCEFD9" },
+      "lighter": { "value": "#F7D7A0" },
+      "light": { "value": "#F2BF67" },
+      "default": { "value": "#EFAF41" },
+      "dark": { "value": "#A77B2E" },
+      "darker": { "value": "#60461A" }
+    },
+    "error": {
+      "tint": { "value": "#FBDEDD" },
+      "lighter": { "value": "#F6ADAB" },
+      "light": { "value": "#F07C78" },
+      "default": { "value": "#EC5B56" },
+      "dark": { "value": "#A5403C" },
+      "darker": { "value": "#5E2422" }
+    },
+    "gray": {
+      "lightest": { "value": "#ffffff" },
+      "light": { "value": "#F1F1F1" },
+      "mediumlight": { "value": "#CCCCCC" },
+      "medium": { "value": "#888888" },
+      "mediumdark": { "value": "#555555" },
+      "dark": { "value": "#333333" },
+      "darkest": { "value": "#111111" },
+      "background": { "value": "#F5F5F5" },
+      "border": { "value": "#EAEAEA" },
+      "over": { "value": "#E6E6E6" }
+    }
+  }
+}

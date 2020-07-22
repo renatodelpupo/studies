@@ -1,0 +1,12 @@
+{
+  "color": {
+    "sauvignon": {
+      "tint": { "value": "#F5D6DC" },
+      "light": { "value": "#F27292" },
+      "default": { "value": "#EE3E80" },
+      "dark": { "value": "#CC1A5D" },
+      "darker": { "value": "#69042C" },
+      "neutral": { "value": "#6C5153" }
+    }
+  }
+}

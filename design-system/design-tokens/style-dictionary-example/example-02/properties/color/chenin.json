@@ -1,0 +1,12 @@
+{
+  "color": {
+    "chenin": {
+      "tint": { "value": "#FCDDD7" },
+      "light": { "value": "#F8971D" },
+      "default": { "value": "#F26649" },
+      "dark": { "value": "#C13B1F" },
+      "darker": { "value": "#69042C" },
+      "neutral": { "value": "#6C5153" }
+    }
+  }
+}

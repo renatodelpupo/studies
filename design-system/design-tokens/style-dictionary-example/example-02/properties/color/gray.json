@@ -1,0 +1,16 @@
+{
+  "color": {
+    "gray": {
+      "lightest": { "value": "#ffffff" },
+      "light": { "value": "#F1F1F1" },
+      "mediumlight": { "value": "#CCCCCC" },
+      "medium": { "value": "#888888" },
+      "mediumdark": { "value": "#555555" },
+      "dark": { "value": "#333333" },
+      "darkest": { "value": "#111111" },
+      "background": { "value": "#F5F5F5" },
+      "border": { "value": "#EAEAEA" },
+      "over": { "value": "#E6E6E6" }
+    }
+  }
+}

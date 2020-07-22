@@ -1,0 +1,12 @@
+{
+  "color": {
+    "tavel": {
+      "tint": { "value": "#FDE8D9" },
+      "light": { "value": "#F9B950" },
+      "default": { "value": "#F79552" },
+      "dark": { "value": "#C6621E" },
+      "darker": { "value": "#7B3400" },
+      "neutral": { "value": "#6D5E4E" }
+    }
+  }
+}

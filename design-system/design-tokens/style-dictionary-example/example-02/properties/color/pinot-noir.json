@@ -1,0 +1,14 @@
+{
+  "color": {
+    "pinot": {
+      "noir": {
+        "tint": { "value": "#E9E2D2" },
+        "light": { "value": "#C4BC86" },
+        "default": { "value": "#B09C56" },
+        "dark": { "value": "#8E7725" },
+        "darker": { "value": "#574400" },
+        "neutral": { "value": "#5C594E" }
+      }
+    }
+  }
+}

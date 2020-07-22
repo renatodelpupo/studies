@@ -1,0 +1,9 @@
+{
+  "name": "wine-tokens",
+  "version": "1.0.0",
+  "main": "build.js",
+  "license": "MIT",
+  "dependencies": {
+    "style-dictionary": "^2.10.1"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "font": {
+    "weight": {
+      "xbold": { "value": 900 },
+      "bold": { "value": 700 },
+      "medium": { "value": 500 },
+      "regular": { "value": 300 },
+      "light": { "value": 100 }
+    }
+  }
+}

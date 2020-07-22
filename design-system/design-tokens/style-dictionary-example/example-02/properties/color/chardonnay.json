@@ -1,0 +1,12 @@
+{
+  "color": {
+    "chardonnay": {
+      "tint": { "value": "#D5E9E2" },
+      "light": { "value": "#4FBFA5" },
+      "default": { "value": "#00B495" },
+      "dark": { "value": "#00826B" },
+      "darker": { "value": "#005154" },
+      "neutral": { "value": "#496161" }
+    }
+  }
+}

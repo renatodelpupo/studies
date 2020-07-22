@@ -1,0 +1,12 @@
+{
+  "color": {
+    "tannat": {
+      "tint": { "value": "#F3CDE0" },
+      "light": { "value": "#D14B8F" },
+      "default": { "value": "#C81A78" },
+      "dark": { "value": "#A9095F" },
+      "darker": { "value": "#3C214B" },
+      "neutral": { "value": "#514F62" }
+    }
+  }
+}

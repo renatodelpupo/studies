@@ -1,0 +1,12 @@
+{
+  "color": {
+    "warning": {
+      "tint": { "value": "#FCEFD9" },
+      "lighter": { "value": "#F7D7A0" },
+      "light": { "value": "#F2BF67" },
+      "default": { "value": "#EFAF41" },
+      "dark": { "value": "#A77B2E" },
+      "darker": { "value": "#60461A" }
+    }
+  }
+}
