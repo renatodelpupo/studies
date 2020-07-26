@@ -2,16 +2,12 @@ package oop.inheritance.challenge;
 
 public class Sky extends Car {
 
-  int power = 20;
-
-  @Override
-  public void brake() {
-    if (currentSpeed >= power) currentSpeed -= power;
-    if (currentSpeed < power && currentSpeed != 0) currentSpeed = 0;
+  Sky() {
+    this(120);
   }
 
-  @Override
-  public void speedUp() {
-    currentSpeed += power;
+  Sky(int maxSpeed) {
+    super(maxSpeed);
+    power = 20;
   }
 }
