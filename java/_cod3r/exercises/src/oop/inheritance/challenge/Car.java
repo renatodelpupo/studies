@@ -3,8 +3,8 @@ package oop.inheritance.challenge;
 public class Car {
 
   public final int MAX_SPEED;
-  public int currentSpeed = 0;
-  protected int power = 5;
+  private int currentSpeed = 0;
+  private int power = 5;
 
   protected Car() {
     super();
@@ -21,6 +21,22 @@ public class Car {
     } else {
       currentSpeed = 0;
     }
+  }
+
+  public int getCurrentSpeed() {
+    return currentSpeed;
+  }
+
+  public int getPower() {
+    return power;
+  }
+
+  public void setCurrentSpeed(int currentSpeed) {
+    this.currentSpeed = currentSpeed;
+  }
+
+  public void setPower(int power) {
+    this.power = power;
   }
 
   public void speedUp() {

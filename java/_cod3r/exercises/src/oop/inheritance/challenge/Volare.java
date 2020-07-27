@@ -8,16 +8,16 @@ public class Volare extends Car {
 
   public Volare(int maxSpeed) {
     super(maxSpeed);
-    power = 10;
+    setPower(10);
   }
 
   @Override
   public void speedUp() {
-    if (currentSpeed <= (MAX_SPEED - power)) {
-      currentSpeed += power;
+    if (getCurrentSpeed() <= (MAX_SPEED - getPower())) {
+      setCurrentSpeed(getCurrentSpeed() + getPower());
       System.out.println("Vrummmm");
     } else {
-      currentSpeed = MAX_SPEED;
+      setCurrentSpeed(MAX_SPEED);
     }
   }
 }

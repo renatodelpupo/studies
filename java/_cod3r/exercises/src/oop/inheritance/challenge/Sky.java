@@ -8,6 +8,6 @@ public class Sky extends Car {
 
   public Sky(int maxSpeed) {
     super(maxSpeed);
-    power = 20;
+    setPower(20);
   }
 }

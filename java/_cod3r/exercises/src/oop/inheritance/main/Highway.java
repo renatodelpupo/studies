@@ -11,9 +11,9 @@ public class Highway {
     Car skyGt = new Sky(220);
     Car volare = new Volare();
 
-    System.out.println("Sky speed: " + sky.currentSpeed);
-    System.out.println("Sky GT speed: " + skyGt.currentSpeed);
-    System.out.println("Volare speed: " + volare.currentSpeed);
+    System.out.println("Sky speed: " + sky.getCurrentSpeed());
+    System.out.println("Sky GT speed: " + skyGt.getCurrentSpeed());
+    System.out.println("Volare speed: " + volare.getCurrentSpeed());
     System.out.print("\n");
 
     for (int x = 0; x < 10; x++) {
@@ -24,9 +24,9 @@ public class Highway {
       System.out.print("\n");
     }
 
-    System.out.println("Sky speed: " + sky.currentSpeed);
-    System.out.println("Sky GT speed: " + skyGt.currentSpeed);
-    System.out.println("Volare speed: " + volare.currentSpeed);
+    System.out.println("Sky speed: " + sky.getCurrentSpeed());
+    System.out.println("Sky GT speed: " + skyGt.getCurrentSpeed());
+    System.out.println("Volare speed: " + volare.getCurrentSpeed());
     System.out.print("\n");
 
     for (int x = 0; x < 7; x++) {
@@ -37,9 +37,9 @@ public class Highway {
       System.out.print("\n");
     }
 
-    System.out.println("Sky speed: " + sky.currentSpeed);
-    System.out.println("Sky GT speed: " + skyGt.currentSpeed);
-    System.out.println("Volare speed: " + volare.currentSpeed);
+    System.out.println("Sky speed: " + sky.getCurrentSpeed());
+    System.out.println("Sky GT speed: " + skyGt.getCurrentSpeed());
+    System.out.println("Volare speed: " + volare.getCurrentSpeed());
     System.out.print("\n");
   }
 }
