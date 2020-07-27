@@ -13,6 +13,7 @@ public class Highway {
 
     System.out.println("Sky speed: " + sky.getCurrentSpeed());
     System.out.println("Sky GT speed: " + skyGt.getCurrentSpeed());
+    System.out.println("Sky GT NOS brand: " + skyGt.NOSBrand());
     System.out.println("Volare speed: " + volare.getCurrentSpeed());
     System.out.print("\n");
 
