@@ -8,7 +8,7 @@ public class Highway {
 
   public static void main(String[] args) {
     Car sky = new Sky();
-    Car skyGt = new Sky(220);
+    Sky skyGt = new Sky(220);
     Car volare = new Volare();
 
     System.out.println("Sky speed: " + sky.getCurrentSpeed());
@@ -16,7 +16,9 @@ public class Highway {
     System.out.println("Volare speed: " + volare.getCurrentSpeed());
     System.out.print("\n");
 
-    for (int x = 0; x < 10; x++) {
+    skyGt.turnOnNOS();
+
+    for (int x = 0; x < 5; x++) {
       System.out.println("Speed up");
       sky.speedUp();
       skyGt.speedUp();

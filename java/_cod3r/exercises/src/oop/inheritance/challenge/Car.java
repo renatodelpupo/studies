@@ -40,8 +40,8 @@ public class Car {
   }
 
   public void speedUp() {
-    if (currentSpeed <= MAX_SPEED - power) {
-      currentSpeed += power;
+    if (currentSpeed <= MAX_SPEED - getPower()) {
+      currentSpeed += getPower();
     } else {
       currentSpeed = MAX_SPEED;
     }
