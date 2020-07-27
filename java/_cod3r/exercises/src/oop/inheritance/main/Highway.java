@@ -18,25 +18,30 @@ public class Highway {
 
     skyGt.turnOnNOS();
 
-    for (int x = 0; x < 5; x++) {
-      System.out.println("Speed up");
+    int speedUpCount = 5;
+    System.out.println("Speeding up " + speedUpCount + " times.");
+    System.out.print("\n");
+    
+    for (int x = 0; x < speedUpCount; x++) {
       sky.speedUp();
       skyGt.speedUp();
       volare.speedUp();
-      System.out.print("\n");
     }
-
+    
+    System.out.print("\n");
     System.out.println("Sky speed: " + sky.getCurrentSpeed());
     System.out.println("Sky GT speed: " + skyGt.getCurrentSpeed());
     System.out.println("Volare speed: " + volare.getCurrentSpeed());
     System.out.print("\n");
+    
+    int brakeCount = 5;
+    System.out.println("Braking " + brakeCount + " times.");
+    System.out.print("\n");
 
-    for (int x = 0; x < 7; x++) {
-      System.out.println("Brake");
+    for (int x = 0; x < brakeCount; x++) {
       sky.brake();
       skyGt.brake();
       volare.brake();
-      System.out.print("\n");
     }
 
     System.out.println("Sky speed: " + sky.getCurrentSpeed());
