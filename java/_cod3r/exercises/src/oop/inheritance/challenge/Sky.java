@@ -2,11 +2,11 @@ package oop.inheritance.challenge;
 
 public class Sky extends Car {
 
-  Sky() {
+  public Sky() {
     this(120);
   }
 
-  Sky(int maxSpeed) {
+  public Sky(int maxSpeed) {
     super(maxSpeed);
     power = 20;
   }

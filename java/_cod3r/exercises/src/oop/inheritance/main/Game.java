@@ -1,4 +1,8 @@
-package oop.inheritance;
+package oop.inheritance.main;
+
+import oop.inheritance.Direction;
+import oop.inheritance.Hero;
+import oop.inheritance.Player;
 
 public class Game {
 

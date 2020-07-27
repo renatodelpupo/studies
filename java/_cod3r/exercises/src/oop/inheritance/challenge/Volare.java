@@ -2,11 +2,11 @@ package oop.inheritance.challenge;
 
 public class Volare extends Car {
 
-  Volare() {
+  public Volare() {
     this(90);
   }
 
-  Volare(int maxSpeed) {
+  public Volare(int maxSpeed) {
     super(maxSpeed);
     power = 10;
   }

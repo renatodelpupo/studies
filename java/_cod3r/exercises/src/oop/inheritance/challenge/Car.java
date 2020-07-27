@@ -3,15 +3,15 @@ package oop.inheritance.challenge;
 public class Car {
 
   public final int MAX_SPEED;
-  int currentSpeed = 0;
-  int power = 5;
+  public int currentSpeed = 0;
+  protected int power = 5;
 
-  Car() {
+  protected Car() {
     super();
     MAX_SPEED = 100;
   }
 
-  Car(int maxSpeed) {
+  protected Car(int maxSpeed) {
     MAX_SPEED = maxSpeed;
   }
 

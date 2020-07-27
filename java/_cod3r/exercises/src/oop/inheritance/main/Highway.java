@@ -1,4 +1,8 @@
-package oop.inheritance.challenge;
+package oop.inheritance.main;
+
+import oop.inheritance.challenge.Car;
+import oop.inheritance.challenge.Sky;
+import oop.inheritance.challenge.Volare;
 
 public class Highway {
 
