@@ -7,5 +7,8 @@ public class CalcExample2 {
 
     calc = (x, y) -> x * y;
     System.out.println(calc.exec(2, 3));
+
+    System.out.println(calc.stringDefault());
+    System.out.println(Operation.stringStatic());
   }
 }
