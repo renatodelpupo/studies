@@ -10,4 +10,9 @@ public class Product {
     this.price = price;
     this.discount = discount;
   }
+
+  public String toString() {
+    double finalPrice = price * (1 - discount);
+    return name + " costs US$" + finalPrice;
+  }
 }
