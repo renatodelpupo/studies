@@ -11,7 +11,7 @@ public class Field {
   private boolean marked;
   private boolean opened;
 
-  private List<Field> borderer = new ArrayList<>();
+  private List<Field> borderers = new ArrayList<>();
 
   Field(int column, int row) {
     this.column = column;
@@ -19,6 +19,22 @@ public class Field {
   }
 
   boolean addBorderer(Field borderer) {
+    boolean checkColumn = column != borderer.column;
+    boolean checkRow = row != borderer.row;
+    boolean diagonal = checkColumn && checkRow;
 
+    int columnDiff = Math.abs(column - borderer.column);
+    int rowDiff = Math.abs(row - borderer.row);
+    int generalDiff = columnDiff + rowDiff;
+
+    if (generalDiff == 1 && !diagonal) {
+      borderers.add(borderer);
+      return true;
+    } else if (generalDiff == 2 && diagonal) {
+      borderers.add(borderer);
+      return true;
+    } else {
+      return false;
+    }
   }
 }
