@@ -3,6 +3,8 @@ package com.ndp.minesweeper.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.ndp.minesweeper.exception.ExplosionException;
+
 public class Field {
   private final int column;
   private final int row;
@@ -35,6 +37,34 @@ public class Field {
       return true;
     } else {
       return false;
+    }
+  }
+
+  boolean open() {
+    if (!opened && !marked) {
+      opened = true;
+
+      if (hasMine) {
+        throw new ExplosionException();
+      }
+
+      if (safeBorderer()) {
+        borderers.forEach(v -> v.open());
+      }
+
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  boolean safeBorderer() {
+    return borderers.stream().noneMatch(v -> v.hasMine);
+  }
+
+  void toggleMark() {
+    if (!opened) {
+      marked = !marked;
     }
   }
 }
