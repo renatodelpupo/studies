@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ndp.exercisesspringboot.models.Customer;
+import com.ndp.exercisesspringboot.model.entities.Customer;
 
 @RestController
 @RequestMapping("/customer")

@@ -1,4 +1,4 @@
-package com.ndp.exercisesspringboot.models;
+package com.ndp.exercisesspringboot.model.entities;
 
 public class Customer {
 
