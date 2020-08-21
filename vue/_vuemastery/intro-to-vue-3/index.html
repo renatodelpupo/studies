@@ -18,7 +18,8 @@
             <img :class="{ 'out-of-stock-img': !inStock }" :src="image">
           </div>
           <div class="product-info">
-            <h1>{{ product }}</h1>
+            <h1>{{ title }}</h1>
+            <p>{{ sale }}</p>
             <p v-if="inStock">In Stock</p>
             <p v-else>Out of Stock</p>
 
@@ -27,11 +28,11 @@
             </ul>
 
             <div
-              v-for="variant in variants"
+              v-for="(variant, index) in variants"
               class="color-circle"
               :key="variant.id"
               :style="{ backgroundColor: variant.color }"
-              @mouseover="updateImage(variant.image)"
+              @mouseover="updateVariant(index)"
             >
             </div>
 
@@ -51,25 +52,42 @@
     <script>
       Vue.createApp({
         data: () => ({
+          brand: 'Vue Mastery',
           cart: 0,
           details: ['50% cotton', '30% wool', '20% polyester'],
           image: './assets/images/socks_green.jpg',
           inStock: true,
+          onSale: true,
           product: 'Socks',
+          selectedVariant: 0,
           variants: [
-            { id: 2234, color: 'green', image: './assets/images/socks_green.jpg' },
-            { id: 2235, color: 'blue', image: './assets/images/socks_blue.jpg' }
+            { color: 'green', id: 2234, image: './assets/images/socks_green.jpg', quantity: 50 },
+            { color: 'blue', id: 2235, image: './assets/images/socks_blue.jpg', quantity: 0 }
           ]
         }),
+        computed: {
+          image() {
+            return this.variants[this.selectedVariant].image
+          },
+          inStock() {
+            return this.variants[this.selectedVariant].quantity
+          },
+          sale() {
+            if (this.onSale) {
+              return this.brand + ' ' + this.product + ' is on sale.'
+            }
+            return ''
+          },
+          title() {
+            return this.brand + ' ' + this.product
+          }
+        },
         methods: {
           addToCart() {
             this.cart += 1
           },
-          removeFromCart() {
-            if (this.cart >= 1) this.cart -= 1
-          },
-          updateImage(variantImage) {
-            this.image = variantImage
+          updateVariant(index) {
+            this.selectedVariant = index
           }
         }
       }).mount('#app')
