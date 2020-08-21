@@ -17,7 +17,10 @@
           </div>
           <div class="product-info">
             <h1>{{ product }}</h1>
-            <a :href="url">Made by Vue Mastery</a>
+            <p v-if="inventory > 10">In Stock</p>
+            <p v-else-if="inventory <= 10 && inventory > 0">Almost sold out!</p>
+            <p v-else>Out of Stock</p>
+            <p v-if="onSale">On Sale!</p>
           </div>
         </div>
       </div>
@@ -26,10 +29,10 @@
     <script>
       Vue.createApp({
         data: () => ({
-          description: 'A warm fuzzy pair of socks.',
           image: './assets/images/socks_green.jpg',
-          product: 'Socks',
-          url: 'https://www.vuemastery.com/'
+          inventory: 100,
+          onSale: true,
+          product: 'Socks'
         })
       }).mount('#app')
     </script>
