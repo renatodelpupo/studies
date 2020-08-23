@@ -15,7 +15,7 @@
       <div class="product-display">
         <div class="product-container">
           <div class="product-image">
-            <img :class="{ 'out-of-stock-img': !inStock }" :src="image">
+            <img :class="{ 'out-of-stock-img': !inStock }" :src="image" />
           </div>
           <div class="product-info">
             <h1>{{ title }}</h1>
@@ -33,15 +33,9 @@
               :key="variant.id"
               :style="{ backgroundColor: variant.color }"
               @mouseover="updateVariant(index)"
-            >
-            </div>
+            ></div>
 
-            <button
-              class="button"
-              :class="{ disabledButton: !inStock }"
-              :disabled="!inStock"
-              @click="addToCart"
-            >
+            <button class="button" :class="{ disabledButton: !inStock }" :disabled="!inStock" @click="addToCart">
               Add to Cart
             </button>
           </div>

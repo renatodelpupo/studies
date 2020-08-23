@@ -9,7 +9,7 @@ app.component('product-display', {
     <div class="product-display">
       <div class="product-container">
         <div class="product-image">
-          <img v-bind:src="image">
+          <img :src="image">
         </div>
         <div class="product-info">
           <h1>{{ title }}</h1>
