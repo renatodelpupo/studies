@@ -13,7 +13,7 @@ Enzyme.configure({
  * @function setup
  * @returns {ShallowWrapper}
  */
-const setup = () => shallow(<App />)
+const setup = (props = {}) => shallow(<App {...props} />)
 
 const findByTestAttr = (wrapper, val) => wrapper.find(`[data-test="${val}"]`)
 
