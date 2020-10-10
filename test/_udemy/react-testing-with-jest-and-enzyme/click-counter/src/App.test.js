@@ -67,5 +67,5 @@ test('clicking on button decrements counter display', () => {
   button.simulate('click')
 
   const count = findByTestAttr(wrapper, 'count').text()
-  expect(count).toBe('-1')
+  expect(count).toBe('0')
 })
