@@ -11,10 +11,16 @@ Enzyme.configure({
 /**
  * Factory function to create a ShallowWrapper for the App component.
  * @function setup
+ * @param {object} props
  * @returns {ShallowWrapper}
  */
 const setup = (props = {}) => shallow(<App {...props} />)
 
+/**
+ * Return ShallowWrapper containing node(s) with the given data-test value.
+ * @param {ShallowWrapper} wrapper
+ * @param {string} val
+ */
 const findByTestAttr = (wrapper, val) => wrapper.find(`[data-test="${val}"]`)
 
 test('renders without crashing', () => {
