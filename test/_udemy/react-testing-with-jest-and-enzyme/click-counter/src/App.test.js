@@ -66,12 +66,23 @@ describe('increment', () => {
   })
 })
 
-test('clicking on button decrements counter display', () => {
-  const wrapper = setup()
-  const button = findByTestAttr(wrapper, 'button-decrement')
+describe('decrement', () => {
+  test('renders button', () => {
+    const wrapper = setup()
+    const button = findByTestAttr(wrapper, 'button-decrement')
+    expect(button.length).toBe(1)
+  })
 
-  button.simulate('click')
+  test('counter decrements when button is clicked and state is greater than 0', () => {
+    const wrapper = setup()
 
-  const count = findByTestAttr(wrapper, 'count').text()
-  expect(count).toBe('0')
+    const incButton = findByTestAttr(wrapper, 'button-increment')
+    incButton.simulate('click')
+
+    const decButton = findByTestAttr(wrapper, 'button-decrement')
+    decButton.simulate('click')
+
+    const count = findByTestAttr(wrapper, 'count').text()
+    expect(count).toBe('0')
+  })
 })
