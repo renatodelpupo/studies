@@ -30,13 +30,6 @@ test('renders without crashing', () => {
   expect(appComponent.length).toBe(1)
 })
 
-test('renders button', () => {
-  const wrapper = setup()
-  const button = findByTestAttr(wrapper, 'button-increment')
-
-  expect(button.length).toBe(1)
-})
-
 test('renders counter display', () => {
   const wrapper = setup()
   const counterDisplay = findByTestAttr(wrapper, 'counter-display')
@@ -51,20 +44,27 @@ test('counter starts at 0', () => {
   expect(count).toBe('0')
 })
 
-test('clicking on button increments counter display', () => {
-  const wrapper = setup()
+describe('increment', () => {
+  test('renders button', () => {
+    const wrapper = setup()
+    const button = findByTestAttr(wrapper, 'button-increment')
+    expect(button.length).toBe(1)
+  })
 
-  // find the button
-  const button = findByTestAttr(wrapper, 'button-increment')
+  test('counter increments when button is clicked', () => {
+    const wrapper = setup()
 
-  // click the button
-  button.simulate('click')
+    // find the button
+    const button = findByTestAttr(wrapper, 'button-increment')
 
-  // find the display, and test that the number has been incremented
-  const count = findByTestAttr(wrapper, 'count').text()
-  expect(count).toBe('1')
+    // click the button
+    button.simulate('click')
+
+    // find the display, and test that the number has been incremented
+    const count = findByTestAttr(wrapper, 'count').text()
+    expect(count).toBe('1')
+  })
 })
-
 
 test('clicking on button decrements counter display', () => {
   const wrapper = setup()
