@@ -10,6 +10,9 @@ Enzyme.configure({
 
 test('renders without crashing', () => {
   const wrapper = shallow(<App />)
+  const appComponent = wrapper.find('[data-test="component-app"]')
+
+  expect(appComponent.length).toBe(1)
 })
 
 test('renders button', () => {})
