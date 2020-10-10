@@ -11,3 +11,13 @@ Enzyme.configure({
 test('renders without crashing', () => {
   const wrapper = shallow(<App />)
 })
+
+test('renders button', () => {})
+
+test('renders counter display', () => {})
+
+test('counter starts at 0', () => {})
+
+test('clicking on button increments counter display', () => {})
+
+
