@@ -3,9 +3,14 @@ import logo from './logo.svg'
 import './App.css'
 
 function App() {
+  const [count, setCount] = React.useState(0)
+
   return (
     <div className="App" data-test="component-app">
-      <div data-test="counter-display">The counter is currently</div>
+      <h1 data-test="counter-display">
+        The counter is currently
+        <span data-test="count">{count}</span>
+      </h1>
       <button data-test="button-increment">Increment counter</button>
     </div>
   )
