@@ -40,7 +40,7 @@ export default Vue.extend({
     await pokemonInfo
 
     return {
-      pokemons
+      pokemons: pokemons.sort((a, b) => a.id - b.id)
     }
   }
 })
