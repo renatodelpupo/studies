@@ -53,6 +53,18 @@ export default {
   color: white;
 }
 
+.background-color-grass {
+  background: linear-gradient(180deg, #9bcc50 50%, #9bcc50 50%);
+  background-color: #9bcc50;
+  color: #212121;
+}
+
+.background-color-water {
+  background: linear-gradient(180deg, #4592c4 50%, #4592c4 50%);
+  background-color: #4592c4;
+  color: #fff;
+}
+
 .card {
   align-items: center;
   border-radius: 4px;
