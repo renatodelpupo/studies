@@ -13,10 +13,18 @@ app.set('view engine', '.hbs')
 
 // Routing
 app.get('/', (req, res) => {
-  res.render('index')
+  res.render('index', {
+    heading: 'Express with Handlebars',
+    text: 'Welcome to the app.',
+    title: 'Home'
+  })
 })
 app.get('/about', (req, res) => {
-  res.render('about')
+  res.render('about', {
+    heading: 'About the project',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, hic assumenda. Odio ipsa amet enim adipisci suscipit nihil veritatis officia tenetur consequatur, quod eos, repellendus minus reiciendis maiores neque corrupti?',
+    title: 'About'
+  })
 })
 
 const appPort = 8080
