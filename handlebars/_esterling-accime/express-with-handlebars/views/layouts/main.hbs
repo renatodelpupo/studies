@@ -6,6 +6,13 @@
     <title>{{ title }}</title>
   </head>
   <body>
+    <div class="Breadcrumb">
+      {{#each breadcrumb as | item key | }}
+        {{#if key}} / {{/if}}
+        {{ name }}
+      {{/each}}
+    </div>
+
     {{{ body }}}
   </body>
 </html>
