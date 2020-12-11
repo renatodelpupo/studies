@@ -3,6 +3,8 @@ const app = express()
 const exphbs = require('express-handlebars')
 const path = require('path')
 
+app.use(express.static('public'))
+
 const hbs = exphbs.create({
   defaultLayout: 'main',
   extname: '.hbs',
