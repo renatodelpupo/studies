@@ -1,2 +1,9 @@
-<h2>{{ heading }}</h2>
-<p>{{ text }}</p>
+{{#head 'h2' heading}}{{/head}}
+
+<h2>{{ toUppercase heading }}</h2>
+
+<p>{{ firstName }} + {{ lastName }} = {{ fullName }}</p>
+
+<p>
+  {{#toItalic text}}{{/toItalic}}
+</p>

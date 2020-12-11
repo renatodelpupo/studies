@@ -3,15 +3,41 @@ const app = express()
 const exphbs = require('express-handlebars')
 const path = require('path')
 
-app.engine(
-  '.hbs',
-  exphbs({
-    defaultLayout: 'main',
-    extname: '.hbs',
-    layoutsDir: path.join(__dirname, 'views/layouts'), // default path
-    partialsDir: path.join(__dirname, 'views/partials') // default path
-  })
-)
+const hbs = exphbs.create({
+  defaultLayout: 'main',
+  extname: '.hbs',
+  layoutsDir: path.join(__dirname, 'views/layouts'), // default path
+  partialsDir: path.join(__dirname, 'views/partials'), // default path
+
+  helpers: {
+    // computed data
+    fullName: function() {
+      return `${this.firstName} ${this.lastName}`
+    },
+
+    // method block
+    head: function(tag, text, options) {
+      options.fn({ tag, text })
+
+      return `
+        <${tag} class="Heading">
+          ${text}
+        </${tag}>
+      `
+    },
+
+    // method block
+    toItalic: function(text) {
+      return text.italics()
+    },
+
+    // method inline
+    toUppercase: function(text) {
+      return text.toUpperCase()
+    }
+  }
+})
+app.engine('.hbs', hbs.engine)
 app.set('view engine', '.hbs')
 
 // Routing
@@ -37,7 +63,9 @@ app.get('/about', (req, res) => {
         name: 'About'
       }
     ],
+    firstName: 'John',
     heading: 'About the project',
+    lastName: 'Doe',
     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, hic assumenda. Odio ipsa amet enim adipisci suscipit nihil veritatis officia tenetur consequatur, quod eos, repellendus minus reiciendis maiores neque corrupti?',
     title: 'About'
   })
