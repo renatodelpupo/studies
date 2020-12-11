@@ -4,6 +4,10 @@
 
 <p>{{ firstName }} + {{ lastName }} = {{ fullName }}</p>
 
+{{#with mother}}
+  <p>My mother's name is {{ firstName }} {{ lastName }}</p>
+{{/with}}
+
 <p>
   {{#toItalic text}}{{/toItalic}}
 </p>

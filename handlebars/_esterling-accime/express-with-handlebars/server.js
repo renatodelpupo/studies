@@ -66,6 +66,10 @@ app.get('/about', (req, res) => {
     firstName: 'John',
     heading: 'About the project',
     lastName: 'Doe',
+    mother: {
+      firstName: 'Jane',
+      lastName: 'Doe'
+    },
     paragraph: '<p><i>This is a italic paragraph</i></p>',
     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, hic assumenda. Odio ipsa amet enim adipisci suscipit nihil veritatis officia tenetur consequatur, quod eos, repellendus minus reiciendis maiores neque corrupti?',
     title: 'About'
