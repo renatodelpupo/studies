@@ -1,4 +1,11 @@
+import checkPropTypes from 'check-prop-types'
 import { ShallowWrapper } from "enzyme"
+
+export const checkProps = (component, conformingProps) => {
+  const propError = checkPropTypes(component.propTypes, conformingProps, 'prop', component.name)
+
+  expect(propError).toBeUndefined()
+}
 
 /**
  * Returns node(s) with the given data-test attribute
