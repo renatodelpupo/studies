@@ -1,0 +1,5 @@
+{
+  "Nintendo": ["Game Boy", "DS", "Switch"],
+  "PlayStation": ["1", "2", "3", "4"],
+  "Xbox": ["Original", "360", "One"]
+}
