@@ -9,8 +9,19 @@ import HelloI18n from './components/HelloI18n.vue'
 
 export default {
   name: 'App',
+
   components: {
     HelloI18n
+  },
+
+  created() {
+    const locale = localStorage.getItem('locale')
+
+    if (locale) {
+      this.$i18n.locale = locale
+    } else if (navigator.language) {
+      this.$i18n.locale = navigator.language.substring(0, 2)
+    }
   }
 }
 </script>
