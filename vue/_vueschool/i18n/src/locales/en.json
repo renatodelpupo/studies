@@ -1,3 +1,7 @@
 {
+  "fruits": {
+    "apple": "Apple"
+  },
+  "goodbye": "Goodbye!",
   "message": "hello i18n !!"
 }
