@@ -1,5 +1,8 @@
 <template>
-  <p>{{ $t('hello') }}</p>
+  <div>
+    <p>{{ $t('hello') }}</p>
+    <p>{{ $t('message') }}</p>
+  </div>
 </template>
 
 <script>
