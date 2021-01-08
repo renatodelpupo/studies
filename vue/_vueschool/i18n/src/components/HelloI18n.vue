@@ -5,6 +5,11 @@
     <p>{{ $t('fruits.apple') }}</p>
     <p>{{ $t('goodbye') }}</p>
 
+    <p>0: {{ $tc('car', 0) }}</p>
+    <p>1: {{ $tc('car', 1) }}</p>
+    <p>2: {{ $tc('car', 2) }}</p>
+    <p>3: {{ $tc('car', 3, { n: 'too many' }) }}</p>
+
     <button @click="setLocale('en')">English</button>
     <button @click="setLocale('es')">Español</button>
   </div>
