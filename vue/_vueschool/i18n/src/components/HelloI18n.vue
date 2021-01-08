@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>{{ $t('hello') }}</p>
+    <p>{{ $t('hello', { name: 'Renato', surname }) }}</p>
     <p>{{ $t('message') }}</p>
     <p>{{ $t('fruits.apple') }}</p>
     <p>{{ $t('goodbye') }}</p>
@@ -14,6 +14,12 @@
 export default {
   name: 'HelloI18n',
 
+  data() {
+    return {
+      surname: 'Delpupo'
+    }
+  },
+
   methods: {
     setLocale(locale) {
       this.$i18n.locale = locale
@@ -26,10 +32,10 @@ export default {
 <i18n>
 {
   "en": {
-    "hello": "Hello i18n in SFC!"
+    "hello": "Hello {name} {surname}"
   },
   "es": {
-    "hello": "Hola!"
+    "hello": "Hola {name} {surname}!"
   }
 }
 </i18n>
