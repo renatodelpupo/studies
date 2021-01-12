@@ -3,37 +3,26 @@ import VueI18n from 'vue-i18n'
 
 Vue.use(VueI18n)
 
-const dateTimeFormats = {
-  'en': {
-    long: {
-      day: 'numeric',
-      hour: 'numeric',
-      minute: 'numeric',
-      month: 'long',
-      weekday: 'long',
-      year: 'numeric'
-    },
-    short: {
-      day: 'numeric',
-      month: 'short',
-      year: 'numeric'
-    }
+const setDateTimeFormats = {
+  long: {
+    day: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+    month: 'long',
+    weekday: 'long',
+    year: 'numeric'
   },
-  'pt-BR': {
-    long: {
-      day: 'numeric',
-      hour: 'numeric',
-      minute: 'numeric',
-      month: 'long',
-      weekday: 'long',
-      year: 'numeric'
-    },
-    short: {
-      day: 'numeric',
-      month: 'short',
-      year: 'numeric'
-    }
+  short: {
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric'
   }
+}
+
+const dateTimeFormats = {
+  'en': setDateTimeFormats,
+  'es': setDateTimeFormats,
+  'pt-BR': setDateTimeFormats
 }
 
 function loadLocaleMessages() {
