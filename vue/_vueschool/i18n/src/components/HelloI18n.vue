@@ -24,6 +24,26 @@
 
     <p>{{ product.name }}: {{ $n(product.price, "currency") }}</p>
 
+    <i18n-n :value="1140.71" format="currency">
+      <template v-slot:currency="slotProps">
+        <span style="color: blue; font-size: 24px; font-weight: bold">{{
+          slotProps.currency
+        }}</span>
+      </template>
+      <template v-slot:integer="slotProps">
+        <span style="color: navy; font-size: 24px">{{ slotProps.integer }}</span>
+      </template>
+      <template v-slot:decimal="slotProps">
+        <span style="color: red">{{ slotProps.decimal }}</span>
+      </template>
+      <template v-slot:fraction="slotProps">
+        <span style="color: orange">{{ slotProps.fraction }}</span>
+      </template>
+      <template v-slot:group="slotProps">
+        <span style="color: green; font-size: 24px">{{ slotProps.group }}</span>
+      </template>
+    </i18n-n>
+
     <hr>
 
     <button @click="setLocale('en')">English</button>
