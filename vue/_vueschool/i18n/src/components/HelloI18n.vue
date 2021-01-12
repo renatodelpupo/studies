@@ -5,10 +5,22 @@
     <p>{{ $t('fruits.apple') }}</p>
     <p>{{ $t('goodbye') }}</p>
 
+    <hr>
+
     <p>0: {{ $tc('car', 0) }}</p>
     <p>1: {{ $tc('car', 1) }}</p>
     <p>2: {{ $tc('car', 2) }}</p>
     <p>3: {{ $tc('car', 3, { n: 'too many' }) }}</p>
+
+    <hr>
+
+    <p>{{ $d(new Date(), 'short') }}</p>
+    <p>{{ $d(new Date(), 'short', 'pt-BR') }}</p>
+
+    <p>{{ $d(new Date(), 'long') }}</p>
+    <p>{{ $d(new Date(), 'long', 'pt-BR') }}</p>
+
+    <hr>
 
     <button @click="setLocale('en')">English</button>
     <button @click="setLocale('es')">Español</button>
