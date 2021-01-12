@@ -22,8 +22,13 @@
 
     <hr>
 
+    <p>{{ product.name }}: {{ $n(product.price, "currency") }}</p>
+
+    <hr>
+
     <button @click="setLocale('en')">English</button>
     <button @click="setLocale('es')">Español</button>
+    <button @click="setLocale('pt-BR')">Português</button>
   </div>
 </template>
 
@@ -33,7 +38,27 @@ export default {
 
   data() {
     return {
+      products: {
+        'en': {
+          name: 'Blue Shirt',
+          price: 10
+        },
+        'es': {
+          name: 'Camisa Azul',
+          price: 10
+        },
+        'pt-BR': {
+          name: 'Camisa Azul',
+          price: 30
+        }
+      },
       surname: 'Delpupo'
+    }
+  },
+
+  computed: {
+    product() {
+      return this.products[this.$i18n.locale]
     }
   },
 
