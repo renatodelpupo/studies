@@ -4,5 +4,7 @@
     "apple": "Apple"
   },
   "goodbye": "Goodbye!",
-  "message": "hello i18n !!"
+  "message": "hello i18n !!",
+  "terms": "I accept the {termsURL} of the service contract",
+  "termsLink": "terms and conditions"
 }

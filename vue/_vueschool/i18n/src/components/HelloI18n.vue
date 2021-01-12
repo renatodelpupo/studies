@@ -46,6 +46,14 @@
 
     <hr>
 
+    <i18n path="terms" tag="p">
+      <template v-slot:termsURL>
+        <a href="/terms">{{ $t('termsLink') }}</a>
+      </template>
+    </i18n>
+
+    <hr>
+
     <button @click="setLocale('en')">English</button>
     <button @click="setLocale('es')">Español</button>
     <button @click="setLocale('pt-BR')">Português</button>

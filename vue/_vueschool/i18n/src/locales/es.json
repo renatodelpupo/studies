@@ -3,5 +3,7 @@
     "apple": "Manzana"
   },
   "goodbye": "¡Adiós!",
-  "message": "¿Cómo estás?"
+  "message": "¿Cómo estás?",  
+  "terms": "Acepto los {termsURL} del contrato de servicio",
+  "termsLink": "términos y condiciones"
 }
