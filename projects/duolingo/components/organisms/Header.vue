@@ -2,13 +2,7 @@
   <div class="Header">
     <div class="Header-content">
       <a class="Logo-hyperlink" href="/">
-        <img
-          alt="Duolingo"
-          class="Logo"
-          src="https://d35aaqx5ub95lt.cloudfront.net/images/logo-white.svg"
-          width="153px"
-          height="36px"
-        />
+        <img alt="Duolingo" class="Logo" src="~/assets/images/logo-white.svg" width="153px" height="36px" />
       </a>
     </div>
   </div>

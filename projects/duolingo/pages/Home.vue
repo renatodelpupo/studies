@@ -23,7 +23,7 @@ export default Vue.extend({
 .Home {
   align-items: center;
   background-color: #235390;
-  background-image: url('https://d35aaqx5ub95lt.cloudfront.net/images/star-pattern.svg');
+  background-image: url('~assets/images/star-pattern.svg');
   display: flex;
   min-height: calc(100vh - 138px);
   max-height: 1080px;
@@ -40,7 +40,7 @@ export default Vue.extend({
 }
 
 .Earth {
-  background: url('https://d35aaqx5ub95lt.cloudfront.net/images/331a32943ff73be28537dfc7469d5639.svg');
+  background-image: url('~assets/images/earth.svg');
   background-size: auto;
   background-size: 360px;
   height: 360px;
