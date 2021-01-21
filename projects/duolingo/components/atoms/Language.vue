@@ -1,9 +1,11 @@
 <template>
   <li class="Language">
-    <span class="Language-button">
-      <span class="Language-flag" :class="flagClass" />
-      <span class="Language-name" v-text="name" />
-    </span>
+    <nuxt-link :to="switchLocalePath(locale)">
+      <span class="Language-button">
+        <span class="Language-flag" :class="flagClass" />
+        <span class="Language-name" v-text="name" />
+      </span>
+    </nuxt-link>
   </li>
 </template>
 
@@ -15,6 +17,10 @@ export default Vue.extend({
 
   props: {
     flag: {
+      required: true,
+      type: String
+    },
+    locale: {
       required: true,
       type: String
     },

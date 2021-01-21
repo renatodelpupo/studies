@@ -1,7 +1,13 @@
 <template>
   <ul class="LanguageList">
     <div class="LanguageList-content">
-      <Language v-for="language in languages" :key="language.name" :flag="language.flag" :name="language.name" />
+      <Language
+        v-for="language in languages"
+        :key="language.name"
+        :flag="language.flag"
+        :locale="language.locale"
+        :name="language.name"
+      />
     </div>
   </ul>
 </template>
@@ -19,14 +25,17 @@ export default Vue.extend({
     languages: [
       {
         flag: 'usa',
+        locale: 'en',
         name: 'English'
       },
       {
         flag: 'spain',
+        locale: 'es',
         name: 'Español'
       },
       {
         flag: 'brazil',
+        locale: 'pt',
         name: 'Português'
       }
     ]

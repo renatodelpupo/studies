@@ -5,7 +5,7 @@
         <div class="Earth"></div>
       </div>
       <div class="Text-wrapper">
-        <h1 class="Text">Learn a language for free. Forever.</h1>
+        <h1 class="Text">{{ $t('title') }}</h1>
       </div>
     </div>
   </div>
@@ -54,6 +54,8 @@ export default Vue.extend({
 
 .Text {
   color: #fff;
+  font-size: 32px;
+  line-height: 40px;
 }
 
 .Text-wrapper {

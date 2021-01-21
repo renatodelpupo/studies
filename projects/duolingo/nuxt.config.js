@@ -31,12 +31,40 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    'nuxt-i18n',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa'
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {},
+
+  i18n: {
+    defaultLocale: 'en',
+    fallbackLocale: 'en',
+    langDir: 'locales/',
+    lazy: true,
+    locales: [
+      {
+        code: 'en',
+        iso: 'en-US',
+        name: 'English',
+        file: 'en.json'
+      },
+      {
+        code: 'es',
+        iso: 'es-ES',
+        name: 'Español',
+        file: 'es.json'
+      },
+      {
+        code: 'pt',
+        iso: 'pt-BR',
+        name: 'Português',
+        file: 'pt.json'
+      }
+    ]
+  },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {}
