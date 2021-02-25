@@ -27,12 +27,13 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    '@aceforth/nuxt-optimized-images',
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@bazzite/nuxt-optimized-images'],
+  modules: [],
 
   optimizedImages: {
     inlineImageLimit: -1,
