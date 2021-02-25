@@ -1,5 +1,8 @@
 # optimized-images
 
+Reference:  
+[Minify, generate WebP and lazyload images in your Vue & Nuxt application](https://dev.to/ignore_you/minify-generate-webp-and-lazyload-images-in-your-vue-nuxt-application-1ilm)
+
 ## Build Setup
 
 ```bash
