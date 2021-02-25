@@ -44,6 +44,15 @@
         srcset="~/assets/cloud--640w.jpg, ~/assets/cloud--1280w.jpg 2x"
       />
 
+      <!-- Art direction -->
+      <picture>
+        <source
+          media="(min-width: 992px)"
+          srcset="~/assets/open--desktop.jpg"
+        />
+        <img alt="Open" src="~/assets/open--mobile.jpg" />
+      </picture>
+
       <div class="links">
         <a
           href="https://nuxtjs.org/"
