@@ -5,7 +5,15 @@
       <h1 class="title">optimized-images</h1>
 
       <figure class="picture">
-        <img alt="Windmill" class="lazyload" data-src="~assets/windmill.jpg" />
+        <picture>
+          <source data-srcset="~assets/windmill.jpg?webp" type="image/webp" />
+          <source data-srcset="~assets/windmill.jpg" type="image/png" />
+          <img
+            alt="Windmill"
+            class="lazyload"
+            data-src="~assets/windmill.jpg"
+          />
+        </picture>
       </figure>
 
       <div class="links">
