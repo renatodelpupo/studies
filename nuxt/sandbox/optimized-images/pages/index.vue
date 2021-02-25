@@ -6,12 +6,12 @@
 
       <figure class="picture">
         <picture>
-          <source data-srcset="~assets/windmill.jpg?webp" type="image/webp" />
-          <source data-srcset="~assets/windmill.jpg" type="image/png" />
+          <source data-srcset="~/assets/dinosaur.png?webp" type="image/webp" />
+          <source data-srcset="~/assets/dinosaur.png" type="image/png" />
           <img
-            alt="Windmill"
+            alt="Dinosaur"
             class="lazyload"
-            data-src="~assets/windmill.jpg"
+            data-src="~/assets/dinosaur.png"
           />
         </picture>
       </figure>
