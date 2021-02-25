@@ -96,6 +96,12 @@ export default {
   letter-spacing: 1px;
 }
 
+@media (max-width: 576px) {
+  .title {
+    font-size: 50px;
+  }
+}
+
 .subtitle {
   font-weight: 300;
   font-size: 42px;
