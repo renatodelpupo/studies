@@ -4,6 +4,7 @@
       <Logo />
       <h1 class="title">optimized-images</h1>
 
+      <!-- Default  -->
       <figure class="picture">
         <picture>
           <source data-srcset="~/assets/dinosaur.png?webp" type="image/webp" />
@@ -72,5 +73,12 @@ export default {}
 
 .links {
   padding-top: 15px;
+}
+
+.picture,
+picture,
+source,
+img {
+  max-width: 100%;
 }
 </style>
