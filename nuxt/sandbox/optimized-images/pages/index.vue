@@ -37,6 +37,13 @@
         :srcSet="differentSizes.srcSet"
       />
 
+      <!-- Resolution switching: Same size, different resolutions -->
+      <img
+        alt="Cloud"
+        src="~/assets/cloud--640w.jpg"
+        srcset="~/assets/cloud--640w.jpg, ~/assets/cloud--1280w.jpg 2x"
+      />
+
       <div class="links">
         <a
           href="https://nuxtjs.org/"
