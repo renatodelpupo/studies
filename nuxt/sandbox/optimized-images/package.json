@@ -16,6 +16,7 @@
     "nuxt": "^2.14.12"
   },
   "devDependencies": {
+    "@bazzite/nuxt-optimized-images": "^0.4.0",
     "@nuxtjs/eslint-config": "^5.0.0",
     "@nuxtjs/eslint-module": "^3.0.2",
     "babel-eslint": "^10.1.0",
@@ -24,6 +25,9 @@
     "eslint-plugin-nuxt": "^2.0.0",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^7.5.0",
-    "prettier": "^2.2.1"
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-pngquant": "^9.0.1",
+    "prettier": "^2.2.1",
+    "webp-loader": "^0.6.0"
   }
 }
