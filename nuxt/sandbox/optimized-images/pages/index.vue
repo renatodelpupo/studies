@@ -3,6 +3,11 @@
     <div>
       <Logo />
       <h1 class="title">optimized-images</h1>
+
+      <figure class="picture">
+        <img alt="Windmill" class="lazyload" data-src="~assets/windmill.jpg" />
+      </figure>
+
       <div class="links">
         <a
           href="https://nuxtjs.org/"
