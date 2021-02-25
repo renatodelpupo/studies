@@ -17,6 +17,26 @@
         </picture>
       </figure>
 
+      <!-- Resolution switching: Different sizes -->
+      <!--
+      <img
+        alt="Windmill"
+        sizes="(max-width: 576px) 300px, (max-width: 1200) 600px, 1000px"
+        src="~/assets/windmill--300.jpg"
+        srcset="
+          ~/assets/windmill--300w.jpg   300w,
+          ~/assets/windmill--600w.jpg   600w,
+          ~/assets/windmill--1000w.jpg 1000w
+        "
+      />
+      -->
+      <img
+        alt="Windmill"
+        sizes="(max-width: 576px) 300px, (max-width: 1200) 600px, 1000px"
+        :src="differentSizes.src"
+        :srcSet="differentSizes.srcSet"
+      />
+
       <div class="links">
         <a
           href="https://nuxtjs.org/"
@@ -40,7 +60,13 @@
 </template>
 
 <script>
-export default {}
+const differentSizes = require('~/assets/windmill.jpg?resize&sizes[]=300&sizes[]=600&sizes[]=1000&format=webp')
+
+export default {
+  data() {
+    return { differentSizes }
+  },
+}
 </script>
 
 <style>
