@@ -15,6 +15,9 @@
     <!-- Parameterized size -->
     <nuxt-img alt="Parameterized size" src="/dinosaur.png" width="250px" />
 
+    <!-- WebP -->
+    <nuxt-img alt="WebP" format="webp" src="/dinosaur.png" />
+
     <!-- Nuxt Picture with WebP -->
     <nuxt-picture
       alt="Nuxt Picture with WebP"
