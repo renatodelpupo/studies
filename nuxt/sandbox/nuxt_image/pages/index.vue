@@ -3,6 +3,9 @@
     <!-- Default example -->
     <nuxt-img alt="Default" src="/dinosaur.png" />
 
+    <!-- Quality (Unsuccessful testing) -->
+    <nuxt-img alt="Default" quality="80" src="/dinosaur.png" />
+
     <!-- Resolution switching: Different sizes -->
     <nuxt-img
       alt="Different sizes"
