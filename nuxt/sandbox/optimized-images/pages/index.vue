@@ -21,6 +21,13 @@
         </picture>
       </figure>
 
+      <!-- Quality (Unsuccessful testing) -->
+      <img
+        alt="Quality"
+        class="lazyload"
+        :data-src="`${require('~/assets/windmill.jpg?quality=10}')}`"
+      />
+
       <!-- Resolution switching: Different sizes -->
       <img
         alt="Windmill"
