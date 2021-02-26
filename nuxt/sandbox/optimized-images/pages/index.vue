@@ -1,6 +1,13 @@
 <template>
   <div class="container">
     <div>
+      <!--
+        srcSet is the responsive-loader default
+        data-srcset is the lazysizes attribute
+
+        if using webp, need <picture> with <source type="image/webp"> and <img> fallback
+      -->
+
       <!-- Default  -->
       <figure class="picture">
         <picture>
@@ -15,18 +22,6 @@
       </figure>
 
       <!-- Resolution switching: Different sizes -->
-      <!--
-      <img
-        alt="Windmill"
-        sizes="(max-width: 576px) 300px, (max-width: 1200) 600px, 1000px"
-        src="~/assets/windmill--300.jpg"
-        srcset="
-          ~/assets/windmill--300w.jpg   300w,
-          ~/assets/windmill--600w.jpg   600w,
-          ~/assets/windmill--1000w.jpg 1000w
-        "
-      />
-      -->
       <img
         alt="Windmill"
         sizes="(max-width: 576px) 300px, (max-width: 1200) 600px, 1000px"
