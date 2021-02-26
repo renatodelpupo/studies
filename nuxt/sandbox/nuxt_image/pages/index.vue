@@ -11,6 +11,9 @@
     />
     <!-- Build automatically: -->
     <!-- <img alt="" sizes="..." src="#" srcset="..." /> -->
+
+    <!-- Parameterized size -->
+    <nuxt-img alt="Parameterized size" src="/dinosaur.png" width="250px" />
   </div>
 </template>
 
