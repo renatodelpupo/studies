@@ -1,6 +1,7 @@
 <template>
   <div class="container">
-    <div></div>
+    <!-- Default example -->
+    <nuxt-img alt="Default" src="/dinosaur.png" />
   </div>
 </template>
 
@@ -10,6 +11,7 @@ export default {}
 
 <style>
 .container {
+  flex-direction: column;
   margin: 0 auto;
   min-height: 100vh;
   display: flex;
