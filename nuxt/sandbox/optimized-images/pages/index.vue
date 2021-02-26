@@ -30,6 +30,9 @@
         :data-srcset="differentSizes.srcSet"
       />
 
+      <!-- Parameterized size -->
+      <img alt="Dino" src="~/assets/dinosaur.png?size=250" />
+
       <!-- Resolution switching: Same size, different resolutions -->
       <img
         alt="Cloud"
