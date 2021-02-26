@@ -24,16 +24,18 @@
       <!-- Resolution switching: Different sizes -->
       <img
         alt="Windmill"
+        class="lazyload"
         sizes="(max-width: 576px) 300px, (max-width: 1200) 600px, 1000px"
-        :src="differentSizes.src"
-        :srcSet="differentSizes.srcSet"
+        :data-src="differentSizes.src"
+        :data-srcset="differentSizes.srcSet"
       />
 
       <!-- Resolution switching: Same size, different resolutions -->
       <img
         alt="Cloud"
-        src="~/assets/cloud--640w.jpg"
-        srcset="~/assets/cloud--640w.jpg, ~/assets/cloud--1280w.jpg 2x"
+        class="lazyload"
+        data-src="~/assets/cloud--640w.jpg"
+        :data-srcset="`${require('~/assets/cloud--640w.jpg')}, ${require('~/assets/cloud--1280w.jpg')} 2x`"
       />
 
       <!-- Art direction -->
@@ -42,7 +44,7 @@
           media="(min-width: 992px)"
           srcset="~/assets/open--desktop.jpg"
         />
-        <img alt="Open" src="~/assets/open--mobile.jpg" />
+        <img alt="Open" class="lazyload" data-src="~/assets/open--mobile.jpg" />
       </picture>
     </div>
   </div>
