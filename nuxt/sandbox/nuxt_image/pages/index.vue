@@ -2,6 +2,15 @@
   <div class="container">
     <!-- Default example -->
     <nuxt-img alt="Default" src="/dinosaur.png" />
+
+    <!-- Resolution switching: Different sizes -->
+    <nuxt-img
+      alt="Different sizes"
+      src="/dinosaur.png"
+      sizes="sm:300px md:600px lg:1000px"
+    />
+    <!-- Build automatically: -->
+    <!-- <img alt="" sizes="..." src="#" srcset="..." /> -->
   </div>
 </template>
 
