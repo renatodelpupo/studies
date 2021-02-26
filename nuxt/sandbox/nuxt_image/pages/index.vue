@@ -3,6 +3,9 @@
     <!-- Default example -->
     <nuxt-img alt="Default" src="/dinosaur.png" />
 
+    <!-- Lazy loading -->
+    <nuxt-img alt="Default" src="/dinosaur.png" loading="lazy" />
+
     <!-- Quality (Unsuccessful testing) -->
     <nuxt-img alt="Default" quality="80" src="/dinosaur.png" />
 
