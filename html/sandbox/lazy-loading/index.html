@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lazy loading</title>
+    <style>
+      img {
+        margin-top: 50vh;
+      }
+      .container {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img alt="Dinosaur 1" src="./dinosaur.png" loading="lazy" />
+      <img alt="Dinosaur 2" src="./dinosaur2.png" loading="lazy" />
+      <img alt="Dinosaur 3" src="./dinosaur3.png" loading="lazy" />
+      <img alt="Dinosaur 4" src="./dinosaur4.png" loading="lazy" />
+    </div>
+  </body>
+</html>
