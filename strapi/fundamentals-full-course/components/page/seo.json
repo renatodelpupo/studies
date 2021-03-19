@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_page_seos",
+  "info": {
+    "name": "SEO",
+    "icon": "search-dollar"
+  },
+  "options": {},
+  "attributes": {
+    "property": {
+      "type": "string"
+    },
+    "content": {
+      "type": "string"
+    }
+  }
+}

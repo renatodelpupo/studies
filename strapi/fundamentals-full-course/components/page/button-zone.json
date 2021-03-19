@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_page_button_zones",
+  "info": {
+    "name": "button-zone",
+    "icon": "hand-point-up"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "text"
+    },
+    "buttons": {
+      "type": "component",
+      "repeatable": true,
+      "component": "page.button"
+    }
+  }
+}
