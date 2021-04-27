@@ -37,6 +37,38 @@
         <img alt="" sizes="..." src="#" srcset="..."
       </picture>
     -->
+
+    <!-- Full example  -->
+    <nuxt-picture
+      alt="Full example"
+      fit="contain"
+      format="webp"
+      height="1388"
+      loading="lazy"
+      quality="80"
+      sizes="xs:320px sm:640px md:768px lg:900px"
+      src="/dinosaur.png"
+      width="1920"
+    />
+    <!-- Build automatically: -->
+    <!--
+      <picture>
+        <source
+          type="image/webp"
+          srcset="..."
+          sizes="(max-width: 320px) 320px, (max-width: 640px) 640px, (max-width: 768px) 768px, 900px"
+        >
+        <img
+          alt="Full example"
+          height="1388"
+          loading="lazy"
+          sizes="(max-width: 320px) 320px, (max-width: 640px) 640px, (max-width: 768px) 768px, 900px"
+          src="..."
+          srcset="..."
+          width="1920"
+        >
+      </picture>
+    -->
   </div>
 </template>
 
