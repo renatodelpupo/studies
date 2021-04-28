@@ -30,6 +30,12 @@ test('renders without crashing', () => {
   expect(appComponent.length).toBe(1)
 })
 
+test('renders non-empty component without crashing', () => {
+  const wrapper = setup()
+
+  expect(wrapper.exists()).toBe(true)
+})
+
 test('renders counter display', () => {
   const wrapper = setup()
   const counterDisplay = findByTestAttr(wrapper, 'counter-display')
