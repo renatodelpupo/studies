@@ -6,6 +6,26 @@ const convertSrtStringToArray = (srtString) => {
   return srtString.toLowerCase().replace(/\n/g, ' ').split(' ')
 }
 
+const convertArrayPairToObject = (array) => {
+  const result = array.reduce(
+    (result, [key, value]) => ({
+      ...result,
+      [key]: value,
+    }),
+    {}
+  )
+
+  return result
+}
+
+const convertObjectToDescOrderedArray = (object) => {
+  const result = Object.entries(object).sort((a, b) => {
+    return b[1] - a[1]
+  })
+
+  return result
+}
+
 const reduceSrtArray = (srtArray) => {
   return srtArray.reduce((acc, cur) => {
     if (Object.keys(acc).includes(cur)) {
@@ -16,6 +36,13 @@ const reduceSrtArray = (srtArray) => {
 
     return acc
   }, {})
+}
+
+const sortObjectDesc = (object) => {
+  const orderedArray = convertObjectToDescOrderedArray(object)
+  const orderedObject = convertArrayPairToObject(orderedArray)
+
+  return orderedObject
 }
 
 const treatSrtString = (srtString) => {
@@ -56,8 +83,9 @@ const handleSrtString = (srt) => {
   const treatedSrtString = treatSrtString(srt)
   const treatedSrtStringArray = convertSrtStringToArray(treatedSrtString)
   const reducedSrtStringArray = reduceSrtArray(treatedSrtStringArray)
+  const orderedSrtStringArray = sortObjectDesc(reducedSrtStringArray)
 
-  return reducedSrtStringArray
+  return orderedSrtStringArray
 }
 
 module.exports = { getSubtitle, handleSrtString }
