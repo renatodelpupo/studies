@@ -26,7 +26,7 @@ const convertObjectToDescOrderedArray = (object) => {
   return result
 }
 
-const reduceSrtArray = (srtArray) => {
+const convertToUniqueObject = (srtArray) => {
   return srtArray.reduce((acc, cur) => {
     if (Object.keys(acc).includes(cur)) {
       acc[cur] += 1
@@ -73,19 +73,19 @@ const removeXml = (string) => {
 
 //
 // Methods
+const countSrtWords = (srt) => {
+  const treatedString = treatSrtString(srt)
+  const treatedArray = convertSrtStringToArray(treatedString)
+  const objectWithoutDuplicates = convertToUniqueObject(treatedArray)
+  const orderedObject = sortObjectDesc(objectWithoutDuplicates)
+
+  return orderedObject
+}
+
 const getSubtitle = (filePath) => {
   return new Promise((resolve) => {
     fs.readFile(filePath, (_, content) => resolve(content.toString()))
   })
 }
 
-const handleSrtString = (srt) => {
-  const treatedSrtString = treatSrtString(srt)
-  const treatedSrtStringArray = convertSrtStringToArray(treatedSrtString)
-  const reducedSrtStringArray = reduceSrtArray(treatedSrtStringArray)
-  const orderedSrtStringArray = sortObjectDesc(reducedSrtStringArray)
-
-  return orderedSrtStringArray
-}
-
-module.exports = { getSubtitle, handleSrtString }
+module.exports = { countSrtWords, getSubtitle }
