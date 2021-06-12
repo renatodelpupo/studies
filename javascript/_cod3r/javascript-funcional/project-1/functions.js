@@ -105,22 +105,26 @@ const getSubtitle = (filePath) => {
   })
 }
 
-const reduceSrts = (srtFiles) => {
-  return new Promise((resolve) => {
-    let reducedString = ''
-
-    srtFiles
-      .reduce((accumulatorPromise, currentSrtFile) => {
-        return accumulatorPromise.then(() => {
-          return getSubtitle(path.join(__dirname, currentSrtFile)).then((newSrt) => {
-            reducedString = reducedString.concat(newSrt)
-          })
-        })
-      }, Promise.resolve())
-      .then(() => {
-        return resolve(reducedString)
-      })
-  })
+const getSubtitles = (filePaths) => {
+  return Promise.all(filePaths.map((filePath) => getSubtitle(path.join(__dirname, filePath))))
 }
 
-module.exports = { countSrtWords, filterSrtFiles, getFilePaths, getFolderFiles, reduceSrts }
+// const reduceSrts = (srtFiles) => {
+//   return new Promise((resolve) => {
+//     let reducedString = ''
+
+//     srtFiles
+//       .reduce((accumulatorPromise, currentSrtFile) => {
+//         return accumulatorPromise.then(() => {
+//           return getSubtitle(path.join(__dirname, currentSrtFile)).then((newSrt) => {
+//             reducedString = reducedString.concat(newSrt)
+//           })
+//         })
+//       }, Promise.resolve())
+//       .then(() => {
+//         return resolve(reducedString)
+//       })
+//   })
+// }
+
+module.exports = { countSrtWords, filterSrtFiles, getFilePaths, getFolderFiles, getSubtitles }
