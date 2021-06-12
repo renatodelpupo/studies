@@ -69,7 +69,7 @@ const removePunctuation = (string) => {
 }
 
 const removeXml = (string) => {
-  return string.replace(/<.+>.+<\/.+>/g, '')
+  return string.replace(/<.*?>/g, '')
 }
 
 //
