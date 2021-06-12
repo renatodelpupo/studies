@@ -93,9 +93,12 @@ const getFilePaths = (folderPath, fileNames) => {
 
 const getFolderFiles = (folderPath) => {
   return new Promise((resolve) => {
-    fs.readdir(folderPath, (err, content) => {
-      resolve(content)
-    })
+    const folderFiles = fs.readdirSync(folderPath)
+    resolve(folderFiles)
+
+    // fs.readdir(folderPath, (err, content) => {
+    //   resolve(content)
+    // })
   })
 }
 
