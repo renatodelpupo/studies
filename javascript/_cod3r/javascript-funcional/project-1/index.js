@@ -1,11 +1,13 @@
 const fs = require('fs')
-const path = require('path')
 
-const { countSrtWords, getSubtitle } = require('./functions')
+const { countSrtWords, filterSrtFiles, getFilePaths, getFolderFiles, reduceSrts } = require('./functions')
 
-const subtitlePath = path.join(__dirname, '../data/subtitles/subtitle_01.srt')
+const dataFolder = '../data/subtitles'
 
-getSubtitle(subtitlePath)
+getFolderFiles(dataFolder)
+  .then(filterSrtFiles)
+  .then((srtFiles) => getFilePaths(dataFolder, srtFiles))
+  .then(reduceSrts)
   .then(countSrtWords)
   .then((result) => {
     fs.writeFileSync('result.json', JSON.stringify(result))

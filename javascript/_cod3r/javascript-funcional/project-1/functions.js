@@ -1,4 +1,5 @@
 const fs = require('fs')
+const path = require('path')
 
 //
 // Conversions
@@ -82,10 +83,44 @@ const countSrtWords = (srt) => {
   return orderedObject
 }
 
+const filterSrtFiles = (filesArray) => {
+  return filesArray.filter((file) => file.endsWith('.srt'))
+}
+
+const getFilePaths = (folderPath, fileNames) => {
+  return fileNames.map((fileName) => `${folderPath}/${fileName}`)
+}
+
+const getFolderFiles = (folderPath) => {
+  return new Promise((resolve) => {
+    fs.readdir(folderPath, (err, content) => {
+      resolve(content)
+    })
+  })
+}
+
 const getSubtitle = (filePath) => {
   return new Promise((resolve) => {
     fs.readFile(filePath, (_, content) => resolve(content.toString()))
   })
 }
 
-module.exports = { countSrtWords, getSubtitle }
+const reduceSrts = (srtFiles) => {
+  return new Promise((resolve) => {
+    let reducedString = ''
+
+    srtFiles
+      .reduce((accumulatorPromise, currentSrtFile) => {
+        return accumulatorPromise.then(() => {
+          return getSubtitle(path.join(__dirname, currentSrtFile)).then((newSrt) => {
+            reducedString = reducedString.concat(newSrt)
+          })
+        })
+      }, Promise.resolve())
+      .then(() => {
+        return resolve(reducedString)
+      })
+  })
+}
+
+module.exports = { countSrtWords, filterSrtFiles, getFilePaths, getFolderFiles, reduceSrts }
