@@ -29,13 +29,18 @@ export default Vue.extend({
   components: { Card },
 
   async asyncData() {
-    const pokemonsNotFoundIds = [2, 6]
+    const pokemonsNotFoundIds = [174, 180, 181, 186, 201, 205, 222, 232, 237, 239, 240, 244, 245, 249]
 
     const addPokemonAncestorName = (pokemonName) => {
       return fetch(`https://pokeapi.co/api/v2/pokemon-species/${pokemonName}`)
         .then((response) => response.json())
-        .then((data) => data.evolves_from_species.name)
-        .then((pokemonAncestorName) => [pokemonAncestorName, pokemonName])
+        .then((data) => {
+          if (data.evolves_from_species) {
+            return [data.evolves_from_species.name, pokemonName]
+          } else {
+            return [pokemonName]
+          }
+        })
     }
 
     const getPokemonInfo = (pokemon) => {
