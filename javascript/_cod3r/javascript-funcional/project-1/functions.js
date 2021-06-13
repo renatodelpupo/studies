@@ -40,14 +40,15 @@ const convertToUniqueObject = (srtArray) => {
 }
 
 const sortObjectDesc = (object) => {
-  const orderedArray = convertObjectToDescOrderedArray(object)
-  const orderedObject = convertArrayPairToObject(orderedArray)
-
-  return orderedObject
+  return new Promise((resolve) => resolve(convertObjectToDescOrderedArray(object))).then(convertArrayPairToObject)
 }
 
 const treatSrtString = (srtString) => {
-  return handleBackslash(removeEmpties(removePunctuation(removeNumbers(removeXml(srtString)))))
+  return new Promise((resolve) => resolve(removeXml(srtString)))
+    .then(removeNumbers)
+    .then(removePunctuation)
+    .then(removeEmpties)
+    .then(handleBackslash)
 }
 
 //
@@ -75,12 +76,10 @@ const removeXml = (string) => {
 //
 // Methods
 const countSrtWords = (srt) => {
-  const treatedString = treatSrtString(srt)
-  const treatedArray = convertSrtStringToArray(treatedString)
-  const objectWithoutDuplicates = convertToUniqueObject(treatedArray)
-  const orderedObject = sortObjectDesc(objectWithoutDuplicates)
-
-  return orderedObject
+  return new Promise((resolve) => resolve(treatSrtString(srt)))
+    .then(convertSrtStringToArray)
+    .then(convertToUniqueObject)
+    .then(sortObjectDesc)
 }
 
 const filterSrtFiles = (filesArray) => {
