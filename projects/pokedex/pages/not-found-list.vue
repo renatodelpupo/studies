@@ -6,10 +6,10 @@
           v-for="pokemon in pokemonSpecie"
           :id="pokemon.id"
           :key="pokemon.name"
-          :main-type="pokemon.types[0].type.name"
+          :main-type="pokemon.types && pokemon.types[0].type.name"
         >
           <template #image>
-            <img alt="" :src="pokemon.sprites.front_default" />
+            <img alt="" :src="pokemon.sprites && pokemon.sprites.front_default" />
           </template>
 
           <template #name>{{ pokemon.name }}</template>
