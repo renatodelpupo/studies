@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <ul>
-      <li v-for="pokemonSpecie in pokemonSpecieList" :key="pokemonSpecie[0].name">
+      <li v-for="pokemonSpecie in pokemonSpeciesList" :key="pokemonSpecie[0].name">
         <Card
           v-for="pokemon in pokemonSpecie"
           :id="pokemon.id"
@@ -31,8 +31,8 @@ export default Vue.extend({
   async asyncData() {
     const pokemonsNotFoundIds = [174, 180, 181, 186, 201, 205, 222, 232, 237, 239, 240, 244, 245, 249]
 
-    const getPokemonInfo = (pokemon) => {
-      return fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`).then((response) => response.json())
+    const getPokemon = (pokemonId) => {
+      return fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`).then((response) => response.json())
     }
 
     const getPokemonAncestor = (pokemonId) => {
@@ -53,10 +53,10 @@ export default Vue.extend({
       )
     }
 
-    const pokemonSpecieList = await Promise.all(pokemonsNotFoundIds.map(getPokemonWithAncestor))
+    const pokemonSpeciesList = await Promise.all(pokemonsNotFoundIds.map(getPokemonWithAncestor))
 
     return {
-      pokemonSpecieList
+      pokemonSpeciesList
     }
   }
 })
