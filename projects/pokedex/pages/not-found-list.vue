@@ -31,37 +31,29 @@ export default Vue.extend({
   async asyncData() {
     const pokemonsNotFoundIds = [174, 180, 181, 186, 201, 205, 222, 232, 237, 239, 240, 244, 245, 249]
 
-    const addPokemonAncestorName = (pokemonName) => {
-      return fetch(`https://pokeapi.co/api/v2/pokemon-species/${pokemonName}`)
-        .then((response) => response.json())
-        .then((data) => {
-          if (data.evolves_from_species) {
-            return [data.evolves_from_species.name, pokemonName]
-          } else {
-            return [pokemonName]
-          }
-        })
-    }
-
     const getPokemonInfo = (pokemon) => {
       return fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`).then((response) => response.json())
     }
 
-    const getPokemonAndAncestorName = (pokemon) => {
-      return getPokemonInfo(pokemon)
-        .then((data) => data.name)
-        .then(addPokemonAncestorName)
+    const getPokemonAncestor = (pokemonId) => {
+      return fetch(`https://pokeapi.co/api/v2/pokemon-species/${pokemonId}`)
+        .then((response) => response.json())
+        .then((pokemon) => {
+          const evolvesFrom = pokemon.evolves_from_species
+          return evolvesFrom ? getPokemonAncestor(evolvesFrom.name) : pokemon
+        })
+        .then((pokemon) => {
+          return pokemon.id !== pokemonId ? getPokemon(pokemon.id) : null
+        })
     }
 
-    const pokemonSpecieList = await Promise.all(pokemonsNotFoundIds.map(getPokemonAndAncestorName)).then(
-      (pokemonsList) => {
-        return Promise.all(
-          pokemonsList.map((item) => {
-            return Promise.all(item.map(getPokemonInfo))
-          })
-        )
-      }
-    )
+    const getPokemonWithAncestor = (id) => {
+      return Promise.all([getPokemonAncestor(id), getPokemon(id)]).then((pokemonsSpecie) =>
+        pokemonsSpecie.filter(Boolean)
+      )
+    }
+
+    const pokemonSpecieList = await Promise.all(pokemonsNotFoundIds.map(getPokemonWithAncestor))
 
     return {
       pokemonSpecieList
