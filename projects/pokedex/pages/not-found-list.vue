@@ -53,7 +53,32 @@ export default Vue.extend({
       )
     }
 
-    const pokemonSpeciesList = await Promise.all(pokemonsNotFoundIds.map(getPokemonWithAncestor))
+    const pokemonSpeciesList = await Promise.all(pokemonsNotFoundIds.map(getPokemonWithAncestor)).then(
+      (pokemonSpeciesList) => {
+        const pokemonSpeciesListTreated = []
+
+        pokemonSpeciesList.forEach((pokemonSpecie) => {
+          let pokemonSpecieDuplicatedIndex = null
+
+          const pokemonSpecieDuplicated = pokemonSpeciesListTreated.find((pokemonSpecieTreated, index) => {
+            if (pokemonSpecieTreated[0].name === pokemonSpecie[0].name) {
+              pokemonSpecieDuplicatedIndex = index
+              return true
+            }
+
+            return false
+          })
+
+          if (pokemonSpecieDuplicated) {
+            pokemonSpeciesListTreated[pokemonSpecieDuplicatedIndex].push(pokemonSpecie[1])
+          } else {
+            pokemonSpeciesListTreated.push(pokemonSpecie)
+          }
+        })
+
+        return pokemonSpeciesListTreated
+      }
+    )
 
     return {
       pokemonSpeciesList
