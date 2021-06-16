@@ -58,18 +58,11 @@ export default Vue.extend({
         const pokemonSpeciesListTreated = []
 
         pokemonSpeciesList.forEach((pokemonSpecie) => {
-          let pokemonSpecieDuplicatedIndex = null
+          const pokemonSpecieDuplicatedIndex = pokemonSpeciesListTreated.findIndex(
+            (pokemonSpecieTreated) => pokemonSpecieTreated[0].name === pokemonSpecie[0].name
+          )
 
-          const pokemonSpecieDuplicated = pokemonSpeciesListTreated.find((pokemonSpecieTreated, index) => {
-            if (pokemonSpecieTreated[0].name === pokemonSpecie[0].name) {
-              pokemonSpecieDuplicatedIndex = index
-              return true
-            }
-
-            return false
-          })
-
-          if (pokemonSpecieDuplicated) {
+          if (pokemonSpecieDuplicatedIndex >= 0) {
             pokemonSpeciesListTreated[pokemonSpecieDuplicatedIndex].push(pokemonSpecie[1])
           } else {
             pokemonSpeciesListTreated.push(pokemonSpecie)
