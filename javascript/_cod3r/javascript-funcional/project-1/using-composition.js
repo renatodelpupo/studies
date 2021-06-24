@@ -5,7 +5,8 @@ const { composition } = require('../functional/composition-2')
 
 const dataFolder = '../data/subtitles'
 
-composition(
+const mostCommonWords = composition(
+  getFolderFiles,
   filterSrtFiles,
   (srtFiles) => getFilePaths(dataFolder, srtFiles),
   getSubtitles,
@@ -14,4 +15,6 @@ composition(
   (result) => {
     fs.writeFileSync('result-composition.json', JSON.stringify(result))
   }
-)(getFolderFiles(dataFolder))
+)
+
+mostCommonWords(dataFolder)
