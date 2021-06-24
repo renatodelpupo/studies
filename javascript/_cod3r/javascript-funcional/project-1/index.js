@@ -13,4 +13,3 @@ getFolderFiles(dataFolder)
   .then((result) => {
     fs.writeFileSync('result.json', JSON.stringify(result))
   })
-

@@ -26,3 +26,5 @@ const slow = (text) => {
 
 composition(upperCase, emphasis)('hey').then(console.log)
 composition(upperCase, emphasis, slow)('hey').then(console.log)
+
+module.exports = { composition }
