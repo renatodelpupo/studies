@@ -1,4 +1,5 @@
-function isBetween(min, max) {
+// First-Class Function
+const isBetween = function (min, max) {
   // Currying && Higher-Order Function
   return function handleError(error) {
     // Currying && Higher-Order Function
@@ -35,6 +36,9 @@ console.log(test20Century(2001))
 
 // Currying
 // Chain of functions that accepts just a single argument
+
+// First-Class Function
+// Language feature where functions are treated like any other variable
 
 // Higher-Order Function
 // Functions with functions as arguments or return
