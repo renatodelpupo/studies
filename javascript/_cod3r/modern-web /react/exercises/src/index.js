@@ -1,3 +1,4 @@
 import ReactDOM from 'react-dom'
+import Welcome from './components/Welcome'
 
-ReactDOM.render(<h1>Welcome</h1>, document.querySelector('#root'))
+ReactDOM.render(<Welcome />, document.querySelector('#root'))
