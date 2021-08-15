@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Menu Challenge</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" />
+    <style>
+      body {
+        background-color: lightgray;
+        font-family: 'Oswald', sans-serif;
+        margin: 0;
+      }
+
+      .header {
+        background: #333;
+        border-bottom: solid 5px #4faddb;
+        color: #fff;
+        height: 80px;
+      }
+
+      .header a {
+        color: #eee;
+        font-size: 1.3em;
+        padding: 10px 15px;
+        text-decoration: none;
+      }
+
+      .header .button {
+        border-radius: 30px;
+        margin-right: 10px;
+        padding: 10px 25px;
+      }
+
+      .highlight {
+        background: #f50a31;
+        color: #fff;
+      }
+
+      .logo img {
+        height: 50px;
+      }
+
+      .menu a:hover {
+        background-color: #4faddb;
+        color: #000;
+      }
+
+      .menu ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="logo">
+        <a href="#welcome">
+          <img src="http://files.cod3r.com.br/curso-web/logo.png" alt="Logo" />
+        </a>
+      </div>
+      <nav class="menu">
+        <ul>
+          <li>
+            <a href="#welcome">Welcome</a>
+          </li>
+          <li>
+            <a href="#courses">Courses</a>
+          </li>
+          <li>
+            <a href="#about">About</a>
+          </li>
+          <li>
+            <a href="#contact">Contact</a>
+          </li>
+        </ul>
+      </nav>
+      <aside class="auth">
+        <a href="#login">Login</a>
+        <a href="#register" class="button highlight">Register</a>
+      </aside>
+    </header>
+  </body>
+</html>

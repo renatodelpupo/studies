@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>CSS Specificity</title>
+    <style>
+      /* https://specificity.keegan.st/ */
+    </style>
+  </head>
+
+  <body>
+    <div class="style" id="unique1">#unique1 vs .style vs inline</div>
+    <div class="style" id="unique2">#unique2 vs .style</div>
+    <div class="style" wm-color>.style vs wm-color</div>
+    <div wm-color>wm-color</div>
+    <div class="style">.style</div>
+    <div>element</div>
+  </body>
+</html>
