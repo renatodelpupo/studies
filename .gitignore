@@ -1,4 +1,5 @@
 .apm
+.env
 .node-gyp
 .npm
 
