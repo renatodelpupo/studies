@@ -7,11 +7,8 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Next.js Boilerplate</title>
-        <meta
-          content="Boilerplate using Typescript, React, NextJS and Styled Components!"
-          name="description"
-        />
+        <title>My Trips</title>
+        <meta content="" name="description" />
 
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#06092b" />

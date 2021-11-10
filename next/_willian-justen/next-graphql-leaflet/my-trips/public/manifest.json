@@ -1,9 +1,9 @@
 {
-  "name": "Next.js - Boilerplate",
-  "short_name": "Next.js",
+  "name": "My Trips",
+  "short_name": "My Trips",
   "icons": [],
   "background_color": "#06092B",
-  "description": "Boilerplate using Typescript, React, NextJS and Styled Components!",
+  "description": "",
   "display": "fullscreen",
   "start_url": "/",
   "theme_color": "#06092B"
