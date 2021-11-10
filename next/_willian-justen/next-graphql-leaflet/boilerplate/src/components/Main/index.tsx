@@ -1,7 +1,10 @@
+import * as S from './styles'
+
 const Main = () => (
-  <main>
-    <h1>Welcome to Next.js!</h1>
-  </main>
+  <S.Wrapper>
+    <S.Title>Welcome to Next.js!</S.Title>
+    <S.Description>Just another website</S.Description>
+  </S.Wrapper>
 )
 
 export default Main

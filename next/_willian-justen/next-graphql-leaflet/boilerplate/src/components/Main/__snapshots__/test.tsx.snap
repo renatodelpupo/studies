@@ -1,9 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Main /> should render the heading 1`] = `
-<main>
-  <h1>
+<main
+  class="styles__Wrapper-sc-dzx1ao-2 igLRza"
+>
+  <h1
+    class="styles__Title-sc-dzx1ao-1 hjyugG"
+  >
     Welcome to Next.js!
   </h1>
+  <h2
+    class="styles__Description-sc-dzx1ao-0 bRValt"
+  >
+    Just another website
+  </h2>
 </main>
 `;
