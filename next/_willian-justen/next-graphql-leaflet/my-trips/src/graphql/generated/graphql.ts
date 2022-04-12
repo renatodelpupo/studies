@@ -25,6 +25,10 @@ export type Scalars = {
   RichTextAST: any;
 };
 
+
+
+
+
 export type Aggregate = {
   __typename?: 'Aggregate';
   count: Scalars['Int'];
@@ -68,11 +72,13 @@ export type Asset = Node & {
   url: Scalars['String'];
 };
 
+
 /** Asset system model */
 export type AssetLocalizationsArgs = {
   locales?: Array<Locale>;
   includeCurrent?: Scalars['Boolean'];
 };
+
 
 /** Asset system model */
 export type AssetDocumentInStagesArgs = {
@@ -81,20 +87,24 @@ export type AssetDocumentInStagesArgs = {
   inheritLocale?: Scalars['Boolean'];
 };
 
+
 /** Asset system model */
 export type AssetCreatedAtArgs = {
   variation?: SystemDateTimeFieldVariation;
 };
+
 
 /** Asset system model */
 export type AssetUpdatedAtArgs = {
   variation?: SystemDateTimeFieldVariation;
 };
 
+
 /** Asset system model */
 export type AssetPublishedAtArgs = {
   variation?: SystemDateTimeFieldVariation;
 };
+
 
 /** Asset system model */
 export type AssetGalleryPlaceArgs = {
@@ -108,12 +118,14 @@ export type AssetGalleryPlaceArgs = {
   locales?: Maybe<Array<Locale>>;
 };
 
+
 /** Asset system model */
 export type AssetHistoryArgs = {
   limit?: Scalars['Int'];
   skip?: Scalars['Int'];
   stageOverride?: Maybe<Stage>;
 };
+
 
 /** Asset system model */
 export type AssetUrlArgs = {
@@ -653,6 +665,8 @@ export type ConnectPositionInput = {
   end?: Maybe<Scalars['Boolean']>;
 };
 
+
+
 export enum DocumentFileTypes {
   Jpg = 'jpg',
   Odp = 'odp',
@@ -717,6 +731,7 @@ export type DocumentVersion = {
   data?: Maybe<Scalars['Json']>;
 };
 
+
 export enum ImageFit {
   /** Resizes the image to fit within the specified parameters without distorting, cropping, or changing the aspect ratio. */
   Clip = 'clip',
@@ -743,6 +758,7 @@ export type ImageTransformationInput = {
   resize?: Maybe<ImageResizeInput>;
 };
 
+
 /** Locale system enumeration */
 export enum Locale {
   /** System locale */
@@ -757,6 +773,7 @@ export type Location = {
   distance: Scalars['Float'];
 };
 
+
 /** Representing a geolocation point with latitude and longitude */
 export type LocationDistanceArgs = {
   from: LocationInput;
@@ -767,6 +784,7 @@ export type LocationInput = {
   latitude: Scalars['Float'];
   longitude: Scalars['Float'];
 };
+
 
 export type Mutation = {
   __typename?: 'Mutation';
@@ -895,23 +913,28 @@ export type Mutation = {
   unpublishManyPlaces: BatchPayload;
 };
 
+
 export type MutationCreateAssetArgs = {
   data: AssetCreateInput;
 };
+
 
 export type MutationUpdateAssetArgs = {
   where: AssetWhereUniqueInput;
   data: AssetUpdateInput;
 };
 
+
 export type MutationDeleteAssetArgs = {
   where: AssetWhereUniqueInput;
 };
+
 
 export type MutationUpsertAssetArgs = {
   where: AssetWhereUniqueInput;
   upsert: AssetUpsertInput;
 };
+
 
 export type MutationPublishAssetArgs = {
   where: AssetWhereUniqueInput;
@@ -921,12 +944,14 @@ export type MutationPublishAssetArgs = {
   to?: Array<Stage>;
 };
 
+
 export type MutationUnpublishAssetArgs = {
   where: AssetWhereUniqueInput;
   from?: Array<Stage>;
   locales?: Maybe<Array<Locale>>;
   unpublishBase?: Maybe<Scalars['Boolean']>;
 };
+
 
 export type MutationUpdateManyAssetsConnectionArgs = {
   where?: Maybe<AssetManyWhereInput>;
@@ -938,6 +963,7 @@ export type MutationUpdateManyAssetsConnectionArgs = {
   after?: Maybe<Scalars['ID']>;
 };
 
+
 export type MutationDeleteManyAssetsConnectionArgs = {
   where?: Maybe<AssetManyWhereInput>;
   skip?: Maybe<Scalars['Int']>;
@@ -946,6 +972,7 @@ export type MutationDeleteManyAssetsConnectionArgs = {
   before?: Maybe<Scalars['ID']>;
   after?: Maybe<Scalars['ID']>;
 };
+
 
 export type MutationPublishManyAssetsConnectionArgs = {
   where?: Maybe<AssetManyWhereInput>;
@@ -961,6 +988,7 @@ export type MutationPublishManyAssetsConnectionArgs = {
   withDefaultLocale?: Maybe<Scalars['Boolean']>;
 };
 
+
 export type MutationUnpublishManyAssetsConnectionArgs = {
   where?: Maybe<AssetManyWhereInput>;
   stage?: Maybe<Stage>;
@@ -974,14 +1002,17 @@ export type MutationUnpublishManyAssetsConnectionArgs = {
   unpublishBase?: Maybe<Scalars['Boolean']>;
 };
 
+
 export type MutationUpdateManyAssetsArgs = {
   where?: Maybe<AssetManyWhereInput>;
   data: AssetUpdateManyInput;
 };
 
+
 export type MutationDeleteManyAssetsArgs = {
   where?: Maybe<AssetManyWhereInput>;
 };
+
 
 export type MutationPublishManyAssetsArgs = {
   where?: Maybe<AssetManyWhereInput>;
@@ -991,6 +1022,7 @@ export type MutationPublishManyAssetsArgs = {
   withDefaultLocale?: Maybe<Scalars['Boolean']>;
 };
 
+
 export type MutationUnpublishManyAssetsArgs = {
   where?: Maybe<AssetManyWhereInput>;
   from?: Array<Stage>;
@@ -998,33 +1030,40 @@ export type MutationUnpublishManyAssetsArgs = {
   unpublishBase?: Maybe<Scalars['Boolean']>;
 };
 
+
 export type MutationCreatePageArgs = {
   data: PageCreateInput;
 };
+
 
 export type MutationUpdatePageArgs = {
   where: PageWhereUniqueInput;
   data: PageUpdateInput;
 };
 
+
 export type MutationDeletePageArgs = {
   where: PageWhereUniqueInput;
 };
+
 
 export type MutationUpsertPageArgs = {
   where: PageWhereUniqueInput;
   upsert: PageUpsertInput;
 };
 
+
 export type MutationPublishPageArgs = {
   where: PageWhereUniqueInput;
   to?: Array<Stage>;
 };
 
+
 export type MutationUnpublishPageArgs = {
   where: PageWhereUniqueInput;
   from?: Array<Stage>;
 };
+
 
 export type MutationUpdateManyPagesConnectionArgs = {
   where?: Maybe<PageManyWhereInput>;
@@ -1036,6 +1075,7 @@ export type MutationUpdateManyPagesConnectionArgs = {
   after?: Maybe<Scalars['ID']>;
 };
 
+
 export type MutationDeleteManyPagesConnectionArgs = {
   where?: Maybe<PageManyWhereInput>;
   skip?: Maybe<Scalars['Int']>;
@@ -1044,6 +1084,7 @@ export type MutationDeleteManyPagesConnectionArgs = {
   before?: Maybe<Scalars['ID']>;
   after?: Maybe<Scalars['ID']>;
 };
+
 
 export type MutationPublishManyPagesConnectionArgs = {
   where?: Maybe<PageManyWhereInput>;
@@ -1056,6 +1097,7 @@ export type MutationPublishManyPagesConnectionArgs = {
   after?: Maybe<Scalars['ID']>;
 };
 
+
 export type MutationUnpublishManyPagesConnectionArgs = {
   where?: Maybe<PageManyWhereInput>;
   stage?: Maybe<Stage>;
@@ -1067,52 +1109,63 @@ export type MutationUnpublishManyPagesConnectionArgs = {
   after?: Maybe<Scalars['ID']>;
 };
 
+
 export type MutationUpdateManyPagesArgs = {
   where?: Maybe<PageManyWhereInput>;
   data: PageUpdateManyInput;
 };
 
+
 export type MutationDeleteManyPagesArgs = {
   where?: Maybe<PageManyWhereInput>;
 };
+
 
 export type MutationPublishManyPagesArgs = {
   where?: Maybe<PageManyWhereInput>;
   to?: Array<Stage>;
 };
 
+
 export type MutationUnpublishManyPagesArgs = {
   where?: Maybe<PageManyWhereInput>;
   from?: Array<Stage>;
 };
 
+
 export type MutationCreatePlaceArgs = {
   data: PlaceCreateInput;
 };
+
 
 export type MutationUpdatePlaceArgs = {
   where: PlaceWhereUniqueInput;
   data: PlaceUpdateInput;
 };
 
+
 export type MutationDeletePlaceArgs = {
   where: PlaceWhereUniqueInput;
 };
+
 
 export type MutationUpsertPlaceArgs = {
   where: PlaceWhereUniqueInput;
   upsert: PlaceUpsertInput;
 };
 
+
 export type MutationPublishPlaceArgs = {
   where: PlaceWhereUniqueInput;
   to?: Array<Stage>;
 };
 
+
 export type MutationUnpublishPlaceArgs = {
   where: PlaceWhereUniqueInput;
   from?: Array<Stage>;
 };
+
 
 export type MutationUpdateManyPlacesConnectionArgs = {
   where?: Maybe<PlaceManyWhereInput>;
@@ -1124,6 +1177,7 @@ export type MutationUpdateManyPlacesConnectionArgs = {
   after?: Maybe<Scalars['ID']>;
 };
 
+
 export type MutationDeleteManyPlacesConnectionArgs = {
   where?: Maybe<PlaceManyWhereInput>;
   skip?: Maybe<Scalars['Int']>;
@@ -1132,6 +1186,7 @@ export type MutationDeleteManyPlacesConnectionArgs = {
   before?: Maybe<Scalars['ID']>;
   after?: Maybe<Scalars['ID']>;
 };
+
 
 export type MutationPublishManyPlacesConnectionArgs = {
   where?: Maybe<PlaceManyWhereInput>;
@@ -1144,6 +1199,7 @@ export type MutationPublishManyPlacesConnectionArgs = {
   after?: Maybe<Scalars['ID']>;
 };
 
+
 export type MutationUnpublishManyPlacesConnectionArgs = {
   where?: Maybe<PlaceManyWhereInput>;
   stage?: Maybe<Stage>;
@@ -1155,19 +1211,23 @@ export type MutationUnpublishManyPlacesConnectionArgs = {
   after?: Maybe<Scalars['ID']>;
 };
 
+
 export type MutationUpdateManyPlacesArgs = {
   where?: Maybe<PlaceManyWhereInput>;
   data: PlaceUpdateManyInput;
 };
 
+
 export type MutationDeleteManyPlacesArgs = {
   where?: Maybe<PlaceManyWhereInput>;
 };
+
 
 export type MutationPublishManyPlacesArgs = {
   where?: Maybe<PlaceManyWhereInput>;
   to?: Array<Stage>;
 };
+
 
 export type MutationUnpublishManyPlacesArgs = {
   where?: Maybe<PlaceManyWhereInput>;
@@ -2319,12 +2379,37 @@ export type GetPageBySlugQuery = (
   )> }
 );
 
-export type GetPlacesQueryVariables = Exact<{ [key: string]: never; }>;
+export type GetPlacesQueryVariables = Exact<{
+  first?: Maybe<Scalars['Int']>;
+}>;
 
 
 export type GetPlacesQuery = (
   { __typename?: 'Query' }
   & { places: Array<(
+    { __typename?: 'Place' }
+    & Pick<Place, 'id' | 'slug' | 'name'>
+    & { location: (
+      { __typename?: 'Location' }
+      & Pick<Location, 'latitude' | 'longitude'>
+    ), description?: Maybe<(
+      { __typename?: 'RichText' }
+      & Pick<RichText, 'html'>
+    )>, gallery: Array<(
+      { __typename?: 'Asset' }
+      & Pick<Asset, 'url' | 'height' | 'width'>
+    )> }
+  )> }
+);
+
+export type GetPlaceBySlugQueryVariables = Exact<{
+  slug: Scalars['String'];
+}>;
+
+
+export type GetPlaceBySlugQuery = (
+  { __typename?: 'Query' }
+  & { place?: Maybe<(
     { __typename?: 'Place' }
     & Pick<Place, 'id' | 'slug' | 'name'>
     & { location: (
