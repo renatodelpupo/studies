@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Part 4 - Valid Tab Index</title>
+
+    <style>
+      *:focus {
+        outline: 2px solid green;
+        outline-offset: 2px;
+      }
+
+      body {
+        margin: 8px;
+      }
+
+      .carousel {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 25px;
+        height: 250px;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+        width: 400px;
+      }
+
+      .carousel-item {
+        background-color: gray;
+        flex-grow: 1;
+        height: 250px;
+        scroll-snap-align: center;
+        width: 250px;
+      }
+
+      .carousel-item--active {
+        background-color: orange;
+      }
+
+      .outside-link {
+        display: inline-block;
+        margin-bottom: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Here we have an <a class="outside-link" href="#">outside link</a>.</p>
+
+    <div class="carousel">
+      <div class="carousel-item">Initializing, <a href="#">first steps</a>.</div>
+      <div class="carousel-item">Know <a href="#">about us</a>.</div>
+      <div class="carousel-item">Try to <a href="#">contact us</a>.</div>
+      <div class="carousel-item">Goodbye, <a href="#">final page</a>.</div>
+    </div>
+
+    <script>
+      const carouselClassName = 'carousel'
+      const carouselElement = document.querySelector(`.${carouselClassName}`)
+      const carouselItemClassName = 'carousel-item'
+      const carouselItemElements = document.querySelectorAll(`.${carouselItemClassName}`)
+
+      const carouselObserverCallback = (entries, observer) => {
+        entries.forEach((entry, index) => {
+          const { intersectionRatio, isIntersecting, target } = entry
+          const carouselItemActiveClass = `${carouselItemClassName}--active`
+          const focusableElements = [...target.querySelectorAll('a')]
+
+          if (intersectionRatio === 1) {
+            target.classList.add(carouselItemActiveClass)
+
+            target.removeAttribute('aria-hidden')
+
+            focusableElements.forEach((element) => {
+              element.setAttribute('tabindex', '0')
+            })
+          } else {
+            target.classList.remove(carouselItemActiveClass)
+
+            target.setAttribute('aria-hidden', true)
+
+            focusableElements.forEach((element) => {
+              element.setAttribute('tabindex', '-1')
+            })
+          }
+        })
+      }
+
+      const carouselObserverOptions = {
+        root: carouselElement,
+        threshold: 1,
+      }
+
+      const carouselObserver = new IntersectionObserver(carouselObserverCallback, carouselObserverOptions)
+
+      carouselItemElements.forEach((item) => carouselObserver.observe(item))
+    </script>
+  </body>
+</html>
