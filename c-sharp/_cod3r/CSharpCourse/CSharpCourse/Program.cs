@@ -9,6 +9,7 @@ namespace CSharpCourse
         static void Main(string[] args) {
             var center = new ExerciseCenter(new Dictionary<string, Action>() {
                 {"First Program - Fundamentals", FirstProgram.Exec},
+                {"Comments - Fundamentals", Comments.Exec},
             });
 
             center.SelectAndExec();
