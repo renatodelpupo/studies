@@ -1,0 +1,13 @@
+\\wsl.localhost\Ubuntu-18.04\home\natodp\git\studies\c-sharp\_cod3r\CSharpCourse\CSharpCourse\bin\Debug\netcoreapp3.1\CSharpCourse.exe
+\\wsl.localhost\Ubuntu-18.04\home\natodp\git\studies\c-sharp\_cod3r\CSharpCourse\CSharpCourse\bin\Debug\netcoreapp3.1\CSharpCourse.deps.json
+\\wsl.localhost\Ubuntu-18.04\home\natodp\git\studies\c-sharp\_cod3r\CSharpCourse\CSharpCourse\bin\Debug\netcoreapp3.1\CSharpCourse.runtimeconfig.json
+\\wsl.localhost\Ubuntu-18.04\home\natodp\git\studies\c-sharp\_cod3r\CSharpCourse\CSharpCourse\bin\Debug\netcoreapp3.1\CSharpCourse.runtimeconfig.dev.json
+\\wsl.localhost\Ubuntu-18.04\home\natodp\git\studies\c-sharp\_cod3r\CSharpCourse\CSharpCourse\bin\Debug\netcoreapp3.1\CSharpCourse.dll
+\\wsl.localhost\Ubuntu-18.04\home\natodp\git\studies\c-sharp\_cod3r\CSharpCourse\CSharpCourse\bin\Debug\netcoreapp3.1\CSharpCourse.pdb
+\\wsl.localhost\Ubuntu-18.04\home\natodp\git\studies\c-sharp\_cod3r\CSharpCourse\CSharpCourse\obj\Debug\netcoreapp3.1\CSharpCourse.csprojAssemblyReference.cache
+\\wsl.localhost\Ubuntu-18.04\home\natodp\git\studies\c-sharp\_cod3r\CSharpCourse\CSharpCourse\obj\Debug\netcoreapp3.1\CSharpCourse.AssemblyInfoInputs.cache
+\\wsl.localhost\Ubuntu-18.04\home\natodp\git\studies\c-sharp\_cod3r\CSharpCourse\CSharpCourse\obj\Debug\netcoreapp3.1\CSharpCourse.AssemblyInfo.cs
+\\wsl.localhost\Ubuntu-18.04\home\natodp\git\studies\c-sharp\_cod3r\CSharpCourse\CSharpCourse\obj\Debug\netcoreapp3.1\CSharpCourse.csproj.CoreCompileInputs.cache
+\\wsl.localhost\Ubuntu-18.04\home\natodp\git\studies\c-sharp\_cod3r\CSharpCourse\CSharpCourse\obj\Debug\netcoreapp3.1\CSharpCourse.dll
+\\wsl.localhost\Ubuntu-18.04\home\natodp\git\studies\c-sharp\_cod3r\CSharpCourse\CSharpCourse\obj\Debug\netcoreapp3.1\CSharpCourse.pdb
+\\wsl.localhost\Ubuntu-18.04\home\natodp\git\studies\c-sharp\_cod3r\CSharpCourse\CSharpCourse\obj\Debug\netcoreapp3.1\CSharpCourse.genruntimeconfig.cache
