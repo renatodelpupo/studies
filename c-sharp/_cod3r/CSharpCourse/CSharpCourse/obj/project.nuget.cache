@@ -1,10 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "r3ZmaHH3kvTRaBqo5k1laTPFEroZCk4s/HFV2VaeSJtcTY9kTXDAPZiBPlFj5IQQZLgmmRE9N1rDruHfuuYxPw==",
+  "dgSpecHash": "enFKeiYrmQus7Z8OAdgfk+W11foRUabINWWJwgmHykvdhT2bn9c4Be7Rg/tv5+xiL3QLYMqZ+1VtuFlPBS3PgQ==",
   "success": true,
   "projectFilePath": "\\\\wsl.localhost\\Ubuntu-18.04\\home\\natodp\\git\\studies\\c-sharp\\_cod3r\\CSharpCourse\\CSharpCourse\\CSharpCourse.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\renato.delpupo\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.28\\microsoft.netcore.app.host.win-x64.3.1.28.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }
