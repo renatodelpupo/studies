@@ -15,5 +15,6 @@ export const getStaticProps = async () => {
     props: {
       places,
     },
+    revalidate: 60 * 60 * 24,
   }
 }
