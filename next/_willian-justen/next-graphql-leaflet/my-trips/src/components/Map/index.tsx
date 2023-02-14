@@ -1,5 +1,6 @@
 import { useRouter } from 'next/dist/client/router'
 import { MapContainer, TileLayer, Marker } from 'react-leaflet'
+import L from 'leaflet'
 
 type Place = {
   id: string
@@ -14,6 +15,13 @@ type Place = {
 export type MapProps = {
   places?: Place[]
 }
+
+const markerIcon = new L.Icon({
+  iconUrl: 'vercel.svg',
+  iconSize: [40, 40],
+  iconAnchor: [20, 40],
+  popupAnchor: [0, -40],
+})
 
 const Map = ({ places }: MapProps) => {
   const router = useRouter()
@@ -34,6 +42,7 @@ const Map = ({ places }: MapProps) => {
 
         return (
           <Marker
+            icon={markerIcon}
             key={`place-${id}`}
             position={[latitude, longitude]}
             title={name}
