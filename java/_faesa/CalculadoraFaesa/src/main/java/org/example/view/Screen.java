@@ -4,11 +4,11 @@ import org.example.controller.Calculation;
 import org.example.enums.Operators;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.util.Map;
 
 public class Screen extends JFrame {
   private JButton actionClean;
+  private JButton actionResult;
   private JButton number0;
   private JButton number1;
   private JButton number2;
@@ -21,7 +21,6 @@ public class Screen extends JFrame {
   private JButton number9;
   private JButton operatorAddition;
   private JButton operatorDivision;
-  private JButton operatorEquals;
   private JButton operatorMultiplication;
   private JButton operatorSubtraction;
   public JPanel calculator;
@@ -30,7 +29,7 @@ public class Screen extends JFrame {
 
   private final Calculation calculation;
   private final String initialValue = "0";
-  private Operators operator;
+  private Operators calculationOperator;
 
   private void clearDisplay() {
     display.setText(initialValue);
@@ -50,12 +49,9 @@ public class Screen extends JFrame {
   public Screen() {
     calculation = new Calculation();
 
-    actionClean.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        clearDisplay();
-        calculation.clean();
-      }
+    actionClean.addActionListener(e -> {
+      clearDisplay();
+      calculation.clean();
     });
 
     JButton[] numberButtons = {number0, number1, number2, number3, number4, number5, number6, number7, number8, number9};
@@ -63,56 +59,28 @@ public class Screen extends JFrame {
       numberButton.addActionListener(e -> printOnDisplay(numberButton.getText()));
     }
 
-    operatorAddition.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
+    Map<JButton, Operators> operators = Map.of(
+      operatorAddition, Operators.ADDITION,
+      operatorDivision, Operators.DIVISION,
+      operatorMultiplication, Operators.MULTIPLICATION,
+      operatorSubtraction, Operators.SUBTRACTION
+    );
+    operators.forEach((button, operator) -> {
+      button.addActionListener(e -> {
         int intNumber = Integer.parseInt(display.getText());
         calculation.setSubtotal(intNumber);
-        operator = Operators.ADDITION;
+        calculationOperator = operator;
         clearDisplay();
-      }
+      });
     });
 
-    operatorDivision.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        int intNumber = Integer.parseInt(display.getText());
-        calculation.setSubtotal(intNumber);
-        operator = Operators.DIVISION;
-        clearDisplay();
-      }
-    });
+    actionResult.addActionListener(e -> {
+      int intNumber = Integer.parseInt(display.getText());
+      calculation.calculate(calculationOperator, intNumber);
 
-    operatorMultiplication.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        int intNumber = Integer.parseInt(display.getText());
-        calculation.setSubtotal(intNumber);
-        operator = Operators.MULTIPLICATION;
-        clearDisplay();
-      }
-    });
-
-    operatorSubtraction.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        int intNumber = Integer.parseInt(display.getText());
-        calculation.setSubtotal(intNumber);
-        operator = Operators.SUBTRACTION;
-        clearDisplay();
-      }
-    });
-
-    operatorEquals.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        int intNumber = Integer.parseInt(display.getText());
-        calculation.calculate(operator, intNumber);
-
-        int intResult = calculation.getTotal();
-        String stringResult = Integer.toString(intResult);
-        display.setText(stringResult);
-      }
+      int intResult = calculation.getTotal();
+      String stringResult = Integer.toString(intResult);
+      display.setText(stringResult);
     });
   }
 }
