@@ -25,22 +25,28 @@ public class Screen extends JFrame {
   private JPanel keyboard;
   private JTextField display;
 
-  private void printOnDisplay(String newInput) {
-    String visorValue = display.getText();
+  private final String initialValue = "0";
 
-    if (visorValue.equals("0")) {
+  private void clearDisplay() {
+    display.setText(initialValue);
+  }
+
+  private void printOnDisplay(String newInput) {
+    String displayValue = display.getText();
+
+    if (displayValue.equals(initialValue)) {
       display.setText(newInput);
       return;
     }
 
-    display.setText(visorValue + newInput);
+    display.setText(displayValue.concat(newInput));
   }
 
   public Screen() {
     actionClean.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
-        display.setText("0");
+        clearDisplay();
       }
     });
 
