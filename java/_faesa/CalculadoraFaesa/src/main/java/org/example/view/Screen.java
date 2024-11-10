@@ -44,74 +44,9 @@ public class Screen extends JFrame {
       }
     });
 
-    number0.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        printOnDisplay(number0.getText());
-      }
-    });
-
-    number1.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        printOnDisplay(number1.getText());
-      }
-    });
-
-    number2.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        printOnDisplay(number2.getText());
-      }
-    });
-
-    number3.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        printOnDisplay(number3.getText());
-      }
-    });
-
-    number4.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        printOnDisplay(number4.getText());
-      }
-    });
-
-    number5.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        printOnDisplay(number5.getText());
-      }
-    });
-
-    number6.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        printOnDisplay(number6.getText());
-      }
-    });
-
-    number7.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        printOnDisplay(number7.getText());
-      }
-    });
-
-    number8.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        printOnDisplay(number8.getText());
-      }
-    });
-
-    number9.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        printOnDisplay(number9.getText());
-      }
-    });
+    JButton[] numberButtons = {number0, number1, number2, number3, number4, number5, number6, number7, number8, number9};
+    for (JButton numberButton : numberButtons) {
+      numberButton.addActionListener(e -> printOnDisplay(numberButton.getText()));
+    }
   }
 }
