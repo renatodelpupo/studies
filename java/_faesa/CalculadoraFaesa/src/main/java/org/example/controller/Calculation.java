@@ -13,7 +13,7 @@ public class Calculation {
     if (operator.equals(Operators.ADDITION)) {
       total += value;
     } else if (operator.equals(Operators.DIVISION)) {
-      total /= value;
+      total = (value == 0) ? 0 : total / value;
     } else if (operator.equals(Operators.MULTIPLICATION)) {
       total *= value;
     } else if (operator.equals(Operators.SUBTRACTION)) {
