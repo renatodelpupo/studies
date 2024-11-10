@@ -24,7 +24,6 @@ public class Screen extends JFrame {
   private JButton operatorMultiplication;
   private JButton operatorSubtraction;
   public JPanel calculator;
-  private JPanel keyboard;
   private JTextField display;
 
   private final Calculation calculation = new Calculation();
