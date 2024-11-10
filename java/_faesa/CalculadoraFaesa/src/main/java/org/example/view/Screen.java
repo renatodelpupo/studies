@@ -76,14 +76,12 @@ public class Screen extends JFrame {
       operatorMultiplication, Operators.MULTIPLICATION,
       operatorSubtraction, Operators.SUBTRACTION
     );
-    operators.forEach((button, operator) -> {
-      button.addActionListener(e -> {
-        int intNumber = Integer.parseInt(display.getText());
-        calculation.setSubtotal(intNumber);
-        calculationOperator = operator;
-        clearDisplay();
-      });
-    });
+    operators.forEach((button, operator) -> button.addActionListener(e -> {
+      int intNumber = Integer.parseInt(display.getText());
+      calculation.setSubtotal(intNumber);
+      calculationOperator = operator;
+      clearDisplay();
+    }));
   }
 
   public Screen() {
