@@ -9,7 +9,7 @@ public class Calculation {
     total = 0;
   }
 
-  public int calculate(Operators operator, int value) {
+  public void calculate(Operators operator, int value) {
     if (operator.equals(Operators.ADDITION)) {
       total += value;
     } else if (operator.equals(Operators.DIVISION)) {
@@ -19,8 +19,6 @@ public class Calculation {
     } else if (operator.equals(Operators.SUBTRACTION)) {
       total -= value;
     }
-
-    return total;
   }
 
   public void clean() {
