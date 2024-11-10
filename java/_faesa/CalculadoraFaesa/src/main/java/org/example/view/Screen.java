@@ -27,7 +27,7 @@ public class Screen extends JFrame {
   private JPanel keyboard;
   private JTextField display;
 
-  private final Calculation calculation;
+  private final Calculation calculation = new Calculation();
   private final String initialValue = "0";
   private Operators calculationOperator;
 
@@ -46,19 +46,30 @@ public class Screen extends JFrame {
     display.setText(displayValue.concat(newInput));
   }
 
-  public Screen() {
-    calculation = new Calculation();
-
+  private void registerActionsListeners() {
     actionClean.addActionListener(e -> {
       clearDisplay();
       calculation.clean();
     });
 
-    JButton[] numberButtons = {number0, number1, number2, number3, number4, number5, number6, number7, number8, number9};
-    for (JButton numberButton : numberButtons) {
-      numberButton.addActionListener(e -> printOnDisplay(numberButton.getText()));
-    }
+    actionResult.addActionListener(e -> {
+      int intNumber = Integer.parseInt(display.getText());
+      calculation.calculate(calculationOperator, intNumber);
 
+      int intResult = calculation.getTotal();
+      String stringResult = Integer.toString(intResult);
+      display.setText(stringResult);
+    });
+  }
+
+  private void registerNumbersListeners() {
+    JButton[] numbers = {number0, number1, number2, number3, number4, number5, number6, number7, number8, number9};
+    for (JButton number : numbers) {
+      number.addActionListener(e -> printOnDisplay(number.getText()));
+    }
+  }
+
+  private void registerOperatorsListeners() {
     Map<JButton, Operators> operators = Map.of(
       operatorAddition, Operators.ADDITION,
       operatorDivision, Operators.DIVISION,
@@ -73,14 +84,11 @@ public class Screen extends JFrame {
         clearDisplay();
       });
     });
+  }
 
-    actionResult.addActionListener(e -> {
-      int intNumber = Integer.parseInt(display.getText());
-      calculation.calculate(calculationOperator, intNumber);
-
-      int intResult = calculation.getTotal();
-      String stringResult = Integer.toString(intResult);
-      display.setText(stringResult);
-    });
+  public Screen() {
+    registerActionsListeners();
+    registerNumbersListeners();
+    registerOperatorsListeners();
   }
 }
